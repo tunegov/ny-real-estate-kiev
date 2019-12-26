@@ -1,0 +1,29 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@components": "./src/components",
+          "@constatns": "./src/constatns",
+          "@types": "./src/types",
+          "@pages": "./pages",
+          "@server": "./server",
+          "@stores": "./stores",
+          "@styles": "./src/styles",
+          "@static": "./static"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}

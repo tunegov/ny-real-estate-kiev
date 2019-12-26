@@ -1,0 +1,17 @@
+{
+  "menu": {
+    "team": "Команда",
+    "services": "Услуги",
+    "jobs": "Вакансии",
+    "partners": "Партнерам",
+    "contacts": "Контакты",
+    "services_list": {
+      "buying_a_property": "Покупка недвижимости",
+      "property_for_sale": "Продажа недвижимости",
+      "legal_support": "Юридическое сопровождение",
+      "expert_review": "Экспертная оценка",
+      "free_consulting": "Бесплатная консультация",
+      "manufacturing_of_passports": "Изготовление техпаспортов"
+    }
+  }
+}
