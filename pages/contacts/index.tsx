@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '@components/Header';
+import Content from '@components/Content';
 
 class ContactsPage extends React.Component {
   static getInitialProps = async () => ({
@@ -13,8 +13,7 @@ class ContactsPage extends React.Component {
         <Head>
           <title>Contacts</title>
         </Head>
-
-        <Header />
+        <Content>contacts</Content>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '@components/Header';
+import Content from '@components/Content';
 
 class PartnersPage extends React.Component {
   static getInitialProps = async () => ({
@@ -14,7 +14,7 @@ class PartnersPage extends React.Component {
           <title>Partners</title>
         </Head>
 
-        <Header />
+        <Content>partners</Content>
       </div>
     );
   }

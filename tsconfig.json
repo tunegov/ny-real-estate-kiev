@@ -17,7 +17,7 @@
     "paths": {
       "test-utils": ["./utils/test-utils"],
       "@components/*": ["src/components/*"],
-      "@constatns/*": ["src/constatns/*"],
+      "@constants/*": ["src/constants/*"],
       "@types/*": ["src/types/*"],
       "@pages/*": ["pages/*"],
       "@server/*": ["server/*"],

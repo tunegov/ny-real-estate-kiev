@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '@components/Header';
+import Content from '@components/Content';
 
 interface Props {
   sid?: string | string[];
@@ -18,8 +18,7 @@ class ServicesPage extends React.Component<Props> {
           <title>Services</title>
         </Head>
 
-        <Header />
-        {this.props.sid}
+        <Content>{this.props.sid}</Content>
       </div>
     );
   }

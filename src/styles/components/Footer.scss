@@ -1,0 +1,18 @@
+@import './common';
+
+footer.footer {
+  min-height: 40vh;
+  background-color: $color-brown-background;
+  position: relative;
+
+  .footer-image {
+    width: 30vw;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/static/images/pattern-light.png');
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

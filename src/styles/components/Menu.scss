@@ -1,9 +1,4 @@
-$font-size: 50px;
-
-$color-gray-light: #f9f9f9;
-$color-gray: #fefefe;
-$color-black: #3d3331;
-$color-brown: #84726d;
+@import './common';
 
 .home {
   font-size: $font-size;
