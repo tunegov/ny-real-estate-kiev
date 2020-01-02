@@ -5,7 +5,7 @@ import { TFunction } from 'next-i18next';
 
 import { withTranslation } from '@server/i18n';
 
-import '@styles/menu.scss';
+import '@styles/components/Menu.scss';
 
 type LinkType = {
   href: string;
@@ -67,36 +67,50 @@ const MenuLink = ({
   router
 }: LinkProps & LinkType) => {
   const [collapsed, setCollapsed] = useState(true);
-  const selected = router.pathname === href;
+
+  const selected = router.asPath === href;
 
   const hasInnerLinks = !!innerLinks?.length;
 
   const toggleCollapsed = () => setCollapsed(!collapsed);
 
   return (
-    <li
-      className={`menu-item ${selected ? 'selected' : ''} ${
-        hasInnerLinks ? 'with-inner-links' : ''
-      }`}>
-      <Link href={href}>
-        <a>{t(label)}</a>
-      </Link>
-      {hasInnerLinks && (
-        <div onClick={toggleCollapsed}>{collapsed ? 'open' : 'close'}</div>
-      )}
+    <>
+      <li
+        className={`menu-item ${selected ? 'selected' : ''} ${
+          hasInnerLinks ? 'with-inner-links' : ''
+        }`}>
+        {hasInnerLinks ? (
+          <div className="menu-item-inner-links" onClick={toggleCollapsed}>
+            <a>{t(label)}</a>
+            <div
+              className={`menu-item-arrow ${collapsed ? 'open' : 'close'}`}
+              onClick={toggleCollapsed}
+            />
+          </div>
+        ) : (
+          <Link href={href}>
+            <a>{t(label)}</a>
+          </Link>
+        )}
+      </li>
       {!collapsed && hasInnerLinks && (
-        <div className="inner-links">
+        <ul className="inner-links">
           {innerLinks?.map(link => (
             <MenuLink router={router} t={t} key={link.label} {...link} />
           ))}
-        </div>
+        </ul>
       )}
-    </li>
+    </>
   );
 };
 
 const Menu = ({ t }: MenuProps) => {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
+
+  const openMenu = () => setOpen(true);
+  const closeMenu = () => setOpen(false);
 
   const renderLinks = () => {
     return links.map(link => {
@@ -104,10 +118,23 @@ const Menu = ({ t }: MenuProps) => {
     });
   };
 
+  const renderMenu = () => (
+    <>
+      <nav className="menu">
+        <div className="menu-inner">
+          <div className="menu-close" onClick={closeMenu} />
+          <ul>{renderLinks()}</ul>
+        </div>
+      </nav>
+      <div className="menu-outer" onClick={closeMenu} />
+    </>
+  );
+
   return (
-    <nav className="menu">
-      <ul>{renderLinks()}</ul>
-    </nav>
+    <>
+      <div className="menu-button" onClick={openMenu} />
+      {open && renderMenu()}
+    </>
   );
 };
 

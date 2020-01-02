@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Menu from '../../src/components/Menu';
+import Header from '@components/Header';
 
 class HomePage extends React.Component {
   static getInitialProps = async () => ({
@@ -15,7 +15,7 @@ class HomePage extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Menu />
+        <Header />
       </div>
     );
   }
