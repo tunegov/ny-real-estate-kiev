@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { TFunction } from 'next-i18next';
@@ -108,6 +108,10 @@ const MenuLink = ({
 const Menu = ({ t }: MenuProps) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+
+  router.events?.on('routeChangeStart', () => {
+    closeMenu();
+  });
 
   const openMenu = () => {
     document.body.style.overflow = 'hidden';
