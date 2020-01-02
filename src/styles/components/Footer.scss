@@ -7,12 +7,20 @@ footer.footer {
 
   .footer-image {
     width: 30vw;
-    height: 20vh;
+    min-height: 20vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('/static/images/pattern-light.png');
     position: absolute;
     bottom: 0;
     right: 0;
+
+    @include phone {
+      background-image: url('/static/images/pattern-light-mobile.png');
+      background-size: contain;
+      background-position-x: right;
+      background-position-y: bottom;
+      width: 70vw;
+    }
   }
 }

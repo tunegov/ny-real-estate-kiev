@@ -11,6 +11,11 @@
   background-size: contain;
   background-image: url('/static/images/menu.png');
   cursor: pointer;
+
+  @include phone {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .menu {
@@ -21,6 +26,11 @@
   background-color: $color-gray-light;
   min-width: 25vw;
   z-index: 9999;
+
+  @include phone {
+    width: 100%;
+    overflow: scroll;
+  }
 
   &-inner {
     position: relative;

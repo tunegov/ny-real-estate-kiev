@@ -109,8 +109,14 @@ const Menu = ({ t }: MenuProps) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const openMenu = () => setOpen(true);
-  const closeMenu = () => setOpen(false);
+  const openMenu = () => {
+    document.body.style.overflow = 'hidden';
+    setOpen(true);
+  };
+  const closeMenu = () => {
+    document.body.style.overflow = 'auto';
+    setOpen(false);
+  };
 
   const renderLinks = () => {
     return links.map(link => {

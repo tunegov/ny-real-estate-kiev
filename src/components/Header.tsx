@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <header className="header">
       <Menu />
-      <Logo />
+      <div className="logo-block">
+        <Logo />
+      </div>
       <a href={`tel:${number}`} className="number">
         {number}
       </a>
