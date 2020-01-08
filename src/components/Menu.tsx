@@ -130,20 +130,20 @@ const Menu = ({ t }: MenuProps) => {
 
   const renderMenu = () => (
     <>
-      <nav className="menu">
+      <nav className={`menu ${open ? 'opened' : ''}`}>
         <div className="menu-inner">
           <div className="menu-close" onClick={closeMenu} />
           <ul>{renderLinks()}</ul>
         </div>
       </nav>
-      <div className="menu-outer" onClick={closeMenu} />
+      {open && <div className="menu-outer" onClick={closeMenu} />}
     </>
   );
 
   return (
     <>
       <div className="menu-button" onClick={openMenu} />
-      {open && renderMenu()}
+      {renderMenu()}
     </>
   );
 };

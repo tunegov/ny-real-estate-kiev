@@ -4,6 +4,11 @@ footer.footer {
   min-height: 40vh;
   background-color: $color-brown-background;
   position: relative;
+  padding: 4rem;
+
+  @include phone {
+    padding: 2rem 1rem 10rem;
+  }
 
   .footer-image {
     width: 30vw;
@@ -21,6 +26,81 @@ footer.footer {
       background-position-x: right;
       background-position-y: bottom;
       width: 70vw;
+    }
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+
+    @include phone {
+      flex-direction: column;
+    }
+
+    .footer-links {
+      display: flex;
+      height: 100%;
+      flex: 2;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-bottom: 10rem;
+
+        @include phone {
+          padding-bottom: 3rem;
+        }
+      }
+
+      &-col {
+        display: flex;
+        flex-direction: column;
+
+        .footer-link {
+          margin: 0.5rem;
+          color: $color-white;
+          cursor: pointer;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      .footer-social {
+        display: flex;
+
+        @include phone {
+          padding-bottom: 3rem;
+        }
+
+        .social-link {
+          width: 24px;
+          height: 24px;
+          margin-right: 1rem;
+
+          &.telegram {
+            background-size: contain;
+            background-image: url('/static/images/telegram-icon.png');
+          }
+          &.facebook {
+            background-size: contain;
+            background-image: url('/static/images/facebook-icon.png');
+          }
+          &.instagram {
+            background-size: contain;
+            background-image: url('/static/images/instagram-icon.png');
+          }
+        }
+      }
+    }
+
+    .footer-subscribe {
+      display: flex;
+      flex: 1;
+      width: 10vw;
     }
   }
 }
