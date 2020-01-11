@@ -5,6 +5,7 @@ import { appWithTranslation } from '@server/i18n';
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
+    console.log(this.props);
     return <Component {...pageProps} />;
   }
 }

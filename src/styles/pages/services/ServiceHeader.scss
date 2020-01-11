@@ -1,0 +1,86 @@
+@import '../../common';
+
+$services: 'manufactoring_of_passports', 'buying_a_property',
+  'property_for_sale', 'legal_support', 'expert_review', 'free_consulting';
+
+.service-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 3vh 10vw;
+
+  @include phone {
+    padding: 2vh 0;
+  }
+
+  &-text {
+    position: absolute;
+    width: calc(20vw - 6rem);
+    padding: 3.5rem;
+    background-color: white;
+
+    @include phone {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+
+    &-title {
+      color: $color-black;
+      font-size: 24px;
+      margin: 0 0 1rem;
+
+      @include phone {
+        font-size: 16px;
+      }
+    }
+
+    &-subtitle {
+      color: $color-black-light;
+      font-size: 16px;
+
+      @include phone {
+        font-size: 12px;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 80px;
+      height: 5px;
+      background-color: $color-brown-line;
+      position: absolute;
+      right: -40px;
+      top: 50%;
+
+      @include phone {
+        height: 3px;
+        width: 60px;
+        right: -30px;
+      }
+    }
+  }
+
+  &-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-left: calc(8vw + 8rem);
+    width: calc(100% - 8vw - 8rem);
+    height: 500px;
+
+    @include phone {
+      height: 300px;
+      margin-left: 5rem;
+      width: calc(100% - 5rem);
+    }
+
+    @each $service in $services {
+      &.#{$service} {
+        background-image: url('/static/images/services/#{$service}_header.png');
+      }
+    }
+  }
+}
+
+//manufactoring_of_passports_header.png

@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TFunction } from 'next-i18next';
+
 import { withTranslation } from '@server/i18n';
+import Button from '@components/Button';
+import Input from '@components/Input';
 
 import '@styles/components/Footer.scss';
-import { TFunction } from 'next-i18next';
+import {
+  facebookLink,
+  telegramLink,
+  instagramLink
+} from '@constants/constants';
 
 type Link = {
   url: string;
@@ -93,15 +101,15 @@ const LINKS_3: Link[] = [
 const SOCIAL_LINKS = [
   {
     className: 'social-link telegram',
-    href: ''
+    href: telegramLink
   },
   {
     className: 'social-link facebook',
-    href: ''
+    href: facebookLink
   },
   {
     className: 'social-link instagram',
-    href: ''
+    href: instagramLink
   }
 ];
 
@@ -110,6 +118,9 @@ interface Props {
 }
 
 const Footer = ({ t }: Props) => {
+  const [email, setEmail] = useState('');
+  const onSubscribe = () => {};
+
   const renderLinks = () => {
     return (
       <div className="footer-links">
@@ -137,15 +148,30 @@ const Footer = ({ t }: Props) => {
           </div>
         </div>
         <div className="footer-social">
-          {SOCIAL_LINKS.map(link => (
-            <a href={link.href} className={link.className}></a>
+          {SOCIAL_LINKS.map((link, index) => (
+            <a
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.href}
+              className={link.className}></a>
           ))}
         </div>
       </div>
     );
   };
   const renderSubscripe = () => {
-    return <div className="footer-subscribe">Подписаться</div>;
+    return (
+      <div className="footer-subscribe">
+        <p className="footer-subscribe-text">{t('footer.subscribe.text')}</p>
+        <Input
+          placeholder={t('footer.subscribe.input')}
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+        <Button onClick={onSubscribe} title={t('footer.subscribe.button')} />
+      </div>
+    );
   };
 
   return (

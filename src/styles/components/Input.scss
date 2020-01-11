@@ -1,0 +1,22 @@
+@import '../common';
+
+input.input {
+  height: 35px;
+  min-width: 200px;
+  background-color: transparent;
+  color: $color-white;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid $color-white;
+  outline: none;
+}
+
+::placeholder {
+  color: $color-gray-dark;
+}
+::-webkit-input-placeholder {
+  color: $color-gray-dark;
+}
+:-ms-input-placeholder {
+  color: $color-gray-dark;
+}

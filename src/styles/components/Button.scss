@@ -1,0 +1,24 @@
+@import '../common';
+
+button.button {
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid $color-white;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.85;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  p {
+    color: $color-white;
+    font-size: 16px;
+    padding: 5px 30px;
+  }
+}

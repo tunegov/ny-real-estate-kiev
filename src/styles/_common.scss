@@ -1,0 +1,38 @@
+$font-size: 50px;
+
+$color-white: #cbcbcb;
+$color-gray-light: #f9f9f9;
+$color-gray-dark: #9a9a9a;
+$color-gray: #efefef;
+$color-black: #3d3331;
+$color-black-light: #898989;
+$color-brown: #84726d;
+$color-brown-background: #524643;
+$color-brown-line: #705e5b;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
