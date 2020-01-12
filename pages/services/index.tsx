@@ -57,7 +57,6 @@ class ServicesPage extends React.Component<Props> {
         <Head>
           <title>{this.props.title}</title>
         </Head>
-
         <Content>
           {this.renderServiceContent()}
           <CallBackForm />
