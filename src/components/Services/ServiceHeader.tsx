@@ -30,9 +30,11 @@ const ServiceHeader = (props: Props) => {
 
   const onScroll = (e: any) => {
     const y = (window.pageYOffset / movementStrength) * 5 - 50;
-    requestAnimationFrame(() => {
-      setY(y);
-    });
+    const isMobile = window.innerWidth <= 768;
+    !isMobile &&
+      requestAnimationFrame(() => {
+        setY(y);
+      });
     return () => document.removeEventListener('scroll', onScroll);
   };
 

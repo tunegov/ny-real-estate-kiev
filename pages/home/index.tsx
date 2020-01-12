@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Content from '@components/Content';
 
+import CallBackForm from '@components/common/CallBackForm';
+
 class HomePage extends React.Component {
   static getInitialProps = async () => ({
     namespacesRequired: ['menu', 'common']
@@ -15,7 +17,9 @@ class HomePage extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Content>home</Content>
+        <Content>
+          <CallBackForm />
+        </Content>
       </div>
     );
   }

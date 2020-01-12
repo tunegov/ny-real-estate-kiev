@@ -1,23 +1,36 @@
 import React from 'react';
 import Head from 'next/head';
-import Content from '@components/Content';
+import { WithTranslation } from 'next-i18next';
+import { withTranslation } from '@server/i18n';
 
-class PartnersPage extends React.Component {
+import Content from '@components/Content';
+import HeaderBlock from '@components/common/HeaderBlock';
+
+interface Props extends WithTranslation {}
+
+class PartnersPage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common']
+    namespacesRequired: ['menu', 'common', 'jobs']
   });
 
   render() {
+    const { t } = this.props;
     return (
       <div>
         <Head>
-          <title>Partners</title>
+          <title>{t('partners.title')}</title>
         </Head>
 
-        <Content>partners</Content>
+        <Content>
+          <HeaderBlock
+            title={t('partners.title')}
+            subtitle={t('partners.subtitle')}
+            imageClassName="partners"
+          />
+        </Content>
       </div>
     );
   }
 }
 
-export default PartnersPage;
+export default withTranslation('partners')(PartnersPage);

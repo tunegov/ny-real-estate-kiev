@@ -1,8 +1,10 @@
 import React from 'react';
 import { withRouter, NextRouter } from 'next/router';
+import { WithTranslation } from 'next-i18next';
+import { withTranslation } from '@server/i18n';
 import Services from './index';
 
-interface Props {
+interface Props extends WithTranslation {
   sid?: string | string[];
   router: NextRouter;
 }
@@ -14,9 +16,10 @@ class ServicesWithIdPage extends React.Component<Props> {
 
   render() {
     const { sid } = this.props.router.query;
+    const title = this.props.t(`services.${sid}.title`);
 
-    return <Services sid={sid} />;
+    return <Services sid={sid} title={title} />;
   }
 }
 
-export default withRouter(ServicesWithIdPage);
+export default withTranslation('services')(withRouter(ServicesWithIdPage));

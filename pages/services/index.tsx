@@ -1,24 +1,25 @@
 import React from 'react';
 import Head from 'next/head';
-import { TFunction, WithTranslation } from 'next-i18next';
+import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
 import Content from '@components/Content';
-import CallBackForm from '@components/Services/CallBackForm';
-import ManufactoringOfPassports from '@components/Services/ManufactoringOfPassports';
-import BuyingProperty from '@components/Services/BuyingProperty';
-import LegalSupport from '@components/Services/LegalSupport';
-import PropertyForSale from '@components/Services/PropertyForSale';
-import ExpertReview from '@components/Services/ExpertReview';
-import FreeConsulting from '@components/Services/FreeConsulting';
+import CallBackForm from '@components/common/CallBackForm';
+import ManufactoringOfPassports from '@components/services/ManufactoringOfPassports';
+import BuyingProperty from '@components/services/BuyingProperty';
+import LegalSupport from '@components/services/LegalSupport';
+import PropertyForSale from '@components/services/PropertyForSale';
+import ExpertReview from '@components/services/ExpertReview';
+import FreeConsulting from '@components/services/FreeConsulting';
 
 interface Props extends WithTranslation {
   sid?: string | string[];
+  title: string;
 }
 
 class ServicesPage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common']
+    namespacesRequired: ['menu', 'common', 'services']
   });
 
   renderServiceContent() {
@@ -54,7 +55,7 @@ class ServicesPage extends React.Component<Props> {
     return (
       <div>
         <Head>
-          <title>Services</title>
+          <title>{this.props.title}</title>
         </Head>
 
         <Content>
