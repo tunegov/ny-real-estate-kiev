@@ -39,7 +39,7 @@ const CallBackForm = ({ t }: Props) => {
       <div className="call-back-form-left">
         <div
           className="call-back-form-left-image"
-          style={{ backgroundPosition: `${x}px ${y}px` }}
+          // style={{ backgroundPosition: `${x}px ${y}px` }}
         />
       </div>
       <div className="call-back-form-right">
