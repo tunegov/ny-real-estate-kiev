@@ -1,6 +1,6 @@
 @import '../../common';
 
-$pages: 'jobs', 'partnenrs', 'team';
+$pages: 'jobs', 'partners', 'team';
 
 .header-block {
   position: relative;
@@ -16,10 +16,11 @@ $pages: 'jobs', 'partnenrs', 'team';
 
   &-text {
     width: calc(20vw - 6rem);
+    min-width: 200px;
     padding: 3.5rem;
     background-color: #52464399;
 
-    @include phone {
+    @include phone-and-tablet {
       width: calc(60vw - 4rem);
       padding: 2rem;
       left: 1rem;
@@ -30,7 +31,7 @@ $pages: 'jobs', 'partnenrs', 'team';
       font-size: 48px;
       margin: 0 0 1rem;
 
-      @include phone {
+      @include phone-and-tablet {
         font-size: 18px;
       }
 
@@ -46,7 +47,7 @@ $pages: 'jobs', 'partnenrs', 'team';
       color: white;
       font-size: 24px;
 
-      @include phone {
+      @include phone-and-tablet {
         font-size: 14px;
       }
     }
@@ -71,7 +72,7 @@ $pages: 'jobs', 'partnenrs', 'team';
       background-color: #52464345;
     }
 
-    @include phone {
+    @include phone-and-tablet {
       height: 300px;
       width: 100%;
       background-size: cover;

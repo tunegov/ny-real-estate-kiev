@@ -6,7 +6,7 @@ footer.footer {
   position: relative;
   padding: 4rem 6rem;
 
-  @include phone {
+  @include phone-and-tablet {
     padding: 2rem 1rem 10rem;
   }
 
@@ -20,7 +20,7 @@ footer.footer {
     bottom: 0;
     right: 0;
 
-    @include phone {
+    @include phone-and-tablet {
       background-image: url('/static/images/pattern-light-mobile.png');
       background-size: contain;
       background-position-x: right;
@@ -34,7 +34,7 @@ footer.footer {
     flex-direction: row;
     width: 100%;
 
-    @include phone {
+    @include phone-and-tablet {
       flex-direction: column;
     }
 
@@ -50,7 +50,7 @@ footer.footer {
         grid-template-columns: 1fr 1fr 1fr;
         padding-bottom: 10rem;
 
-        @include phone {
+        @include phone-and-tablet {
           padding-bottom: 3rem;
         }
       }
@@ -73,7 +73,7 @@ footer.footer {
       .footer-social {
         display: flex;
 
-        @include phone {
+        @include phone-and-tablet {
           padding-bottom: 3rem;
         }
 
@@ -110,7 +110,7 @@ footer.footer {
       flex-direction: column;
       padding: 0 3rem;
 
-      @include phone {
+      @include phone-and-tablet {
         width: auto;
         padding: 0;
       }

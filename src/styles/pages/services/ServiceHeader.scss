@@ -19,10 +19,11 @@ $services: 'manufactoring_of_passports', 'buying_a_property',
 
   &-text {
     width: calc(20vw - 6rem);
+    min-width: 200px;
     padding: 3.5rem;
     background-color: white;
 
-    @include phone {
+    @include phone-and-tablet {
       width: calc(60vw - 4rem);
       padding: 2rem;
       left: 1rem;
@@ -33,7 +34,7 @@ $services: 'manufactoring_of_passports', 'buying_a_property',
       font-size: 24px;
       margin: 0 0 1rem;
 
-      @include phone {
+      @include phone-and-tablet {
         font-size: 16px;
       }
     }
@@ -42,7 +43,7 @@ $services: 'manufactoring_of_passports', 'buying_a_property',
       color: $color-black-light;
       font-size: 16px;
 
-      @include phone {
+      @include phone-and-tablet {
         font-size: 12px;
       }
     }
@@ -56,7 +57,7 @@ $services: 'manufactoring_of_passports', 'buying_a_property',
       right: -40px;
       top: 50%;
 
-      @include phone {
+      @include phone-and-tablet {
         height: 3px;
         width: 60px;
         right: -30px;
@@ -73,7 +74,7 @@ $services: 'manufactoring_of_passports', 'buying_a_property',
     width: calc(100% - 8vw - 8rem);
     height: 500px;
 
-    @include phone {
+    @include phone-and-tablet {
       height: 300px;
       margin-left: 5rem;
       width: calc(100% - 5rem);

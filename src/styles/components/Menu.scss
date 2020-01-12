@@ -12,7 +12,7 @@
   background-image: url('/static/images/menu.png');
   cursor: pointer;
 
-  @include phone {
+  @include phone-and-tablet {
     width: 25px;
     height: 25px;
   }
@@ -35,7 +35,7 @@
     animation-timing-function: 1s ease-in;
   }
 
-  @include phone {
+  @include phone-and-tablet {
     left: -100vw;
     width: 100%;
     overflow: scroll;

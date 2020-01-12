@@ -30,7 +30,7 @@ const ServiceHeader = (props: Props) => {
 
   const onScroll = (e: any) => {
     const y = (window.pageYOffset / movementStrength) * 5 - 50;
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
     !isMobile &&
       requestAnimationFrame(() => {
         setY(y);

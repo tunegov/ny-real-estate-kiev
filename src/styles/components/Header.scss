@@ -8,7 +8,7 @@ header.header {
   align-items: center;
   background-color: white;
 
-  @include phone {
+  @include phone-and-tablet {
     padding: 0 10px;
     height: 60px;
   }
@@ -26,7 +26,7 @@ header.header {
     text-decoration: none;
     text-align: right;
 
-    @include phone {
+    @include phone-and-tablet {
       font-size: 14px;
     }
   }

@@ -30,7 +30,7 @@ const HeaderBlock = (props: Props) => {
 
   const onScroll = (e: any) => {
     const y = -(window.pageYOffset / movementStrength) * 10;
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
     !isMobile &&
       requestAnimationFrame(() => {
         setY(y);
