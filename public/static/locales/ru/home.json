@@ -1,0 +1,16 @@
+{
+  "home": {
+    "title": "NY real estate kiev",
+    "header": {
+      "button": {
+        "text": "Подобрать недвижимость"
+      }
+    },
+    "categories": {
+      "retail": "торговая недвижимость",
+      "flats": "квартиры",
+      "offices": "офисная недвижимость",
+      "homes": "дома/участки"
+    }
+  }
+}

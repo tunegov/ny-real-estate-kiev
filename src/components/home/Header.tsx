@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Plx from 'react-plx';
 
-import '@styles/pages/services/ServiceHeader.scss';
+import Button from '@components/Button';
+
+import '@styles/components/home/Header.scss';
 
 const textParalax = [
   {
@@ -18,46 +20,44 @@ const textParalax = [
 ];
 
 interface Props {
-  title: string;
-  subtitle?: string;
-  imageClassName: string;
+  buttonLabel: string;
+  buttonOnClick: any;
 }
 
-const ServiceHeader = (props: Props) => {
+const HeaderBlock = (props: Props) => {
   const [x] = useState(0);
-  const [y, setY] = useState(-50);
-  const movementStrength = 50;
+  const [y, setY] = useState(0);
+  const movementStrength = 100;
 
   const onScroll = (e: any) => {
-    const y = (window.pageYOffset / movementStrength) * 5 - 50;
+    const y = -(window.pageYOffset / movementStrength) * 10;
     const isMobile = window.innerWidth <= 1024;
     !isMobile &&
       requestAnimationFrame(() => {
         setY(y);
       });
-    return () => document.removeEventListener('scroll', onScroll);
   };
 
   useEffect(() => {
     document.addEventListener('scroll', onScroll);
+    return () => {
+      document.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   return (
-    <div className="service-header">
+    <div className="home-header">
       <Plx parallaxData={textParalax}>
-        <div className="service-header-text">
-          <p className="service-header-text-title">{props.title}</p>
-          {!!props.subtitle && (
-            <p className="service-header-text-subtitle">{props.subtitle}</p>
-          )}
+        <div className="home-header-content">
+          <Button title={props.buttonLabel} onClick={props.buttonOnClick} />
         </div>
       </Plx>
       <div
         style={{ backgroundPosition: `${x}px ${y}px` }}
-        className={`service-header-image ${props.imageClassName}`}
+        className={`home-header-image`}
       />
     </div>
   );
 };
 
-export default ServiceHeader;
+export default HeaderBlock;

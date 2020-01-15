@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url('/static/images/logo-with-text.png');
+  background-position: center;
 
   @include phone-and-tablet {
     width: 50px;

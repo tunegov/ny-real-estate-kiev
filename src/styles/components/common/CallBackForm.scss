@@ -3,7 +3,7 @@
 .call-back-form {
   display: flex;
   padding: 0 10vw;
-  margin: 5rem 0;
+  margin: 5rem 0 0 0;
   min-height: 250px;
 
   @include phone-and-tablet {
@@ -13,7 +13,7 @@
   }
 
   &-left {
-    width: 20vw;
+    width: 30vw;
     min-width: 250px;
     background-color: white;
     position: relative;

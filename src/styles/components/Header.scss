@@ -25,6 +25,7 @@ header.header {
     color: $color-black;
     text-decoration: none;
     text-align: right;
+    font-family: 'Lato', sans-serif;
 
     @include phone-and-tablet {
       font-size: 14px;

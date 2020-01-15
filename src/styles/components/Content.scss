@@ -3,4 +3,51 @@
 .content {
   min-height: 100vh;
   background-color: $color-gray-light;
+  position: relative;
+  z-index: 9;
+  padding-bottom: 4rem;
+
+  @include phone-and-tablet {
+    padding-bottom: 0;
+  }
+
+  &-pattern-right,
+  &-pattern-left {
+    display: none;
+    position: absolute;
+    z-index: -1;
+
+    @include phone-and-tablet {
+      display: none !important;
+    }
+  }
+
+  &-pattern-right {
+    right: 0;
+    top: 45%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+    width: 12vw;
+    height: 400px;
+    background-image: url('/static/images/pattern-content-right.png');
+  }
+
+  &-pattern-left {
+    left: 0;
+    top: 55%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+    width: 12vw;
+    height: 400px;
+    background-image: url('/static/images/pattern-content-left.png');
+  }
+
+  &.with-pattern {
+    .content-pattern-right,
+    .content-pattern-left {
+      display: block;
+    }
+  }
 }

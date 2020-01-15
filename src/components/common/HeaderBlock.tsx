@@ -10,7 +10,7 @@ const textParalax = [
     properties: [
       {
         startValue: 0,
-        endValue: 400,
+        endValue: 300,
         property: 'translateY'
       }
     ]
@@ -48,13 +48,13 @@ const HeaderBlock = (props: Props) => {
     <div className="header-block">
       <Plx parallaxData={textParalax}>
         <div className="header-block-text">
-          <div className="header-block-text-title">
+          <p className="header-block-text-title">
             {props.title}
             <div className="header-block-text-title-undeline" />
-          </div>
+          </p>
 
           {!!props.subtitle && (
-            <div className="header-block-text-subtitle">{props.subtitle}</div>
+            <p className="header-block-text-subtitle">{props.subtitle}</p>
           )}
         </div>
       </Plx>

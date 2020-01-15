@@ -10,14 +10,11 @@ $color-brown: #84726d;
 $color-brown-background: #524643;
 $color-brown-line: #705e5b;
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 $phone-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 @mixin phone {
   @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
@@ -41,4 +38,13 @@ $desktop-width: 1024px;
   @media (min-width: #{$desktop-width}) {
     @content;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
 }

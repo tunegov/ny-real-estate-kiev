@@ -15,9 +15,9 @@ $pages: 'jobs', 'partners', 'team';
   }
 
   &-text {
-    width: calc(20vw - 6rem);
+    width: calc(30vw - 8rem);
     min-width: 200px;
-    padding: 3.5rem;
+    padding: 3rem 5rem;
     background-color: #52464399;
 
     @include phone-and-tablet {
@@ -85,5 +85,3 @@ $pages: 'jobs', 'partners', 'team';
     }
   }
 }
-
-//manufactoring_of_passports_header.png

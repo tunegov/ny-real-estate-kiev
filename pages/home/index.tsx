@@ -1,23 +1,37 @@
 import React from 'react';
 import Head from 'next/head';
+import { WithTranslation } from 'next-i18next';
+import { withTranslation } from '@server/i18n';
+
 import Content from '@components/Content';
-
 import CallBackForm from '@components/common/CallBackForm';
+import Header from '@components/home/Header';
+import Categories from '@components/home/Categories';
 
-class HomePage extends React.Component {
+interface Props extends WithTranslation {}
+
+class HomePage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common']
+    namespacesRequired: ['menu', 'common', 'home']
   });
 
+  openModal() {}
+
   render() {
+    const { t } = this.props;
     return (
       <div>
         <Head>
-          <title>Home</title>
+          <title>{t('home.title')}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Content>
+        <Content withPattern>
+          <Header
+            buttonLabel={t('home.header.button.text')}
+            buttonOnClick={this.openModal.bind(this)}
+          />
+          <Categories />
           <CallBackForm />
         </Content>
       </div>
@@ -25,4 +39,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default withTranslation('home')(HomePage);
