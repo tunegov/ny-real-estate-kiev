@@ -5,8 +5,8 @@ import { withTranslation } from '@server/i18n';
 
 import Content from '@components/Content';
 import HeaderBlock from '@components/common/HeaderBlock';
-import TeamGallery from './TeamInsert/TeamGallery';
-import TeamInsert from './TeamInsert/TeamInsert';
+import TeamGallery from '../../src/components/team/TeamGallery';
+import TeamInsert from '../../src/components/team/TeamInsert';
 
 interface Props extends WithTranslation {}
 
@@ -36,7 +36,7 @@ class TeamPage extends React.Component<Props> {
             title={t('team.insert.title')}
             subtitle={t('team.insert.subtitle')}
           />
-          <TeamGallery />
+          {/* <TeamGallery /> */}
         </Content>
       </div>
     );

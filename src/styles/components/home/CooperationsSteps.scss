@@ -1,0 +1,127 @@
+@import '../../common';
+
+$steps: 'application_form', 'object_selection', 'show_object', 'paperwork',
+  'make_a_deal', 'expert_object_evaluation', 'search_customer';
+
+.home-cooperations-steps {
+  display: flex;
+  margin: 5vh 15vw 10vh 15vw;
+  flex-direction: column;
+  align-items: center;
+
+  @include phone-and-tablet {
+    margin: 5vh 2vw 10vh 2vw;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: $color-black;
+    margin-bottom: 3vh;
+
+    @include phone-and-tablet {
+      font-size: 18px;
+      margin-bottom: 5vh;
+    }
+  }
+
+  &-types {
+    display: flex;
+    justify-content: center;
+    padding: 0 10vw;
+    width: calc(100% - 20vw);
+    border-bottom: 2px solid $color-white;
+
+    @include phone-and-tablet {
+      padding: 0 2vw;
+      width: calc(100% - 4vw);
+    }
+
+    &-item {
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      margin: 0 2vw;
+      padding-bottom: 10px;
+      position: relative;
+      bottom: -2px;
+      cursor: pointer;
+
+      @include phone-and-tablet {
+        font-size: 14px;
+        display: flex;
+        flex-wrap: nowrap;
+        text-align: center;
+      }
+
+      &.active {
+        border-bottom: 2px solid $color-black;
+      }
+    }
+  }
+
+  &-list {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+
+    @include phone-and-tablet {
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      width: 50px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      min-height: 110px;
+      cursor: pointer;
+      transition: all 0.25s;
+
+      @include phone-and-tablet {
+        min-width: 32vw;
+        margin-top: 1rem;
+      }
+
+      &:hover div {
+        transform: scale(1.35);
+
+        @include phone-and-tablet {
+          transform: scale(1.25);
+        }
+      }
+
+      &-text {
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        color: $color-black;
+        text-align: center;
+        transition: all 0.5s;
+
+        @include phone-and-tablet {
+          width: 90px;
+        }
+      }
+
+      &-image {
+        width: 35px;
+        height: 35px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-bottom: 1rem;
+        transition: all 0.5s;
+
+        @each $step in $steps {
+          &.#{$step} {
+            background-image: url('/static/images/cooperations/#{$step}.png');
+          }
+        }
+      }
+    }
+  }
+}
+//cooperations

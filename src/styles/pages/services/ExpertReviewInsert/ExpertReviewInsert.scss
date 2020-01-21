@@ -10,8 +10,12 @@ $services: 'buying_a_property';
   background-color: white;
   margin: 3vh 50vw 3vh 10vw;
 
+  @include phone-and-tablet {
+    margin: 3vh 30vw 3vh 2vw;
+  }
+
   &-line {
-    margin: 3vw 0 2.5rem 37vw;
+    margin: 3vw 0 2.5rem 55vw;
     position: absolute;
     width: 80px;
     height: 4px;
@@ -26,7 +30,6 @@ $services: 'buying_a_property';
     padding: 7vh 5vw 8vh 5vw;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
       padding: 2rem;
       left: 1rem;
     }

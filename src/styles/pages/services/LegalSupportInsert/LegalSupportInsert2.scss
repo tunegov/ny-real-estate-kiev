@@ -8,6 +8,11 @@
   background-color: #8a7671;
   margin: -10vh 10vw 3vh 43vw;
 
+  @include phone-and-tablet {
+    margin: -10vh 2vw 3vh 15vw;
+    padding-bottom: 5vh;
+  }
+
   &-image {
     width: 275px;
     min-height: 93px;
@@ -17,6 +22,11 @@
     bottom: 0;
     right: 0;
     background-image: url('/static/images/l-s-i-icon.png');
+
+    @include phone-and-tablet {
+      width: 40vw;
+      min-height: 51px;
+    }
   }
 
   &-text {
@@ -26,8 +36,7 @@
     padding: 7vh 5vw 12vh 5vw;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
-      padding: 2rem;
+      padding: 3rem;
       left: 1rem;
     }
 

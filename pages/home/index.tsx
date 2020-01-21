@@ -7,6 +7,7 @@ import Content from '@components/Content';
 import CallBackForm from '@components/common/CallBackForm';
 import Header from '@components/home/Header';
 import Categories from '@components/home/Categories';
+import CooperationsSteps from '@components/home/CooperationsSteps';
 
 interface Props extends WithTranslation {}
 
@@ -32,6 +33,7 @@ class HomePage extends React.Component<Props> {
             buttonOnClick={this.openModal.bind(this)}
           />
           <Categories />
+          <CooperationsSteps />
           <CallBackForm />
         </Content>
       </div>

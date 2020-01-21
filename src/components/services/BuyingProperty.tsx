@@ -10,6 +10,16 @@ interface Props {
   t: TFunction;
 }
 
+const LIST_ITEMS = [
+  'services.buying_a_property_insert2.li1',
+  'services.buying_a_property_insert2.li2',
+  'services.buying_a_property_insert2.li3',
+  'services.buying_a_property_insert2.li4',
+  'services.buying_a_property_insert2.li5',
+  'services.buying_a_property_insert2.li6',
+  'services.buying_a_property_insert2.li7'
+];
+
 const BuyingProperty = ({ t }: Props) => {
   return (
     <div className="buying-a-property">
@@ -19,7 +29,6 @@ const BuyingProperty = ({ t }: Props) => {
         imageClassName="buying_a_property"
       />
       <BuyingPropertyInsert
-        line
         subtitle={t('services.buying_a_property_info.subtitle')}
         imageClassName="buying_a_property_info_image"
       />
@@ -28,15 +37,7 @@ const BuyingProperty = ({ t }: Props) => {
         subtitle={t('services.buying_a_property_map.subtitle')}
         imageClassName="buying_a_property"
       />
-      <BuyingPropertyList
-        li1={t('services.buying_a_property_insert2.li1')}
-        li2={t('services.buying_a_property_insert2.li2')}
-        li3={t('services.buying_a_property_insert2.li3')}
-        li4={t('services.buying_a_property_insert2.li4')}
-        li5={t('services.buying_a_property_insert2.li5')}
-        li6={t('services.buying_a_property_insert2.li6')}
-        li7={t('services.buying_a_property_insert2.li7')}
-      />
+      <BuyingPropertyList items={LIST_ITEMS} t={t} />
     </div>
   );
 };

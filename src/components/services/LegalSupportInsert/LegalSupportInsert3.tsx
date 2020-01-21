@@ -1,20 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Plx from 'react-plx';
 
 import '@styles/pages/services/LegalSupportInsert/LegalSupportInsert3.scss';
 
 interface Props {
   subtitle?: string;
-  line?: string;
 }
+
+const textParalax = [
+  {
+    start: 0,
+    end: 1200,
+    properties: [
+      {
+        startValue: 100,
+        endValue: 0,
+        property: 'translateY'
+      }
+    ]
+  }
+];
 
 const LegalSupportInsert3 = (props: Props) => {
   return (
-    <div className="legal-support-insert3">
-      <div className="legal-support-insert3-line">{props.line}</div>
+    <Plx parallaxData={textParalax} className="legal-support-insert3">
+      <div className="legal-support-insert3-line" />
       <div className="legal-support-insert3-text">
-        <p className="legal-support-insert3-subtitle">{props.subtitle}</p>
+        <p className="legal-support-insert3-text-subtitle">{props.subtitle}</p>
       </div>
-    </div>
+    </Plx>
   );
 };
 

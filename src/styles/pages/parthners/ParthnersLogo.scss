@@ -15,7 +15,7 @@ $services: 'buying_a_property';
   background-repeat: no-repeat;
 
   @include phone-and-tablet {
-    margin: 0 auto;
+    margin: 0 auto 5vh auto;
     height: 10rem;
     width: 22rem;
     background-size: cover;

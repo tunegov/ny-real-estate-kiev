@@ -10,6 +10,10 @@ $services: 'buying_a_property';
   background-color: white;
   margin: -10vh 45vw 3vh 10vw;
 
+  @include phone-and-tablet {
+    margin: -15vh 25vw 10vh 2vw;
+  }
+
   &-line {
     margin: 0 0 4vw 5vw;
     position: absolute;
@@ -17,6 +21,11 @@ $services: 'buying_a_property';
     height: 4px;
     bottom: 0;
     background-color: #8a7671;
+
+    @include phone-and-tablet {
+      margin: 0 0 4vw 2rem;
+      width: 61px;
+    }
   }
 
   &-text {
@@ -26,7 +35,6 @@ $services: 'buying_a_property';
     padding: 7vh 5vw 12vh 5vw;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
       padding: 2rem;
       left: 1rem;
     }
@@ -40,4 +48,3 @@ $services: 'buying_a_property';
     }
   }
 }
-//manufactoring_of_passports_header.png

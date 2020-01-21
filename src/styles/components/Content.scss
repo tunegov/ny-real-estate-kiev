@@ -6,6 +6,7 @@
   position: relative;
   z-index: 9;
   padding-bottom: 4rem;
+  overflow: hidden;
 
   @include phone-and-tablet {
     padding-bottom: 0;
@@ -27,7 +28,7 @@
     top: 45%;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0px 0px;
+    background-position: right;
     width: 12vw;
     height: 400px;
     background-image: url('/static/images/pattern-content-right.png');

@@ -9,6 +9,15 @@ interface Props {
   t: TFunction;
 }
 
+const LIST_ITEMS = [
+  'services.free_consulting_insert.li1',
+  'services.free_consulting_insert.li2',
+  'services.free_consulting_insert.li3',
+  'services.free_consulting_insert.li4',
+  'services.free_consulting_insert.li5',
+  'services.free_consulting_insert.li6'
+];
+
 const FreeConsulting = ({ t }: Props) => {
   return (
     <div className="free-consulting">
@@ -17,20 +26,7 @@ const FreeConsulting = ({ t }: Props) => {
         subtitle={t('services.free_consulting.subtitle')}
         imageClassName="free_consulting"
       />
-      <FreeConsultingInsert
-        num1={t('services.free_consulting_num.num1')}
-        num2={t('services.free_consulting_num.num2')}
-        num3={t('services.free_consulting_num.num3')}
-        num4={t('services.free_consulting_num.num4')}
-        num5={t('services.free_consulting_num.num5')}
-        num6={t('services.free_consulting_num.num6')}
-        li1={t('services.free_consulting_insert.li1')}
-        li2={t('services.free_consulting_insert.li2')}
-        li3={t('services.free_consulting_insert.li3')}
-        li4={t('services.free_consulting_insert.li4')}
-        li5={t('services.free_consulting_insert.li5')}
-        li6={t('services.free_consulting_insert.li6')}
-      />
+      <FreeConsultingInsert items={LIST_ITEMS} t={t} />
       <FreeConsultingInsert2
         subtitle={t('services.free_consulting2.subtitle')}
       />

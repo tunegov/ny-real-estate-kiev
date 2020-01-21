@@ -8,7 +8,13 @@ $services: 'buying_a_property';
   display: flex;
   min-height: 100px;
   background-color: #8a7671;
-  margin: 3vh 45vw 3vh 10vw;
+  width: 45vw;
+  margin: 3vh 0 3vh 10vw;
+
+  @include phone-and-tablet {
+    width: 70vw;
+    margin: 3vh 0 3vh 5vw;
+  }
 
   &-text {
     line-height: 25px;
@@ -17,7 +23,6 @@ $services: 'buying_a_property';
     padding: 7% 10% 7% 10%;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
       padding: 2rem;
       left: 1rem;
     }

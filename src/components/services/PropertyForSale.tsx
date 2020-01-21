@@ -9,6 +9,16 @@ interface Props {
   t: TFunction;
 }
 
+const LIST_ITEMS = [
+  'services.property_for_sale_insert-list-white.li1',
+  'services.property_for_sale_insert-list-white.li2',
+  'services.property_for_sale_insert-list-white.li3',
+  'services.property_for_sale_insert-list-white.li4',
+  'services.property_for_sale_insert-list-white.li5',
+  'services.property_for_sale_insert-list-white.li6',
+  'services.property_for_sale_insert-list-white.li7'
+];
+
 const PropertyForSale = ({ t }: Props) => {
   return (
     <div className="property-for-sale">
@@ -22,13 +32,8 @@ const PropertyForSale = ({ t }: Props) => {
       />
 
       <PropertyForSaleList
-        li1={t('services.property_for_sale_insert-list-white.li1')}
-        li2={t('services.property_for_sale_insert-list-white.li2')}
-        li3={t('services.property_for_sale_insert-list-white.li3')}
-        li4={t('services.property_for_sale_insert-list-white.li4')}
-        li5={t('services.property_for_sale_insert-list-white.li5')}
-        li6={t('services.property_for_sale_insert-list-white.li6')}
-        li7={t('services.property_for_sale_insert-list-white.li7')}
+        items={LIST_ITEMS}
+        t={t}
         imageClassName="property_for_sale-insert-list-white"
       />
     </div>

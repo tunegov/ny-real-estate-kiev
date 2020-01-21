@@ -7,7 +7,11 @@ $services: 'buying_a_property';
   display: flex;
   min-height: 100px;
   background-color: #8a7671;
-  margin: 3vh 0vw -23vh 10vw;
+  margin: 3vh 0vw 0 10vw;
+
+  @include phone-and-tablet {
+    margin: 3vh 0vw 0 5vw;
+  }
 
   &-line {
     margin: 2.5rem 0 0 3.5rem;
@@ -15,6 +19,12 @@ $services: 'buying_a_property';
     width: 4px;
     height: 75px;
     background-color: #dabbb5;
+
+    @include phone-and-tablet {
+      width: 3px;
+      margin: 2.5rem 0 0 1.5rem;
+      height: calc(100% - 3rem - 3vh);
+    }
   }
 
   &-image {
@@ -26,17 +36,22 @@ $services: 'buying_a_property';
     bottom: 0;
     right: 0;
     background-image: url('/static/images/service-insert-back.png');
+
+    @include phone-and-tablet {
+      margin: 3vh 0vw 0 5vw;
+      width: 131px;
+      min-height: 54px;
+    }
   }
 
   &-text {
     line-height: 25px;
     color: white;
     min-height: 50px;
-    padding: 3% 20% 3% 6%;
+    padding: 3% 20% 3% 10%;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
-      padding: 2rem;
+      padding: 2rem 2rem 2rem 3rem;
       left: 1rem;
     }
 

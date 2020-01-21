@@ -1,30 +1,39 @@
 import React, { useEffect, useState } from 'react';
+import Plx from 'react-plx';
+import { TFunction } from 'next-i18next';
 
 import '@styles/pages/services/BuyingPropertyInsert/BuyingPropertyList.scss';
 
 interface Props {
-  li1?: string;
-  li2?: string;
-  li3?: string;
-  li4?: string;
-  li5?: string;
-  li6?: string;
-  li7?: string;
+  items: string[];
+  t: TFunction;
 }
+
+const textParalax = [
+  {
+    start: 0,
+    end: 1000,
+    properties: [
+      {
+        startValue: 100,
+        endValue: 0,
+        property: 'translateY'
+      }
+    ]
+  }
+];
 
 const BuyingPropertyList = (props: Props) => {
   return (
-    <div className="buying-property-list">
+    <Plx className="buying-property-list" parallaxData={textParalax}>
       <div className="buying-property-list-text">
-        <p className="buying-property-list-li">{props.li1}</p>
-        <p className="buying-property-list-li">{props.li2}</p>
-        <p className="buying-property-list-li">{props.li3}</p>
-        <p className="buying-property-list-li">{props.li4}</p>
-        <p className="buying-property-list-li">{props.li5}</p>
-        <p className="buying-property-list-li">{props.li6}</p>
-        <p className="buying-property-list-li">{props.li7}</p>
+        {props.items.map(item => (
+          <p key={item} className="buying-property-list-text-li">
+            {props.t(item)}
+          </p>
+        ))}
       </div>
-    </div>
+    </Plx>
   );
 };
 

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Plx from 'react-plx';
 
 import '@styles/pages/services/ExpertReviewInsert/ExpertReviewInsert.scss';
 
@@ -7,14 +8,28 @@ interface Props {
   line?: string;
 }
 
+const textParalax = [
+  {
+    start: 0,
+    end: 300,
+    properties: [
+      {
+        startValue: 70,
+        endValue: 0,
+        property: 'translateY'
+      }
+    ]
+  }
+];
+
 const ExpertReviewInsert = (props: Props) => {
   return (
-    <div className="expert-review-insert">
-      <div className="expert-review-insert-line">{props.line}</div>
+    <Plx parallaxData={textParalax} className="expert-review-insert">
+      <div className="expert-review-insert-line" />
       <div className="expert-review-insert-text">
         <p className="expert-review-insert-subtitle">{props.subtitle}</p>
       </div>
-    </div>
+    </Plx>
   );
 };
 

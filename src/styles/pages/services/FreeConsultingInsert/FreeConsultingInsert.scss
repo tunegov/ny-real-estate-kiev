@@ -8,6 +8,11 @@ $services: 'buying_a_property';
   background-color: white;
   margin: 3vh 50vw 3vh 10vw;
   position: relative;
+  z-index: 2;
+
+  @include phone-and-tablet {
+    margin: 3vh 20vw 3vh 2vw;
+  }
 
   &-text {
     line-height: 30px;
@@ -27,10 +32,19 @@ $services: 'buying_a_property';
     grid-gap: 20px;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
       padding: 2rem;
       left: 1rem;
+      grid-template-columns: 7vw 57vw;
     }
+  }
+
+  &-line {
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    bottom: 20%;
+    right: -40px;
+    background-color: #dabbb5;
   }
 
   &-num {
@@ -43,13 +57,10 @@ $services: 'buying_a_property';
     text-align: center;
     margin: 8px;
   }
+
   &-li {
     grid-area: li;
     line-height: 41px;
+    word-wrap: break-word;
   }
 }
-.Plx {
-  position: relative;
-  z-index: 1;
-}
-//manufactoring_of_passports_header.png

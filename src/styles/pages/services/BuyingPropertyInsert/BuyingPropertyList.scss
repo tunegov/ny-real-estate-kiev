@@ -10,6 +10,12 @@ $services: 'buying_a_property';
   background-color: #8a7671;
   margin: -25vh 0vw 3vh 30vw;
 
+  @include phone-and-tablet {
+    margin: -20vh 0vw 3vh 10vw;
+    padding-top: 16vh;
+    left: 1rem;
+  }
+
   &-image {
     width: 223px;
     min-height: 114px;
@@ -28,9 +34,16 @@ $services: 'buying_a_property';
     padding: 10% 20% 7% 6%;
 
     @include phone-and-tablet {
-      width: calc(60vw - 4rem);
       padding: 2rem;
-      left: 1rem;
+    }
+
+    &-li {
+      font-size: 16px;
+      margin-top: 1rem;
+
+      @include phone-and-tablet {
+        font-size: 14px;
+      }
     }
   }
 }

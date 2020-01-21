@@ -25,7 +25,6 @@ const LegalSupport = ({ t }: Props) => {
         imageClassName="legal_support_insert2_image"
       />
       <LegalSupportInsert3
-        line=""
         subtitle={t('services.legal_support_insert3.subtitle')}
       />
     </div>

@@ -1,22 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Plx from 'react-plx';
 
 import '@styles/pages/services/BuyingPropertyInsert/BuyingPropertyInsert.scss';
 
 interface Props {
-  line?: boolean;
   subtitle?: string;
   imageClassName: string;
 }
 
+const textParalax = [
+  {
+    start: 0,
+    end: 300,
+    properties: [
+      {
+        startValue: 80,
+        endValue: 0,
+        property: 'translateY'
+      }
+    ]
+  }
+];
+
 const BuyingPropertyInsert = (props: Props) => {
   return (
-    <div className="buying-property-insert">
-      <div className="buying-property-insert-line">{props.line}</div>
-      <div className="buying-property-insert-text">
-        <p className="buying-property-insert-subtitle">{props.subtitle}</p>
+    <Plx parallaxData={textParalax}>
+      <div className="buying-property-insert">
+        <div className="buying-property-insert-line" />
+        <div className="buying-property-insert-text">
+          <p className="buying-property-insert-text-subtitle">
+            {props.subtitle}
+          </p>
+        </div>
+        <div
+          className={`buying-property-insert-image ${props.imageClassName}`}
+        />
       </div>
-      <div className={`buying-property-insert-image ${props.imageClassName}`} />
-    </div>
+    </Plx>
   );
 };
 
