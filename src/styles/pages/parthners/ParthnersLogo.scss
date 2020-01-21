@@ -1,0 +1,27 @@
+@import '../../common';
+
+$services: 'buying_a_property';
+
+.parthners-logo {
+  position: relative;
+  display: flex;
+  background-color: #8a7671;
+  height: 324px;
+  width: 324px;
+  margin: -25vw 0 0 55vw;
+  background-image: url('/static/images/parthnersLogo.png');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+
+  @include phone-and-tablet {
+    margin: 0 auto;
+    height: 10rem;
+    width: 22rem;
+    background-size: cover;
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+  }
+}
+//manufactoring_of_passports_header.png
