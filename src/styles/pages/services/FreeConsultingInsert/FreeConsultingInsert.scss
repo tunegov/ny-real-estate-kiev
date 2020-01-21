@@ -1,0 +1,55 @@
+@import '../../../common';
+
+$services: 'buying_a_property';
+
+.free-consulting-insert {
+  display: flex;
+  min-height: 100px;
+  background-color: white;
+  margin: 3vh 50vw 3vh 10vw;
+  position: relative;
+
+  &-text {
+    line-height: 30px;
+    color: #8a7671;
+    min-height: 50px;
+    padding: 7% 20% 7% 16%;
+    display: grid;
+    grid-template-areas:
+      'num li'
+      'num li'
+      'num li'
+      'num li'
+      'num li'
+      'num li';
+    grid-template-columns: 50px 400px;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px;
+    grid-gap: 20px;
+
+    @include phone-and-tablet {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+  }
+
+  &-num {
+    grid-area: num;
+    background-color: #dabbb5;
+    color: white;
+    padding: 1px;
+    width: 30px;
+    border-radius: 50px;
+    text-align: center;
+    margin: 8px;
+  }
+  &-li {
+    grid-area: li;
+    line-height: 41px;
+  }
+}
+.Plx {
+  position: relative;
+  z-index: 1;
+}
+//manufactoring_of_passports_header.png

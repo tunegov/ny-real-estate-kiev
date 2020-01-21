@@ -1,0 +1,111 @@
+@import '../../common';
+
+$services: 'buying_a_property';
+
+.cssSlider {
+  text-align: center;
+  margin: 0 20%;
+  display: block;
+  position: relative;
+  width: 60%;
+  overflow: hidden;
+  color: #524643;
+}
+h3 {
+  margin: 20px;
+}
+h5 {
+  margin-bottom: 50px;
+  color: #aaaaaa;
+  background-color: #f9f9f9;
+}
+.cssSlider .slides {
+  width: 100%;
+  height: 55vw;
+  overflow: hidden;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cssSlider .slides > li {
+  width: 50%;
+  margin-left: 25%;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+.cssSlider .slides > li > img {
+  width: 100%;
+  height: auto;
+}
+.cssSlider .thumbnails {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 10%;
+  list-style: none;
+}
+.cssSlider .thumbnails > li {
+  width: 30%;
+}
+.cssSlider .thumbnails > li > a {
+  display: block;
+}
+.cssSlider .thumbnails > li > a > img {
+  width: 100%;
+  height: auto;
+}
+
+.cssSlider .slides li:target {
+  z-index: 3;
+}
+// .cssSlider .slides li:not(:target) {
+//   -webkit-animation: hidden 1s 1;
+// }
+// @-webkit-keyframes slide {
+//   0% {
+//     -webkit-transform: translateX(-100%);
+//     transform: translateX(-100%);
+//   }
+//   100% {
+//     -webkit-transform: translateX(0%);
+//     transform: translateX(0%);
+//   }
+// }
+// @keyframes slide {
+//   0% {
+//     -webkit-transform: translateX(-100%);
+//     transform: translateX(-100%);
+//   }
+//   100% {
+//     -webkit-transform: translateX(0%);
+//     transform: translateX(0%);
+//   }
+// }
+// @-webkit-keyframes hidden {
+//   0% {
+//     z-index: 2;
+//     -webkit-transform: translateX(0%);
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     z-index: 2;
+//     -webkit-transform: translateX(100%);
+//     transform: translateX(100%);
+//   }
+// }
+// @keyframes hidden {
+//   0% {
+//     z-index: 2;
+//     -webkit-transform: translateX(0%);
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     z-index: 2;
+//     -webkit-transform: translateX(100%);
+//     transform: translateX(100%);
+//   }
+// }
+
+// manufactoring_of_passports_header.png

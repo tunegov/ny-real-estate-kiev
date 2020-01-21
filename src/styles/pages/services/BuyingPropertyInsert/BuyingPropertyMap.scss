@@ -1,0 +1,62 @@
+@import '../../../common';
+
+$services: 'manufactoring_of_passports', 'buying_a_property',
+  'property_for_sale', 'legal_support', 'expert_review', 'free_consulting';
+
+.buying-property-map {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 200px;
+  margin: 15vw 50vw 15vh 10vw;
+
+  .Plx {
+    position: absolute;
+  }
+
+  &-image {
+    width: 153px;
+    min-height: 149px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    margin: 10% 2%;
+    right: 0;
+    background-image: url('/static/images/map-icon.png');
+  }
+
+  &-text {
+    background-color: white;
+    line-height: 25px;
+    color: #898989;
+    min-height: 50px;
+    padding: 10% 30% 10% 10%;
+
+    @include phone-and-tablet {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+
+    &-title {
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 35px;
+      color: $color-black;
+      font-size: 24px;
+      margin: 0 0 1rem;
+
+      @include phone-and-tablet {
+        font-size: 16px;
+      }
+    }
+
+    &-subtitle {
+      font-size: 16px;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+      }
+    }
+  }
+}
+//manufactoring_of_passports_header.png

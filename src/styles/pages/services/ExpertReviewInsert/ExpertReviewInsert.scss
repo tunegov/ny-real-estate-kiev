@@ -1,0 +1,43 @@
+@import '../../../common';
+
+$services: 'buying_a_property';
+
+.expert-review-insert {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  min-height: 100px;
+  background-color: white;
+  margin: 3vh 50vw 3vh 10vw;
+
+  &-line {
+    margin: 3vw 0 2.5rem 37vw;
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    bottom: 0;
+    background-color: #dabbb5;
+  }
+
+  &-text {
+    line-height: 25px;
+    color: #8a7671;
+    min-height: 50px;
+    padding: 7vh 5vw 8vh 5vw;
+
+    @include phone-and-tablet {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+
+    &-subtitle {
+      font-size: 16px;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+      }
+    }
+  }
+}
+//manufactoring_of_passports_header.png

@@ -1,0 +1,43 @@
+@import '../../common';
+
+$team: 'insert';
+
+.team-insert {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-align: center;
+
+  &-text {
+    color: #8a7671;
+    min-height: 50px;
+    margin: 50px 20%;
+
+    @include phone-and-tablet {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+
+    &-title {
+      font-family: 'Lato', sans-serif;
+      padding-bottom: 20px;
+      font-size: 36px;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+      }
+    }
+
+    &-subtitle {
+      line-height: 30px;
+      font-size: 16px;
+      color: #aaaaaa;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+      }
+    }
+  }
+}
+//manufactoring_of_passports_header.png

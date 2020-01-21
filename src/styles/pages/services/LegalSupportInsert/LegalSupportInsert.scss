@@ -1,0 +1,34 @@
+@import '../../../common';
+
+$services: 'buying_a_property';
+
+.legal-support-insert {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100px;
+  background-color: white;
+  margin: 3vh 35vw 3vh 10vw;
+
+  &-text {
+    line-height: 25px;
+    color: #8a7671;
+    min-height: 50px;
+    padding: 7vh 5vw 12vh 5vw;
+
+    @include phone-and-tablet {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+
+    &-subtitle {
+      font-size: 16px;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+      }
+    }
+  }
+}
+//manufactoring_of_passports_header.png

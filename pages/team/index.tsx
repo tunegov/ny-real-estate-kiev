@@ -5,6 +5,8 @@ import { withTranslation } from '@server/i18n';
 
 import Content from '@components/Content';
 import HeaderBlock from '@components/common/HeaderBlock';
+import TeamGallery from './TeamInsert/TeamGallery';
+import TeamInsert from './TeamInsert/TeamInsert';
 
 interface Props extends WithTranslation {}
 
@@ -20,6 +22,9 @@ class TeamPage extends React.Component<Props> {
         <Head>
           <title>{t('team.title')}</title>
         </Head>
+        <Head>
+          <title>{t('team.title')}</title>
+        </Head>
 
         <Content>
           <HeaderBlock
@@ -27,6 +32,11 @@ class TeamPage extends React.Component<Props> {
             subtitle={t('team.subtitle')}
             imageClassName="team"
           />
+          <TeamInsert
+            title={t('team.insert.title')}
+            subtitle={t('team.insert.subtitle')}
+          />
+          <TeamGallery />
         </Content>
       </div>
     );

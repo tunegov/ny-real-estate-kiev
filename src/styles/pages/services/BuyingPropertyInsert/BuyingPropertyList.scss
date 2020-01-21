@@ -1,0 +1,37 @@
+@import '../../../common';
+
+$services: 'buying_a_property';
+
+.buying-property-list {
+  z-index: 0;
+  position: relative;
+  display: flex;
+  min-height: 100px;
+  background-color: #8a7671;
+  margin: -25vh 0vw 3vh 30vw;
+
+  &-image {
+    width: 223px;
+    min-height: 114px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url('/static/images/service-insert-back.png');
+  }
+
+  &-text {
+    line-height: 30px;
+    color: white;
+    min-height: 50px;
+    padding: 10% 20% 7% 6%;
+
+    @include phone-and-tablet {
+      width: calc(60vw - 4rem);
+      padding: 2rem;
+      left: 1rem;
+    }
+  }
+}
+//manufactoring_of_passports_header.png
