@@ -8,7 +8,7 @@ $services: 'buying_a_property';
   min-height: 100px;
   background-color: #8a7671;
   height: 254px;
-  margin: 5vw 10vw;
+  margin: 1vw 10vw;
   background-image: url('/static/images/parthnersAdvantages.png');
   background-position: right bottom;
   background-size: 20%;
@@ -26,7 +26,7 @@ $services: 'buying_a_property';
     width: 30%;
     height: 80%;
     text-align: center;
-    margin: 10% 60% 10% 10%;
+    margin: 4% 60% 4% 10%;
 
     @include phone-and-tablet {
       margin: 0;
