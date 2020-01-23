@@ -7,6 +7,7 @@ import Content from '@components/Content';
 import HeaderBlock from '@components/common/HeaderBlock';
 import ParthnersInsert from './ParthnersInsert/ParthnersInsert';
 import ParthnersLogo from './ParthnersInsert/ParthnersLogo';
+import ParthnersAdvantages from './ParthnersInsert/ParthnersAdvantages';
 
 interface Props extends WithTranslation {}
 
@@ -34,6 +35,10 @@ class PartnersPage extends React.Component<Props> {
             subtitle={t('partners-insert.subtitle')}
           />
           <ParthnersLogo imageClassName="parthners-logo" />
+          <ParthnersAdvantages
+            title={t('partners-advantages.title')}
+            subtitle={t('partners-advantages.subtitle')}
+          />
         </Content>
       </div>
     );
