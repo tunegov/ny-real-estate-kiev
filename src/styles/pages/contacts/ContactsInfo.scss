@@ -13,6 +13,7 @@ $services: 'buying_a_property';
 
   @include phone-and-tablet {
     width: 22rem;
+    height: 22rem;
     margin: 0 auto;
   }
 
@@ -23,10 +24,24 @@ $services: 'buying_a_property';
     margin-top: -14vw;
     margin-left: 4vw;
 
+    @include phone-and-tablet {
+      width: 22rem;
+      height: 22rem;
+      margin-top: -38vw;
+      margin-left: 2vw;
+      grid-template-rows: 25px 25px 25px;
+      gap: 15px;
+    }
+
     &-img {
       width: 20px;
       margin-top: 2.5vw;
       min-height: 20px;
+
+      @include phone-and-tablet {
+        width: 15px;
+        min-height: 15px;
+      }
     }
   }
 
@@ -58,7 +73,7 @@ $services: 'buying_a_property';
       text-align: center;
       font-size: 25px;
       margin-top: 5vw;
-      margin-bottom: 5vw;
+      margin-bottom: 7vw;
 
       @include phone-and-tablet {
         font-size: 18px;
@@ -67,9 +82,48 @@ $services: 'buying_a_property';
     &-li {
       font-size: 15px;
       margin: 2vw 5vw 0 7vw;
+
       @include phone-and-tablet {
-        font-size: 18px;
+        line-height: 20px;
+        font-size: 15px;
+        margin: 5vw 5vw 0 10vw;
       }
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-social {
+  margin: 15vw 2vw;
+  display: flex;
+
+  @include phone-and-tablet {
+    padding-bottom: 3rem;
+  }
+
+  .social-link {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+    &.telegram {
+      background-size: contain;
+      background-image: url('/static/images/Contacts/telegram.png');
+    }
+    &.facebook {
+      background-size: contain;
+      background-image: url('/static/images/Contacts/facebook.png');
+    }
+    &.instagram {
+      background-size: contain;
+      background-image: url('/static/images/Contacts/instagram.png');
     }
   }
 }

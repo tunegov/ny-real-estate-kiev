@@ -14,8 +14,8 @@ const textParalax = [
     end: 500,
     properties: [
       {
-        startValue: 50,
-        endValue: 200,
+        startValue: 0,
+        endValue: 0,
         property: 'translateY'
       }
     ]

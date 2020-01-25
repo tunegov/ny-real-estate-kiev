@@ -2,6 +2,26 @@ import React, { useEffect, useState } from 'react';
 import Plx from 'react-plx';
 
 import '@styles/pages/contacts/ContactsInfo.scss';
+import {
+  facebookLink,
+  telegramLink,
+  instagramLink
+} from '@constants/constants';
+
+const SOCIAL_LINKS = [
+  {
+    className: 'social-link telegram',
+    href: telegramLink
+  },
+  {
+    className: 'social-link facebook',
+    href: facebookLink
+  },
+  {
+    className: 'social-link instagram',
+    href: instagramLink
+  }
+];
 
 interface Props {
   title?: string;
@@ -13,11 +33,11 @@ interface Props {
 const textParalax = [
   {
     start: 0,
-    end: 500,
+    end: 300,
     properties: [
       {
-        startValue: 50,
-        endValue: 200,
+        startValue: 0,
+        endValue: 50,
         property: 'translateY'
       }
     ]
@@ -30,43 +50,47 @@ const Contacts = (props: Props) => {
       <div className="contacts-info">
         <div className="contacts-info-text">
           <p className="contacts-info-text-title">{props.title}</p>
-
-          <p className="contacts-info-text-li">{props.mail}</p>
-          <p className="contacts-info-text-li">{props.phone}</p>
-          <p className="contacts-info-text-li">{props.location}</p>
+          <a href="mailto:an.newyork.kiev@gmail.com">
+            <p className="contacts-info-text-li">{props.mail}</p>
+          </a>
+          <a href="tel:+380 67 994 3848">
+            <p className="contacts-info-text-li">{props.phone}</p>
+          </a>
+          <a href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
+            <p className="contacts-info-text-li">{props.location}</p>
+          </a>
           <div className="contacts-info-block">
-            <img
-              className="contacts-info-block-img"
-              src="/static/images/Contacts/email.png"
-              alt=""
-            />
-            <img
-              className="contacts-info-block-img"
-              src="/static/images/Contacts/call.png"
-              alt=""
-            />
-            <img
-              className="contacts-info-block-img"
-              src="/static/images/Contacts/location.png"
-              alt=""
-            />
+            <a href="mailto:an.newyork.kiev@gmail.com">
+              <img
+                className="contacts-info-block-img"
+                src="/static/images/Contacts/email.png"
+                alt=""
+              />
+            </a>
+            <a href="tel:+380 67 994 3848">
+              <img
+                className="contacts-info-block-img"
+                src="/static/images/Contacts/call.png"
+                alt=""
+              />
+            </a>
+            <a href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
+              <img
+                className="contacts-info-block-img"
+                src="/static/images/Contacts/location.png"
+                alt=""
+              />
+            </a>
           </div>
-          <div className="contacts-info-footer">
-            <img
-              className="contacts-info-footer-img"
-              src="/static/images/Contacts/telegram.png"
-              alt=""
-            />
-            <img
-              className="contacts-info-footer-img"
-              src="/static/images/Contacts/instagram.png"
-              alt=""
-            />
-            <img
-              className="contacts-info-footer-img"
-              src="/static/images/Contacts/facebook.png"
-              alt=""
-            />
+          <div className="footer-social">
+            {SOCIAL_LINKS.map((link, index) => (
+              <a
+                key={index}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={link.href}
+                className={link.className}></a>
+            ))}
           </div>
         </div>
       </div>
