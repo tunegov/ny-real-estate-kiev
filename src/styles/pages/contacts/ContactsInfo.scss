@@ -73,10 +73,11 @@ $services: 'buying_a_property';
       text-align: center;
       font-size: 25px;
       margin-top: 5vw;
-      margin-bottom: 7vw;
+      margin-bottom: 2vw;
 
       @include phone-and-tablet {
         font-size: 18px;
+        margin-bottom: 7vw;
       }
     }
     &-li {
@@ -97,11 +98,12 @@ a {
 }
 
 .footer-social {
-  margin: 15vw 2vw;
+  margin: 5vw 2vw;
   display: flex;
 
   @include phone-and-tablet {
     padding-bottom: 3rem;
+    margin: 15vw 2vw;
   }
 
   .social-link {
