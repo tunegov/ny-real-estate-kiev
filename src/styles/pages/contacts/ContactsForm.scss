@@ -41,6 +41,7 @@ $services: 'buying_a_property';
       grid-template-rows: 10vw 10vw 10vw 10vw;
       margin: 0vw 5vw auto;
     }
+
     input {
       width: 30vw;
       border-bottom: 1px solid #524643;
@@ -49,10 +50,15 @@ $services: 'buying_a_property';
         width: 90vw;
       }
     }
+
     button {
       margin-left: 15vw;
       width: 15vw;
       border: 1px solid #524643;
+
+      p {
+        color: #524643;
+      }
 
       @include phone-and-tablet {
         width: 50vw;

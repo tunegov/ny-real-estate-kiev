@@ -19,7 +19,6 @@ $services: 'buying_a_property';
 
   &-img {
     width: 20px;
-    margin-top: 5vh;
     min-height: 20px;
 
     @include phone-and-tablet {
@@ -27,11 +26,22 @@ $services: 'buying_a_property';
       min-height: 15px;
     }
   }
+
   &-block {
     margin-top: 0vh;
     display: flex;
     flex-direction: column;
+    margin: 0 3rem;
+
+    .text-icon {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
   }
+
   &-text {
     font-family: 'Lato', sans-serif;
     line-height: 2vh;
@@ -56,9 +66,10 @@ $services: 'buying_a_property';
         margin-left: 7vw;
       }
     }
+
     &-li {
       font-size: 15px;
-      margin: 0vw 5vw 0 7vw;
+      margin: 0vw 0 0 2vw;
 
       @include phone-and-tablet {
         line-height: 20px;
@@ -66,13 +77,6 @@ $services: 'buying_a_property';
         margin: 5vw 3vw 0 15vw;
       }
     }
-  }
-  a {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .footer-social {

@@ -27,6 +27,12 @@ $services: 'buying_a_property';
       margin-left: 7vw;
     }
   }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   &-text {
     font-family: 'Lato', sans-serif;
     line-height: 2vw;
@@ -51,6 +57,7 @@ $services: 'buying_a_property';
         margin-left: 0;
       }
     }
+
     &-location {
       font-size: 15px;
       margin: 1vw 6vw 0 6vw;
