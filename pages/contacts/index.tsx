@@ -4,6 +4,7 @@ import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
 import Content from '@components/Content';
+
 import Contacts from '@components/contacts/Contacts';
 import ContactsInfo from '@components/contacts/ContactsInfo';
 import ContactsLocation from '@components/contacts/ContactsLocation';
@@ -36,6 +37,11 @@ class ContactsPage extends React.Component<Props> {
             location1={t('contacts-location.location1')}
             location2={t('contacts-location.location2')}
             location3={t('contacts-location.location3')}
+          />
+          <ContactsForm
+            title={t('contacts-form.title')}
+            value={t('contacts.title')}
+            onChange={t('contacts.title')}
           />
         </Content>
       </div>
