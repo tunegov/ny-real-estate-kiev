@@ -61,6 +61,7 @@ const CooperationsSteps = ({ t }: Props) => {
       <div className="home-cooperations-steps-types">
         {TYPES.map(typeItem => (
           <div
+            key={typeItem.key}
             onClick={() => setType(typeItem.key)}
             className={`home-cooperations-steps-types-item ${
               typeItem.key === type ? 'active' : ''

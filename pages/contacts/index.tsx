@@ -4,9 +4,9 @@ import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
 import Content from '@components/Content';
-import Contacts from './ContactsInsert/Contacts';
-import ContactsInfo from './ContactsInsert/ContactsInfo';
-import ContactsLocation from './ContactsInsert/ContactsLocation';
+import Contacts from '@components/contacts/Contacts';
+import ContactsInfo from '@components/contacts/ContactsInfo';
+import ContactsLocation from '@components/contacts/ContactsLocation';
 
 interface Props extends WithTranslation {}
 
@@ -20,7 +20,7 @@ class ContactsPage extends React.Component<Props> {
     return (
       <div>
         <Head>
-          <title>{t('partners.title')}</title>
+          <title>{t('contacts.title')}</title>
         </Head>
 
         <Content>

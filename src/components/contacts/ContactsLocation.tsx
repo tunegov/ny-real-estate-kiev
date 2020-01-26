@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Plx from 'react-plx';
+import { GOOGLE_MAPS_KEY } from '@constants/index';
+import GoogleMapReact from 'google-map-react';
 
 import '@styles/pages/contacts/ContactsLocation.scss';
 
@@ -25,8 +27,14 @@ const textParalax = [
 ];
 
 const Contacts = (props: Props) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 1024);
+  });
+
   return (
-    <Plx parallaxData={textParalax}>
+    <Plx parallaxData={textParalax} disabled={isMobile}>
       <div className="contacts-location">
         <div className="contacts-location-text">
           <p className="contacts-location-text-title">{props.title}</p>
@@ -41,6 +49,17 @@ const Contacts = (props: Props) => {
             <p className="contacts-location-text-location">{props.location3}</p>
           </a>
         </div>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
+          defaultCenter={{
+            lat: 59.95,
+            lng: 30.33
+          }}
+          defaultZoom={11}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={({ map, maps }) =>
+            console.log(map, maps)
+          }></GoogleMapReact>
       </div>
     </Plx>
   );
