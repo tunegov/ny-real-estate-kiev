@@ -1,0 +1,65 @@
+@import '../../common';
+
+$services: 'buying_a_property';
+
+.contacts-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  height: 35vw;
+  z-index: 3;
+  margin-top: 0vw;
+
+  @include phone-and-tablet {
+    width: 22rem;
+    height: 80vw;
+    margin: 0;
+  }
+
+  &-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    margin: 5vw 9vw 1vw 9vw;
+    color: #524643;
+
+    @include phone-and-tablet {
+      margin: 5vw 5vw;
+      font-size: 18px;
+    }
+  }
+
+  &-inputs {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    display: grid;
+    grid-template-rows: 4vw 4vw 4vw 4vw;
+    margin: 0vw 9vw auto;
+
+    @include phone-and-tablet {
+      display: grid;
+      grid-template-rows: 10vw 10vw 10vw 10vw;
+      margin: 0vw 5vw auto;
+    }
+    input {
+      width: 30vw;
+      border-bottom: 1px solid #524643;
+
+      @include phone-and-tablet {
+        width: 90vw;
+      }
+    }
+    button {
+      margin-left: 15vw;
+      width: 15vw;
+      border: 1px solid #524643;
+
+      @include phone-and-tablet {
+        width: 50vw;
+        margin: 7vw 20vw auto;
+      }
+    }
+  }
+}
+
+//manufactoring_of_passports_header.png

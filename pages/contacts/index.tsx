@@ -8,6 +8,8 @@ import Content from '@components/Content';
 import Contacts from '@components/contacts/Contacts';
 import ContactsInfo from '@components/contacts/ContactsInfo';
 import ContactsLocation from '@components/contacts/ContactsLocation';
+import ContactsForm from '@components/contacts/ContactsForm';
+import ContactsMap from '@components/contacts/ContactsMap';
 
 interface Props extends WithTranslation {}
 
@@ -38,11 +40,10 @@ class ContactsPage extends React.Component<Props> {
             location2={t('contacts-location.location2')}
             location3={t('contacts-location.location3')}
           />
-          <ContactsForm
-            title={t('contacts-form.title')}
-            value={t('contacts.title')}
-            onChange={t('contacts.title')}
-          />
+          <div className="contacts-bottom">
+            <ContactsForm />
+            <ContactsMap />
+          </div>
         </Content>
       </div>
     );

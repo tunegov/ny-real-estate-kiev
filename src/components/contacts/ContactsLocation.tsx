@@ -49,17 +49,6 @@ const Contacts = (props: Props) => {
             <p className="contacts-location-text-location">{props.location3}</p>
           </a>
         </div>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
-          defaultCenter={{
-            lat: 59.95,
-            lng: 30.33
-          }}
-          defaultZoom={11}
-          yesIWantToUseGoogleMapApiInternals
-          onGoogleApiLoaded={({ map, maps }) =>
-            console.log(map, maps)
-          }></GoogleMapReact>
       </div>
     </Plx>
   );
