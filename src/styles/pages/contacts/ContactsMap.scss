@@ -6,11 +6,11 @@ $services: 'buying_a_property';
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 35vw;
   height: 35vw;
   // z-index: 0;
   margin-top: 0vw;
-  // margin: 0vw 0 0 25vw;
+  margin: -2vw 0 0 6vw;
 
   @include phone-and-tablet {
     width: 22rem;

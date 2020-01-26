@@ -11,10 +11,10 @@ const ContactsMap = () => {
       <GoogleMapReact
         bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
         defaultCenter={{
-          lat: 59.95,
-          lng: 30.33
+          lat: 50.4504428,
+          lng: 30.5033442
         }}
-        defaultZoom={11}
+        defaultZoom={17}
         yesIWantToUseGoogleMapApiInternals
         onGoogleApiLoaded={({ map, maps }) =>
           console.log(map, maps)

@@ -34,21 +34,28 @@ const Contacts = (props: Props) => {
   });
 
   return (
-    <Plx parallaxData={textParalax} disabled={isMobile}>
-      <div className="contacts-location">
-        <div className="contacts-location-text">
-          <p className="contacts-location-text-title">{props.title}</p>
-          <div className="contacts-location-line" />
-          <a href="https://maps.google.com/?q=г. Киев, м. Золотые Ворота">
-            <p className="contacts-location-text-location">{props.location1}</p>
-          </a>
-          <a href="https://maps.google.com/?q=г. Киев, м. Университет">
-            <p className="contacts-location-text-location">{props.location2}</p>
-          </a>
-          <a href="https://maps.google.com/?q=г. Киев, ТРЦ Украина">
-            <p className="contacts-location-text-location">{props.location3}</p>
-          </a>
-        </div>
+    <Plx
+      className="contacts-location"
+      parallaxData={textParalax}
+      disabled={isMobile}>
+      <div className="contacts-location-text">
+        <p className="contacts-location-text-title">{props.title}</p>
+        <div className="contacts-location-line" />
+        <a
+          target="_blank"
+          href="https://maps.google.com/?q=г. Киев, м. Золотые Ворота">
+          <p className="contacts-location-text-location">{props.location1}</p>
+        </a>
+        <a
+          target="_blank"
+          href="https://maps.google.com/?q=г. Киев, м. Университет">
+          <p className="contacts-location-text-location">{props.location2}</p>
+        </a>
+        <a
+          target="_blank"
+          href="https://maps.google.com/?q=г. Киев, ТРЦ Украина">
+          <p className="contacts-location-text-location">{props.location3}</p>
+        </a>
       </div>
     </Plx>
   );

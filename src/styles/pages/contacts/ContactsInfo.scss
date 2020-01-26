@@ -17,49 +17,24 @@ $services: 'buying_a_property';
     margin: 0;
   }
 
-  &-block {
-    display: grid;
-    grid-template-columns: 25px;
-    position: absolute;
-    margin-top: -14vw;
-    margin-left: 4vw;
+  &-img {
+    width: 20px;
+    margin-top: 5vh;
+    min-height: 20px;
 
     @include phone-and-tablet {
-      width: 22rem;
-      height: 22rem;
-      margin-top: -38vw;
-      margin-left: 7vw;
-      grid-template-rows: 25px 25px 25px;
-      gap: 15px;
-    }
-
-    &-img {
-      width: 20px;
-      margin-top: 2.5vw;
-      min-height: 20px;
-
-      @include phone-and-tablet {
-        width: 15px;
-        min-height: 15px;
-      }
+      width: 15px;
+      min-height: 15px;
     }
   }
-
-  &-footer {
-    margin-left: 3vw;
-    bottom: 0;
-
-    &-img {
-      width: 20px;
-      margin-left: 1vw;
-      margin-top: 2.5vw;
-      min-height: 20px;
-    }
+  &-block {
+    margin-top: 0vh;
+    display: flex;
+    flex-direction: column;
   }
-
   &-text {
     font-family: 'Lato', sans-serif;
-    line-height: 2vw;
+    line-height: 2vh;
     color: #ffffff;
 
     @include phone-and-tablet {
@@ -83,7 +58,7 @@ $services: 'buying_a_property';
     }
     &-li {
       font-size: 15px;
-      margin: 2vw 5vw 0 7vw;
+      margin: 0vw 5vw 0 7vw;
 
       @include phone-and-tablet {
         line-height: 20px;
@@ -92,43 +67,47 @@ $services: 'buying_a_property';
       }
     }
   }
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.footer-social {
-  margin: 5vw 2vw;
-  display: flex;
-
-  @include phone-and-tablet {
-    display: none;
-    padding-bottom: 3rem;
-    margin: 15vw 7vw;
+  a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .social-link {
-    width: 24px;
-    height: 24px;
-    margin-right: 1rem;
-    opacity: 0.9;
+  .footer-social {
+    margin: 5vw 2vw;
+    display: flex;
 
-    &:hover {
-      opacity: 1;
+    @include phone-and-tablet {
+      display: none;
+      padding-bottom: 3rem;
+      margin: 15vw 7vw;
     }
-    &.telegram {
-      background-size: contain;
-      background-image: url('/static/images/contacts/telegram.png');
-    }
-    &.facebook {
-      background-size: contain;
-      background-image: url('/static/images/contacts/facebook.png');
-    }
-    &.instagram {
-      background-size: contain;
-      background-image: url('/static/images/contacts/instagram.png');
+
+    .social-link {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+      }
+      &.telegram {
+        background-size: contain;
+        background-image: url('/static/images/contacts/telegram.png');
+      }
+      &.facebook {
+        background-size: contain;
+        background-image: url('/static/images/contacts/facebook.png');
+      }
+      &.instagram {
+        background-size: contain;
+        background-image: url('/static/images/contacts/instagram.png');
+      }
     }
   }
 }
+
 //manufactoring_of_passports_header.png

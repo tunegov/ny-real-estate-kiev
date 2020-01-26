@@ -34,36 +34,36 @@ const Contacts = (props: Props) => {
     <div className="contacts-info">
       <div className="contacts-info-text">
         <p className="contacts-info-text-title">{props.title}</p>
-        <a href="mailto:an.newyork.kiev@gmail.com">
-          <p className="contacts-info-text-li">{props.mail}</p>
-        </a>
-        <a href="tel:+380 67 994 3848">
-          <p className="contacts-info-text-li">{props.phone}</p>
-        </a>
-        <a href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
-          <p className="contacts-info-text-li">{props.location}</p>
-        </a>
         <div className="contacts-info-block">
-          <a href="mailto:an.newyork.kiev@gmail.com">
+          <a
+            className="text-icon"
+            target="_blank"
+            href="mailto:an.newyork.kiev@gmail.com">
             <img
-              className="contacts-info-block-img"
-              src="/static/images/contacts/email.png"
+              className="contacts-info-img"
+              src="/static/images/Contacts/email.png"
               alt=""
             />
+            <p className="contacts-info-text-li">{props.mail}</p>
           </a>
-          <a href="tel:+380 67 994 3848">
+          <a className="text-icon" href="tel:+380 67 994 3848">
             <img
-              className="contacts-info-block-img"
-              src="/static/images/contacts/call.png"
+              className="contacts-info-img"
+              src="/static/images/Contacts/call.png"
               alt=""
             />
+            <p className="contacts-info-text-li">{props.phone}</p>
           </a>
-          <a href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
+          <a
+            className="text-icon"
+            target="_blank"
+            href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
             <img
-              className="contacts-info-block-img"
-              src="/static/images/contacts/location.png"
+              className="contacts-info-img"
+              src="/static/images/Contacts/location.png"
               alt=""
             />
+            <p className="contacts-info-text-li">{props.location}</p>
           </a>
         </div>
         <div className="footer-social">
