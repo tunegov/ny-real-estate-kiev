@@ -11,10 +11,12 @@ $services: 'buying_a_property';
 
   @include phone-and-tablet {
     width: 22rem;
-    margin: 0 auto;
+    height: 70vw;
+    margin: 0;
   }
 
   &-images {
+    z-index: 0;
     position: absolute;
     background-image: url('/static/images/contacts_header.png');
     background-position: center;
@@ -25,14 +27,18 @@ $services: 'buying_a_property';
     margin-top: 13vw;
 
     @include phone-and-tablet {
+      margin-top: -10vw;
+      height: 82vw;
+      width: 200%;
     }
   }
 
   &-line {
     position: absolute;
+    z-index: 2;
     width: 100px;
     height: 5px;
-    background-color: #705e5b;
+    background-color: #524643;
 
     @include phone-and-tablet {
       height: 3px;
@@ -46,6 +52,8 @@ $services: 'buying_a_property';
     padding: 1vw 0vw 0vw 20vw;
 
     @include phone-and-tablet {
+      position: absolute;
+      z-index: 2;
       width: 100%;
       padding: 2rem;
       left: 1rem;
@@ -55,7 +63,7 @@ $services: 'buying_a_property';
     &-title {
       font-size: 46px;
       padding-bottom: 1rem;
-      color: #3d3331;
+      color: #524643;
 
       @include phone-and-tablet {
         font-size: 18px;
