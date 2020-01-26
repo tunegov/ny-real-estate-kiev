@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TFunction } from 'next-i18next';
+import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
 import Button from '@components/Button';
@@ -7,9 +7,7 @@ import Input from '@components/Input';
 
 import '@styles/components/common/CallBackForm.scss';
 
-interface Props {
-  t: TFunction;
-}
+interface Props extends WithTranslation {}
 
 const CallBackForm = ({ t }: Props) => {
   const [name, setName] = useState('');

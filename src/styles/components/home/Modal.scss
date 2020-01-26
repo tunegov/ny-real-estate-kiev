@@ -1,0 +1,181 @@
+@import '../../common';
+
+.modal-outer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #52464370;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-inner {
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  &-close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('/static/images/close.png');
+    display: none;
+    z-index: 1001;
+
+    @include phone-and-tablet {
+      display: block;
+    }
+  }
+
+  @include phone-and-tablet {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    @include phone-and-tablet {
+      flex-direction: column;
+    }
+
+    &-left {
+      flex: 1;
+      width: 500px;
+      display: flex;
+      position: relative;
+
+      @include phone-and-tablet {
+        width: auto;
+      }
+
+      &-pattern {
+        position: absolute;
+        bottom: 0;
+        width: 350px;
+        height: 150px;
+        background-clip: content-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('/static/images/home/modal/left_pattern.png');
+        z-index: -1;
+
+        @include phone-and-tablet {
+          display: none;
+        }
+      }
+
+      @include phone-and-tablet {
+        background: linear-gradient(#fff, #fff, transparent);
+        z-index: 999;
+      }
+
+      .content-step {
+        padding: 2rem;
+        width: calc(100% - 4rem);
+
+        &.center {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          h2,
+          h3 {
+            text-align: center;
+          }
+        }
+
+        &-form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 3rem;
+
+          input {
+            margin-bottom: 1rem;
+            width: 350px;
+
+            @include phone-and-tablet {
+              width: 250px;
+            }
+          }
+
+          button {
+            width: 250px;
+          }
+        }
+
+        h2 {
+          font-size: 24px;
+          font-weight: normal;
+        }
+
+        h3 {
+          font-size: 14px;
+          font-weight: normal;
+          color: $color-brown-background;
+          margin: 0.5rem 0;
+        }
+
+        button {
+          margin-top: 2rem;
+          border-color: $color-brown-background;
+
+          p {
+            color: $color-brown-background;
+          }
+        }
+      }
+    }
+
+    &-right {
+      width: 200px;
+      background-clip: content-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url('/static/images/home/modal/right_background.png');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include phone-and-tablet {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      &-logo {
+        width: 150px;
+        height: 150px;
+        background-clip: content-box;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url('/static/images/home/modal/right_logo.png');
+
+        @include phone-and-tablet {
+          position: absolute;
+          bottom: 1rem;
+        }
+      }
+    }
+  }
+}

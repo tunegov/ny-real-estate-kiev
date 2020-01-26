@@ -47,21 +47,21 @@ const Contacts = (props: Props) => {
           <a href="mailto:an.newyork.kiev@gmail.com">
             <img
               className="contacts-info-block-img"
-              src="/static/images/Contacts/email.png"
+              src="/static/images/contacts/email.png"
               alt=""
             />
           </a>
           <a href="tel:+380 67 994 3848">
             <img
               className="contacts-info-block-img"
-              src="/static/images/Contacts/call.png"
+              src="/static/images/contacts/call.png"
               alt=""
             />
           </a>
           <a href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
             <img
               className="contacts-info-block-img"
-              src="/static/images/Contacts/location.png"
+              src="/static/images/contacts/location.png"
               alt=""
             />
           </a>

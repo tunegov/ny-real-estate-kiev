@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TFunction } from 'next-i18next';
+import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
 import '@styles/components/home/CooperationsSteps.scss';
@@ -47,9 +47,7 @@ const TYPES = [
   }
 ];
 
-interface Props {
-  t: TFunction;
-}
+interface Props extends WithTranslation {}
 
 const CooperationsSteps = ({ t }: Props) => {
   const [type, setType] = useState(TYPES[0].key);

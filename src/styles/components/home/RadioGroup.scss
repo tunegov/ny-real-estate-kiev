@@ -1,0 +1,24 @@
+@import '../../common';
+
+.radio-group {
+  &-item {
+    font-size: 18px;
+    color: $color-black-light;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    cursor: pointer;
+
+    &-check {
+      width: 12px;
+      height: 12px;
+      border: 1px solid $color-brown-background;
+      border-radius: 8px;
+      margin-right: 1rem;
+
+      &.checked {
+        background-color: #9b8580;
+      }
+    }
+  }
+}

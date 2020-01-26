@@ -16,6 +16,12 @@ button.button {
     opacity: 0.6;
   }
 
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
   p {
     color: $color-white;
     font-size: 16px;

@@ -8,6 +8,7 @@ import CallBackForm from '@components/common/CallBackForm';
 import Header from '@components/home/Header';
 import Categories from '@components/home/Categories';
 import CooperationsSteps from '@components/home/CooperationsSteps';
+import Modal from '@components/home/Modal';
 
 interface Props extends WithTranslation {}
 
@@ -16,7 +17,20 @@ class HomePage extends React.Component<Props> {
     namespacesRequired: ['menu', 'common', 'home']
   });
 
-  openModal() {}
+  state = {
+    modalVisible: false
+  };
+
+  openModal() {
+    document.body.style.overflow = 'hidden';
+    this.setState({ modalVisible: true });
+  }
+
+  closeModal(e: any) {
+    e.stopPropagation();
+    document.body.style.overflow = 'auto';
+    this.setState({ modalVisible: false });
+  }
 
   render() {
     const { t } = this.props;
@@ -31,6 +45,10 @@ class HomePage extends React.Component<Props> {
           <Header
             buttonLabel={t('home.header.button.text')}
             buttonOnClick={this.openModal.bind(this)}
+          />
+          <Modal
+            visible={this.state.modalVisible}
+            onClose={this.closeModal.bind(this)}
           />
           <Categories />
           <CooperationsSteps />

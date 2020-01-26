@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { TFunction } from 'next-i18next';
+import React, { useState } from 'react';
+import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
 import Button from '@components/Button';
@@ -7,9 +7,8 @@ import Input from '@components/Input';
 
 import '@styles/pages/contacts/ContactsForm.scss';
 
-interface Props {
+interface Props extends WithTranslation {
   title?: string;
-  t: TFunction;
 }
 
 const ContactsForm = ({ t, title }: Props) => {
