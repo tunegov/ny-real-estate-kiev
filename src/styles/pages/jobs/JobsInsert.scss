@@ -1,0 +1,105 @@
+@import '../../common';
+
+$services: 'buying_a_property';
+
+.jobs-insert {
+  position: relative;
+  display: flex;
+  width: 80vw;
+  min-height: 30vh;
+  background-color: #efefef;
+  margin: 5vh 10vw;
+
+  @include phone-and-tablet {
+    margin: 5vw auto;
+    width: 90vw;
+    min-height: 10vh;
+  }
+
+  &-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 5vw 10vh;
+    color: #3d3331;
+
+    @include phone-and-tablet {
+      margin: 1vh 5vw 5vh;
+    }
+
+    &-vacancy {
+      margin-top: 2vw;
+      font-size: 25px;
+
+      @include phone-and-tablet {
+        margin-right: 15vw;
+        font-size: 16px;
+      }
+    }
+    &-title {
+      margin-top: 2vw;
+      font-size: 20px;
+
+      @include phone-and-tablet {
+        margin-top: 3vw;
+        font-size: 13px;
+      }
+    }
+    &-salary {
+      margin-top: 2vw;
+      position: absolute;
+      font-size: 25px;
+      right: 0;
+      top: 0;
+
+      @include phone-and-tablet {
+        font-size: 16px;
+      }
+    }
+    &-line {
+      margin-top: 1vw;
+      width: 20vw;
+      height: 3px;
+      background-color: #705e5b;
+
+      @include phone-and-tablet {
+        width: 50vw;
+        height: 2px;
+      }
+    }
+    &-subtitle {
+      margin: 2vw 0;
+      font-size: 20px;
+      color: #898989;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+      }
+    }
+    button {
+      position: relative;
+      margin-left: 50vw;
+      width: 20vw;
+      height: 7vh;
+      border-color: #898989;
+      color: #898989;
+      font-size: 30px;
+      opacity: 100%;
+
+      @include phone-and-tablet {
+        width: 30vw;
+        height: 4vh;
+        margin-left: 50vw;
+      }
+      p {
+        color: #898989;
+        font-size: 20px;
+
+        @include phone-and-tablet {
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}

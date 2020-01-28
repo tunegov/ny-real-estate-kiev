@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Plx from 'react-plx';
 import { GOOGLE_MAPS_KEY } from '@constants/index';
 import GoogleMapReact from 'google-map-react';
 

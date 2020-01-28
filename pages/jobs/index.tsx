@@ -5,8 +5,23 @@ import { withTranslation } from '@server/i18n';
 
 import Content from '@components/Content';
 import HeaderBlock from '@components/common/HeaderBlock';
+import JobsInsert, { JobProps } from '@components/JobsInsert/JobsInsert';
 
 interface Props extends WithTranslation {}
+
+const FakeJobs: JobProps[] = [
+  {
+    vacancy: 'Менеджер по продаже недвижимости, риелтор ',
+    condition: 'Условия:',
+    text_conditional:
+      'strФункциональные обязанности:Функциональные обязанности:Функциональные обязанности:Функциональные обязанности:Функциональные обязанности:ing',
+    salary: '20 000 грн',
+    functional: 'Функциональные обязанности:',
+    text_functional:
+      'stФункциональные обязанности:Функциональные обязанности:Функциональные обязанности:Функциональные обязанности:Функциональные обязанности:ring',
+    button: 'Отправить резюме'
+  }
+];
 
 class JobsPage extends React.Component<Props> {
   static getInitialProps = async () => ({
@@ -27,6 +42,9 @@ class JobsPage extends React.Component<Props> {
             subtitle={t('jobs.subtitle')}
             imageClassName="jobs"
           />
+          {FakeJobs.map((job, index) => (
+            <JobsInsert key={index} {...job} />
+          ))}
         </Content>
       </div>
     );
