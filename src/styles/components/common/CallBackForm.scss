@@ -50,6 +50,10 @@
     background-color: $color-gray;
     padding: 2rem 0;
 
+    @include phone-and-tablet {
+      padding-bottom: 15vh;
+    }
+
     input {
       margin: 1rem 0;
       width: 350px;

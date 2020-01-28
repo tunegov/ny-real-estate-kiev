@@ -145,7 +145,7 @@ const Content = ({ t, onClose }: Props) => {
 
         return (
           <div className="content-step form">
-            <h2>{t('home.modal.steps.step_3.title', { result })}</h2>
+            <h2>{t('home.modal.steps.step_3.title', { result: 12 })}</h2>
             <h3>{t('home.modal.steps.step_3.subtitle')}</h3>
             <Stepper step={step} total={3} />
             <div className="content-step-form">

@@ -88,9 +88,9 @@ $services: 'buying_a_property';
       opacity: 100%;
 
       @include phone-and-tablet {
-        width: 30vw;
+        width: 50vw;
         height: 4vh;
-        margin-left: 50vw;
+        margin-left: 30vw;
       }
 
       p {

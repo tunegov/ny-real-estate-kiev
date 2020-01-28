@@ -6,10 +6,10 @@ import '@styles/pages/jobs/JobsInsert.scss';
 export interface JobProps {
   vacancy: string;
   condition: string;
-  text_conditional: string;
+  text_conditional: any;
   salary: string;
   functional: string;
-  text_functional: string;
+  text_functional: any;
   button: string;
 }
 

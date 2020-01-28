@@ -21,6 +21,7 @@ const CallBackForm = ({ t }: Props) => {
   const [valid, setValid] = useState(false);
 
   const onSend = async () => {
+    console.log('sned');
     if (!valid) {
       return;
     }
