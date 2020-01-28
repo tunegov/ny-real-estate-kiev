@@ -4,8 +4,11 @@ import { withTranslation } from '@server/i18n';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
+import { sendMessageToEmail } from '@api/user';
 
 import '@styles/components/common/CallBackForm.scss';
+
+const MESSAGE_TITLE = 'Перезвонить клиенту';
 
 interface Props extends WithTranslation {}
 
@@ -13,7 +16,13 @@ const CallBackForm = ({ t }: Props) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
-  const onSend = () => {};
+  const onSend = async () => {
+    const messageText = `
+        Имя - ${name}
+        Телефон - ${phone}
+    `;
+    await sendMessageToEmail(MESSAGE_TITLE, messageText);
+  };
 
   return (
     <div className="call-back-form">

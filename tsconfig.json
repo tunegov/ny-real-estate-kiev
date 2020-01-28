@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "test-utils": ["./utils/test-utils"],
+      "@api/*": ["src/api/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@types/*": ["src/types/*"],
