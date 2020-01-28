@@ -26,7 +26,9 @@ const JobsInsert = (props: JobProps) => {
         <p className="jobs-insert-block-salary">{props.salary}</p>
         <p className="jobs-insert-block-title">{props.functional}</p>
         <p className="jobs-insert-block-subtitle">{props.text_functional}</p>
-        <Button title={props.button} onClick={onSend} />
+        <a href="mailto:an.newyork.kiev@gmail.com">
+          <Button title={props.button} onClick={onSend} />
+        </a>
       </div>
     </div>
   );
