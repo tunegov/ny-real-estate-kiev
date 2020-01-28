@@ -1,4 +1,4 @@
-import axios from './index';
+import { convertBody, handleResponse } from './index';
 
 import { API_HOST_URL, lang, ADMIN_USER_ID } from '@constants/index';
 
@@ -16,9 +16,16 @@ export const sendMessageToEmail = async (
       message,
       email
     };
-    const { data } = await axios.post(url, body);
 
-    return data;
+    const response = await handleResponse(
+      fetch(url, {
+        body: convertBody(body, true),
+        method: 'POST',
+        mode: 'no-cors'
+      })
+    );
+
+    return response;
   } catch (err) {
     console.error(err);
   }

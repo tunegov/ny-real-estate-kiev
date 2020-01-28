@@ -15,6 +15,7 @@ $tablet-width: 768px;
 $desktop-width: 1024px;
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import '../../node_modules/react-notifications-component/dist/scss/notification.scss';
 
 @mixin phone {
   @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {

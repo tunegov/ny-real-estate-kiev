@@ -76,5 +76,8 @@ $services: 'buying_a_property';
   position: relative;
   z-index: 0;
   display: flex;
+
+  @include phone-and-tablet {
+    flex-direction: column-reverse;
+  }
 }
-//manufactoring_of_passports_header.png

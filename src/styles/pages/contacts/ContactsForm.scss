@@ -45,6 +45,7 @@ $services: 'buying_a_property';
     input {
       width: 30vw;
       border-bottom: 1px solid #524643;
+      color: #524643;
 
       @include phone-and-tablet {
         width: 90vw;
@@ -67,5 +68,3 @@ $services: 'buying_a_property';
     }
   }
 }
-
-//manufactoring_of_passports_header.png

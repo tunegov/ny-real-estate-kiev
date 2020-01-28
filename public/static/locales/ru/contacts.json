@@ -1,6 +1,6 @@
 {
   "contacts": {
-    "title": "Контактная информация  "
+    "title": "Контактная информация"
   },
   "contacts-info": {
     "title": "REAL ESTATE AGENCY NEW YORK",
@@ -19,6 +19,10 @@
     "name": "Имя",
     "phone": "Телефон",
     "email": "E-mail",
-    "send": "Отправить"
+    "send": "Отправить",
+    "alert": {
+      "title": "Спасибо, {{name}}",
+      "message": "Наши сотрудники скоро с Вами свяжутся!"
+    }
   }
 }

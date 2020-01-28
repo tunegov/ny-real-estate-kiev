@@ -49,7 +49,7 @@ $services: 'buying_a_property';
 
     @include phone-and-tablet {
       width: 100%;
-      padding: 2rem;
+      padding: 0rem;
       left: 1rem;
       padding-top: 5%;
     }
@@ -63,7 +63,7 @@ $services: 'buying_a_property';
       @include phone-and-tablet {
         font-size: 18px;
         margin-bottom: 7vw;
-        margin-left: 7vw;
+        margin-left: 0vw;
       }
     }
 
@@ -74,7 +74,7 @@ $services: 'buying_a_property';
       @include phone-and-tablet {
         line-height: 20px;
         font-size: 15px;
-        margin: 5vw 3vw 0 15vw;
+        margin-left: 5vw;
       }
     }
   }
@@ -113,5 +113,3 @@ $services: 'buying_a_property';
     }
   }
 }
-
-//manufactoring_of_passports_header.png

@@ -14,6 +14,7 @@
           "@server": "./server",
           "@stores": "./stores",
           "@styles": "./src/styles",
+          "@utils": "./src/utils",
           "@static": "./static"
         }
       }

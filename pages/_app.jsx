@@ -2,6 +2,9 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from '@server/i18n';
+import ReactNotification from 'react-notifications-component';
+
+// import { NotificationContainer } from 'react-notifications';
 
 class MyApp extends App {
   componentDidMount() {
@@ -26,6 +29,7 @@ class MyApp extends App {
           />
           <meta name="theme-color" content="#f9f9f9" />
         </Head>
+        <ReactNotification />
         <Component {...pageProps} />
       </>
     );

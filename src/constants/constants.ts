@@ -16,3 +16,23 @@ export const API_ACCESS_PASSWORD =
   'GZlSsK3k71FZ&IKD7#BVGOb7U7VE&mzI^f9FuG%b7aQR6B^Y8Vx@^ED@BqTGQIKj';
 
 export const ADMIN_USER_ID = 2976402;
+
+export const NumberMask = [
+  '(',
+  /[0-9]/,
+  /\d/,
+  /\d/,
+  ')',
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/
+];
+
+export const NumberRegex = /\(\d\d\d\)\s+\d\d\d\-\d\d\d\d/;
+export const EmailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;

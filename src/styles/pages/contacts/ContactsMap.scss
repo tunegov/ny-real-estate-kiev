@@ -13,8 +13,8 @@ $services: 'buying_a_property';
   margin: -2vw 0 0 6vw;
 
   @include phone-and-tablet {
-    width: 22rem;
-    height: 80vw;
+    width: 100%;
+    height: 80vh;
     margin: 0;
   }
 
@@ -22,5 +22,3 @@ $services: 'buying_a_property';
     z-index: 0 !important;
   }
 }
-
-//manufactoring_of_passports_header.png
