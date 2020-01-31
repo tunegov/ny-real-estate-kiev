@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { TFunction } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
@@ -27,13 +28,15 @@ const Categories = ({ t }: Props) => {
   return (
     <div className="home-categories">
       {CATEGORIES.map(category => (
-        <div key={category.key} className="home-categories-item">
-          <div className={`home-categories-item-image ${category.key}`} />
-          <p className="home-categories-item-text">
-            {t(`home.categories.${category.key}`)}
-          </p>
-          <div className={`home-categories-item-underline`} />
-        </div>
+        <Link key={category.key} href={`deals/${category.key}`}>
+          <div className="home-categories-item">
+            <div className={`home-categories-item-image ${category.key}`} />
+            <p className="home-categories-item-text">
+              {t(`home.categories.${category.key}`)}
+            </p>
+            <div className={`home-categories-item-underline`} />
+          </div>
+        </Link>
       ))}
     </div>
   );

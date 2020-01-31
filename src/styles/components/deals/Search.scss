@@ -1,0 +1,21 @@
+@import '../../common';
+
+.deal-search {
+  position: relative;
+
+  &-icon {
+    position: absolute;
+    bottom: 8px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('/static/images/search.png');
+    background-position: center;
+  }
+
+  input {
+    color: $color-brown-background;
+    padding-left: 25px;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../common';
+
+.deal-header {
+  margin: 5vh 0 5vh 10vw;
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5vw;
+
+    h1 {
+      font-size: 24px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+}
