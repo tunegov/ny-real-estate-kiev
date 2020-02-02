@@ -4,20 +4,35 @@ import GoogleMapReact from 'google-map-react';
 
 import '@styles/pages/contacts/ContactsMap.scss';
 
+const Marker = (props: any) => (
+  <a
+    className="marker"
+    target="_blank"
+    href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б">
+    <div className="marker-inner">
+      <div className="marker-inner-inner">
+        <div className="marker-inner-inner-inner" />
+      </div>
+    </div>
+  </a>
+);
+
+const lat = 50.450474;
+const lng = 30.505468;
+
 const ContactsMap = () => {
   return (
     <div className="contacts-map">
       <GoogleMapReact
         bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
         defaultCenter={{
-          lat: 50.4504428,
-          lng: 30.5033442
+          lat,
+          lng
         }}
         defaultZoom={17}
-        yesIWantToUseGoogleMapApiInternals
-        onGoogleApiLoaded={({ map, maps }) =>
-          console.log(map, maps)
-        }></GoogleMapReact>
+        yesIWantToUseGoogleMapApiInternals>
+        <Marker lat={lat} lng={lng} />
+      </GoogleMapReact>
     </div>
   );
 };

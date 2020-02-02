@@ -19,7 +19,7 @@
       "@api/*": ["src/api/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
-      "@types/*": ["src/types/*"],
+      "@type/*": ["src/types/*"],
       "@pages/*": ["pages/*"],
       "@server/*": ["server/*"],
       "@stores/*": ["stores/*"],

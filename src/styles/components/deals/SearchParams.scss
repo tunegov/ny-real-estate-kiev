@@ -1,0 +1,41 @@
+@import '../../common';
+
+.deal-search-params {
+  background-color: $color-gray-darkest;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  .type-param {
+    color: #818181;
+    padding: 10px 1rem;
+    cursor: pointer;
+    min-width: 70px;
+
+    &:hover,
+    &.visible {
+      color: darken(#818181, 10%);
+    }
+  }
+
+  .type-param-values {
+    color: #818181;
+    position: absolute;
+    background-color: #efefef;
+    width: 100%;
+    left: 0;
+    top: 38px;
+    display: flex;
+    padding: 1rem;
+
+    &-item {
+      padding: 1rem 2rem;
+      cursor: pointer;
+
+      &.selected {
+        color: $color-black;
+      }
+    }
+  }
+}

@@ -16,6 +16,18 @@
       "search": {
         "placeholder": "Название ЖК"
       }
+    },
+    "params": {
+      "type": {
+        "rent_long": "Аренда",
+        "sell": "Покупка"
+      },
+      "class": {
+        "title": "Класс",
+        "econom": "Економный",
+        "business": "Бизнес",
+        "elit": "Элитный"
+      }
     }
   }
 }

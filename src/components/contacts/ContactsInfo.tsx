@@ -57,7 +57,7 @@ const Contacts = (props: Props) => {
           <a
             className="text-icon"
             target="_blank"
-            href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б, 3 этаж, офис 6">
+            href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б">
             <img
               className="contacts-info-img"
               src="/static/images/Contacts/location.png"
