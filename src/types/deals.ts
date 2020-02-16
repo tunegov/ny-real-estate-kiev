@@ -9,7 +9,8 @@ export type PriceKind = 'per_object' | 'per_sqrmeter' | 'per_are';
 export type ByParamsDeal = 'by_number' | 'sell' | 'rent_long' | 'rent_day';
 export type ByParamsProperty = 'flat' | 'house' | 'commercial' | 'plot';
 export type ByParamsRoomsCount = '1' | '2' | '3' | '4' | 'more';
-export type ByParamsHousingclass = 'econom' | 'business' | 'elit';
+export type ByParamsHousingClass = 'econom' | 'business' | 'elit';
+export type ByParamsGeoSearchBy = 'city' | 'area';
 
 export type Params = ParamsCommon & ParamsByNumber & ParamsByParams;
 
@@ -22,6 +23,7 @@ export type ParamsCommon = {
   country_id?: string;
   region_id?: string;
   locality_id?: string;
+  geo_search_by?: ByParamsGeoSearchBy;
 };
 
 export type ParamsByNumber = {
@@ -44,7 +46,7 @@ export type ParamsByParams = {
   'area_lot[value_from]'?: number;
   'area_lot[value_to]'?: number;
   room_count?: ByParamsRoomsCount;
-  housing_class?: ByParamsHousingclass;
+  housing_class?: ByParamsHousingClass;
   district_id?: string[];
   subway_station?: string[];
   regions_id?: string[];

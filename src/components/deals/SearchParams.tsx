@@ -5,11 +5,11 @@ import '@styles/components/deals/SearchParams.scss';
 import TypeParam from './params/TypeParam';
 import ClassParam from './params/ClassParam';
 
-import { search, getDistricts, getSubway } from '@api/deals';
+import { search, getDistricts, getSubway, view } from '@api/deals';
 import {
   ByParamsDeal,
   ByParamsProperty,
-  ByParamsHousingclass,
+  ByParamsGeoSearchBy,
   PriceCurrency,
   PriceKind,
   Params
@@ -19,7 +19,7 @@ interface Props {}
 
 const SearchParams = (props: Props) => {
   const [params, setParams] = useState<Params>({
-    deal: 'rent_long' as ByParamsDeal,
+    deal: 'sell' as ByParamsDeal,
     property: 'flat' as ByParamsProperty,
     // room_count: '1' as ByParamsRoomsCount,
     'price[currency_id]': 'UAH' as PriceCurrency,
@@ -33,7 +33,10 @@ const SearchParams = (props: Props) => {
   }, []);
 
   const getData = async () => {
-    const data = await getDistricts();
+    await view('RF-1-400-963', 'UAH');
+    await getDistricts();
+    await getSubway();
+    const data = await search(1, params);
     console.log(data);
   };
 

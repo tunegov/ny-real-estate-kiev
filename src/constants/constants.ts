@@ -7,7 +7,7 @@ export const instagramLink =
 export const GOOGLE_MAPS_KEY = 'AIzaSyAAEs5ZXI6WWT3ukkRNiiIjyKWziGEPyVw';
 export const lang = `ru`;
 
-export const API_HOST_URL = `https://re.plektan.com`;
+export const API_HOST_URL = `http://localhost:3000/api`;
 
 export const API_VERSION = '1.1';
 export const API_COMPANY = 'newyork';

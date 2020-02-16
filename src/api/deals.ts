@@ -1,74 +1,69 @@
-import { convertBody, handleResponse } from './index';
+import axios from './index';
 
-import { API_HOST_URL, lang } from '@constants/index';
-import { Params } from '@type/deals';
+import { Params, PriceCurrency } from '@type/deals';
 
 export const search = async (currentPage: number, params: Params) => {
-  const url = `${API_HOST_URL}/${lang}/API_serp/search`;
   try {
     const body: Params = {
       currentPage,
+      rowsPerPage: 50,
       country_id: 'Ukraine',
       region_id: 'Київська область',
       locality_id: 'Київ',
+      geo_search_by: 'city',
+      'sorter[field]': 'price',
+      'sorter[direction]': 'asc',
       ...params
     };
 
-    const response = await handleResponse(
-      fetch(url, {
-        body: convertBody(body, true),
-        method: 'POST',
-        mode: 'no-cors'
-      })
-    );
+    return await axios.post('/search', body);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-    return response;
+export const view = async (adid: string, currency_id: PriceCurrency) => {
+  try {
+    const body = {
+      adid,
+      currency_id
+    };
+
+    return await axios.post('/view', body);
   } catch (err) {
     console.error(err);
   }
 };
 
 export const getDistricts = async () => {
-  const url = `${API_HOST_URL}/${lang}/API_geo/getDistricts`;
   try {
     const body = {
       country_id: 'Ukraine',
       region_id: 'Київська область',
-      locality_id: 'Київ'
+      locality_id: 'Київ',
+      geo_search_by: 'city',
+      'sorter[field]': 'area',
+      'sorter[direction]': 'asc'
     };
 
-    const response = await handleResponse(
-      fetch(url, {
-        body: convertBody(body, true),
-        method: 'POST',
-        mode: 'no-cors'
-      })
-    );
-
-    return response;
+    return await axios.post('/get_Districts', body);
   } catch (err) {
     console.error(err);
   }
 };
 
 export const getSubway = async () => {
-  const url = `${API_HOST_URL}/${lang}/API_geo/getSubway`;
   try {
     const body = {
       country_id: 'Ukraine',
       region_id: 'Київська область',
-      locality_id: 'Київ'
+      locality_id: 'Київ',
+      geo_search_by: 'city',
+      'sorter[field]': 'area',
+      'sorter[direction]': 'asc'
     };
 
-    const response = await handleResponse(
-      fetch(url, {
-        body: convertBody(body, true),
-        method: 'POST',
-        mode: 'no-cors'
-      })
-    );
-
-    return response;
+    return await axios.post('/get_subway', body);
   } catch (err) {
     console.error(err);
   }

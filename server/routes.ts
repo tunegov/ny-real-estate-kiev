@@ -8,6 +8,7 @@ routes.add('home', '/');
 routes.add('team', '/team');
 routes.add('services', '/services');
 routes.add('services/:sid', '/services');
+routes.add('deals/:did', '/services');
 routes.add('jobs', '/jobs');
 routes.add('partners', '/partners');
 routes.add('contacts', '/contacts');
