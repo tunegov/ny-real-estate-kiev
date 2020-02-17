@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Search from './Search';
-import SearchParams from './SearchParams';
 
 import '@styles/components/deals/DealHeader.scss';
 
@@ -16,9 +15,6 @@ const DealHeader = (props: Props) => {
       <div className="deal-header-top">
         <h1>{props.title}</h1>
         <Search placeholder={props.placeholder} />
-      </div>
-      <div className="deal-header-bottom">
-        <SearchParams />
       </div>
     </div>
   );

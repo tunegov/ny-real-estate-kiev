@@ -27,6 +27,12 @@
         "econom": "Економный",
         "business": "Бизнес",
         "elit": "Элитный"
+      },
+      "districts": {
+        "title": "Районы"
+      },
+      "subways": {
+        "title": "Метро"
       }
     }
   }

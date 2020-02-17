@@ -1,7 +1,7 @@
 @import '../../common';
 
 .deal-header {
-  margin: 5vh 0 5vh 10vw;
+  margin: 5vh 0 0 10vw;
 
   &-top {
     display: flex;
@@ -17,6 +17,6 @@
 
   &-bottom {
     display: flex;
-    margin-top: 1rem;
+    margin: 1rem 0 5vh 10vw;
   }
 }

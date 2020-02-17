@@ -16,7 +16,9 @@ export const search = async (currentPage: number, params: Params) => {
       ...params
     };
 
-    return await axios.post('/search', body);
+    const { data } = await axios.post('/search', body);
+
+    return data.data;
   } catch (err) {
     console.error(err);
   }
@@ -46,7 +48,9 @@ export const getDistricts = async () => {
       'sorter[direction]': 'asc'
     };
 
-    return await axios.post('/get_Districts', body);
+    const { data } = await axios.post('/get_Districts', body);
+
+    return convertData(data);
   } catch (err) {
     console.error(err);
   }
@@ -63,8 +67,34 @@ export const getSubway = async () => {
       'sorter[direction]': 'asc'
     };
 
-    return await axios.post('/get_subway', body);
+    const { data } = await axios.post('/get_subway', body);
+
+    return data;
   } catch (err) {
     console.error(err);
   }
+};
+
+const convertData = (data: DataObject): Data[] => {
+  return Object.keys(data).map(key => ({
+    ...data[key],
+    id: key
+  }));
+};
+
+export type Data = {
+  id?: string;
+  value: string;
+  caption: string;
+};
+
+export type DataWithItems = {
+  id?: string;
+  value: string;
+  caption: string;
+  items: Data[];
+};
+
+export type DataObject = {
+  [key: string]: Data;
 };

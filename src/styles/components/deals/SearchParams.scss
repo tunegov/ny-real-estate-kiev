@@ -15,7 +15,7 @@
 
     &:hover,
     &.visible {
-      color: darken(#818181, 10%);
+      color: white;
     }
   }
 
@@ -27,7 +27,68 @@
     left: 0;
     top: 38px;
     display: flex;
+    flex-wrap: wrap;
     padding: 1rem;
+
+    &-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      &-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+
+        &.red {
+          background-color: #d81b22;
+        }
+        &.blue {
+          background-color: #4980c0;
+        }
+        &.green {
+          background-color: #04b157;
+        }
+      }
+
+      &.red {
+        .type-param-values-item {
+          &:hover {
+            color: lighten(#d81b22, 15%);
+          }
+          &.selected {
+            color: #d81b22;
+          }
+        }
+      }
+
+      &.blue {
+        .type-param-values-item {
+          &:hover {
+            color: lighten(#4980c0, 15%);
+          }
+          &.selected {
+            color: #4980c0;
+          }
+        }
+      }
+
+      &.green {
+        .type-param-values-item {
+          &:hover {
+            color: lighten(#04b157, 15%);
+          }
+          &.selected {
+            color: #04b157;
+          }
+        }
+      }
+
+      .type-param-values-item {
+        padding: 1rem;
+        cursor: pointer;
+      }
+    }
 
     &-item {
       padding: 1rem 2rem;

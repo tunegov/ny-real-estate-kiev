@@ -46,8 +46,8 @@ export type ParamsByParams = {
   'area_lot[value_from]'?: number;
   'area_lot[value_to]'?: number;
   room_count?: ByParamsRoomsCount;
-  housing_class?: ByParamsHousingClass;
-  district_id?: string[];
+  housing_class?: ByParamsHousingClass[];
+  districts_id?: string[];
   subway_station?: string[];
   regions_id?: string[];
   is_newbuilding?: ParamsBoolean;
