@@ -17,6 +17,9 @@
         "placeholder": "Название ЖК"
       }
     },
+    "item": {
+      "no_fee": "Без комиссии %"
+    },
     "params": {
       "type": {
         "rent_long": "Аренда",

@@ -1,0 +1,133 @@
+@import '../../common';
+
+$color-black-deal: #494949;
+
+.deal-content {
+  margin: 5vh 0 0 10vw;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item {
+      width: 270px;
+      margin: 0 2rem 2rem 0;
+      position: relative;
+      background-color: white;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.25s;
+
+      &:hover {
+        transform: scale(1.03);
+        z-index: 99;
+
+        .deal-content-list-item-content-button {
+          &-inner {
+            background-color: $color-brown-background;
+          }
+
+          &-area {
+            color: white;
+          }
+
+          &-price {
+            color: white;
+          }
+        }
+      }
+
+      &-fee {
+        position: absolute;
+        right: 0;
+        background-color: $color-brown-background;
+        color: white;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        border-bottom-left-radius: 1.5rem;
+        font-family: 'Lato', sans-serif;
+      }
+
+      &-image {
+        width: 270px;
+
+        img {
+          width: 270px;
+          height: 220px;
+        }
+      }
+
+      &-content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 220px - 2rem);
+
+        h3 {
+          color: $color-black-deal;
+          font-size: 18px;
+          font-weight: 500;
+          padding: 0.5rem 0;
+          font-family: 'Lato', sans-serif;
+        }
+
+        &-subway {
+          font-family: 'Lato', sans-serif;
+          font-size: 14px;
+          color: $color-black-deal;
+          display: flex;
+          align-items: center;
+
+          &-icon {
+            width: 15px;
+            height: 11px;
+            margin-right: 1rem;
+          }
+        }
+
+        &-address {
+          font-family: 'Lato', sans-serif;
+          color: $color-black-deal;
+        }
+
+        &-button {
+          border: none;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          margin-top: 1rem;
+          cursor: pointer;
+
+          &-inner {
+            min-width: 150px;
+            background-color: $color-gray;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transition: all 0.25s;
+          }
+
+          &-area {
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            margin-bottom: 0.5rem;
+            color: #757575;
+          }
+
+          &-price {
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            color: #3f3f3f;
+          }
+        }
+      }
+    }
+  }
+}
