@@ -16,7 +16,7 @@ export const search = async (currentPage: number, params: Partial<Params>) => {
       ...params
     };
 
-    const { data } = await axios.post('/search', body);
+    const { data } = await axios.post('/api/search', body);
 
     return data.data;
   } catch (err) {
@@ -31,7 +31,7 @@ export const view = async (adid: string, currency_id: PriceCurrency) => {
       currency_id
     };
 
-    return await axios.post('/view', body);
+    return await axios.post('/api/view', body);
   } catch (err) {
     console.error(err);
   }
@@ -48,7 +48,7 @@ export const getDistricts = async () => {
       'sorter[direction]': 'asc'
     };
 
-    const { data } = await axios.post('/get_Districts', body);
+    const { data } = await axios.post('/api/get_Districts', body);
 
     return convertData(data);
   } catch (err) {
@@ -67,7 +67,7 @@ export const getSubway = async () => {
       'sorter[direction]': 'asc'
     };
 
-    const { data } = await axios.post('/get_subway', body);
+    const { data } = await axios.post('/api/get_subway', body);
 
     return data;
   } catch (err) {

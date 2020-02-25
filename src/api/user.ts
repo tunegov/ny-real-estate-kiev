@@ -16,7 +16,7 @@ export const sendMessageToEmail = async (
       email
     };
 
-    return await axios.post('send_message', body);
+    return await axios.post('/api/send_message', body);
   } catch (err) {
     console.error(err);
   }
