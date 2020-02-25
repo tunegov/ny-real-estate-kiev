@@ -1,0 +1,97 @@
+{
+  "home": {
+    "title": "NY real estate kiev",
+    "header": {
+      "button": {
+        "text": "Підібрати нерухомість"
+      }
+    },
+    "categories": {
+      "retail": "торгова нерухомість",
+      "flats": "квартири",
+      "offices": "офисна нерухомість",
+      "homes": "дома/ділянки"
+    },
+    "cooperation": {
+      "title": " Етапи співпраця ",
+      "buy": {
+        "application_form": "Оформленння заявки",
+        "object_selection": "Підбір обьекта",
+        "show_object": "Показ обьекта",
+        "paperwork": "Оформлення документів",
+        "make_a_deal": "Заключення згоди"
+      },
+      "sell": {
+        "application_form": "Оформленння заявки",
+        "expert_object_evaluation": "Експертна оцінка обьекта",
+        "search_customer": "Пошук кліента",
+        "paperwork": "Оформлення документів",
+        "make_a_deal": "Заключення згоди"
+      },
+      "types": {
+        "buy": "Покупка/Аренда",
+        "sell": "Продажа/Здача в Аренду"
+      }
+    },
+    "modal": {
+      "steps": {
+        "step_1": {
+          "title": "Для яких цілей Ви купуєте нерухомість?",
+          "answer_1": {
+            "title": "Для життя",
+            "key": "for_life"
+          },
+          "answer_2": {
+            "title": "Для інвестиція",
+            "key": "for_investment"
+          }
+        },
+        "step_2_1": {
+          "title": "Який тип нерухомості для життя Вам підходить найбільше?",
+          "answer_1": {
+            "title": "Економ",
+            "key": "economy"
+          },
+          "answer_2": {
+            "title": "Комфорт",
+            "key": "сomfort"
+          },
+          "answer_3": {
+            "title": "Бізнес",
+            "key": "business"
+          },
+          "answer_4": {
+            "title": "Преміум",
+            "key": "premium"
+          }
+        },
+        "step_2_2": {
+          "title": "Який тип нерухомості для інвестицій Вам підходить найбільше?",
+          "answer_1": {
+            "title": "Жила",
+            "key": "residential"
+          },
+          "answer_2": {
+            "title": "Комерційна",
+            "key": "commercial"
+          }
+        },
+        "step_3": {
+          "title": " Ми знайшли {{result}} обьектів",
+          "subtitle": "Заповніть форму і ми Вам зателефонуємо, щоб уточнити всі деталі",
+          "form": {
+            "name": "Ім'я",
+            "phone": "Номер телефону",
+            "button": "ОТпримати пропозицію"
+          }
+        },
+        "step_4": {
+          "title": "Дякуємо!",
+          "subtitle": "Наш менеджер зв'яжеться с Вами в найближчий час.",
+          "button": "Закрити"
+        },
+        "next": "Далі"
+      }
+    }
+  }
+}

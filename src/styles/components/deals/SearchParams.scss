@@ -7,11 +7,22 @@
   display: flex;
   flex-direction: row;
 
+  @include phone-and-tablet {
+    width: 100vw;
+    flex-wrap: wrap;
+    padding: 0 0 0 10vw;
+  }
+
   .type-param {
     color: #818181;
     padding: 10px 1rem;
     cursor: pointer;
     min-width: 70px;
+    position: relative;
+
+    @include phone-and-tablet {
+      padding: 10px 2rem 10px 0;
+    }
 
     &:hover,
     &.visible {
@@ -30,6 +41,68 @@
     flex-wrap: wrap;
     padding: 1rem;
     z-index: 9999;
+
+    @include phone-and-tablet {
+      top: 76px;
+    }
+
+    &.price,
+    &.area {
+      flex-direction: row;
+
+      @include phone-and-tablet {
+        flex-direction: column;
+      }
+
+      .type-param-values-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-select {
+          padding: 0.5rem 1rem;
+          margin: 0 0.5rem;
+          background-color: rgba(white, 0.5);
+          color: $color-gray-dark;
+
+          @include phone-and-tablet {
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem 0 0;
+          }
+
+          &.active {
+            background-color: white;
+            color: $color-brown-background;
+          }
+        }
+
+        &-divider {
+          width: 2rem;
+          height: 1px;
+          background-color: black;
+          margin-right: 1rem;
+
+          @include phone-and-tablet {
+            width: 1rem;
+          }
+        }
+
+        input.input {
+          background-color: white;
+          border-bottom: none;
+          margin-right: 1rem;
+          padding-left: 1rem;
+          color: $color-brown-background;
+
+          @include phone-and-tablet {
+            width: 70px;
+            min-width: 70px;
+            padding-left: 0.5rem;
+          }
+        }
+      }
+    }
 
     &-block {
       display: flex;

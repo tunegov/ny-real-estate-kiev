@@ -1,45 +1,45 @@
 {
   "deals": {
     "retail": {
-      "title": "Торговая недвижимость"
+      "title": "Торгова нерухомість"
     },
     "flats": {
-      "title": "Квартиры"
+      "title": "Квартири"
     },
     "offices": {
-      "title": "Офисная недвижимость"
+      "title": "Офісна нерухомість"
     },
     "homes": {
-      "title": "Дома / Участки"
+      "title": "Дома / Ділянки"
     },
     "header": {
       "search": {
-        "placeholder": "Название ЖК"
+        "placeholder": "Назва ЖК"
       }
     },
     "item": {
-      "no_fee": "Без комиссии %"
+      "no_fee": "Без коміссії %"
     },
     "params": {
       "type": {
         "rent_long": "Аренда",
-        "sell": "Покупка"
+        "sell": "Купівля"
       },
       "class": {
-        "title": "Класс",
-        "econom": "Економный",
-        "business": "Бизнес",
-        "elit": "Элитный"
+        "title": "Клас",
+        "econom": "Економний",
+        "business": "Бізнес",
+        "elit": "Елітний"
       },
       "districts": {
-        "title": "Районы"
+        "title": "Райони"
       },
       "subways": {
         "title": "Метро"
       },
       "price": {
-        "title": "Цена",
-        "value_from": "от",
+        "title": "Ціна",
+        "value_from": "від",
         "value_to": "до",
         "currency": {
           "UAH": "UAH",
@@ -52,8 +52,8 @@
         }
       },
       "area": {
-        "title": "Площадь",
-        "value_from": "от",
+        "title": "Площа",
+        "value_from": "від",
         "value_to": "до"
       }
     }

@@ -49,6 +49,29 @@
   &-inner {
     position: relative;
     padding: 50px 25px 25px;
+
+    &-lang {
+      display: flex;
+      margin-top: 10vh;
+
+      > div {
+        color: $color-gray-dark;
+        cursor: pointer;
+        transition: all 0.25s;
+
+        &:hover {
+          color: $color-brown-background;
+        }
+
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        &.active {
+          color: $color-brown-background;
+        }
+      }
+    }
   }
 
   &-outer {

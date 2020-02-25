@@ -38,7 +38,7 @@ const DistrictParam = ({ t, currentValue, onChange, field }: Props) => {
           className="type-param-values"
           onMouseEnter={() => setVisible(true)}
           onMouseLeave={() => setVisible(false)}>
-          {values.map(({ value, id }) => {
+          {values?.map(({ value, id }) => {
             const selected = currentValue.includes(value);
             return (
               <div

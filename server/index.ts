@@ -36,6 +36,7 @@ app.prepare().then(() => {
   server.use(nextI18NextMiddleware(nextI18next));
 
   server.use('/api', api);
+  server.use('/ru/api', api);
 
   server.get('*', (req, res) => handler(req, res));
 

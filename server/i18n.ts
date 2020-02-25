@@ -1,8 +1,13 @@
 import NextI18Next from 'next-i18next';
 
 const NextI18NextInstance = new NextI18Next({
-  defaultLanguage: 'ru',
-  otherLanguages: ['ua']
+  defaultLanguage: 'ua',
+  otherLanguages: ['ru'],
+  // localeSubpaths: {
+  //   ru: 'ru'
+  // },
+  serverLanguageDetection: true,
+  browserLanguageDetection: true
 });
 
 export default NextI18NextInstance;

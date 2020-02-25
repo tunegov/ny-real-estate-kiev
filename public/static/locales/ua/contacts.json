@@ -1,0 +1,28 @@
+{
+  "contacts": {
+    "title": "Контактна інформація"
+  },
+  "contacts-info": {
+    "title": "REAL ESTATE AGENCY NEW YORK",
+    "mail": "an.newyork.kiev@gmail.com",
+    "phone": "+380 67 994 3848",
+    "l": "Розташування офісу м. Київ, вулиця О.Гончара 47Б, 3 поверх, офіс 6"
+  },
+  "contacts-location": {
+    "title": "Як до нас дістатись",
+    "location1": "м. Золоті Ворота",
+    "location2": "м. Університет",
+    "location3": "ТРЦ Україна"
+  },
+  "contacts-form": {
+    "title": "ЯКШО У ВАС ЗАЛИШИЛИСЬ ПИТАННЯ, ЗОПОВНІТЬ ФОРМУ",
+    "name": "Ім'я",
+    "phone": "Телефон",
+    "email": "E-mail",
+    "send": "Відправити",
+    "alert": {
+      "title": "Дякую, {{name}}",
+      "message": "Наші співробітники скоро з Вами зв'яжуться!"
+    }
+  }
+}

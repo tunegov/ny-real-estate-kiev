@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from '@server/routes';
 import { useRouter } from 'next/router';
 import { TFunction } from 'next-i18next';
+import i18n from '@server/i18n';
 
 import { withTranslation } from '@server/i18n';
 
@@ -89,7 +90,7 @@ const MenuLink = ({
             />
           </div>
         ) : (
-          <Link href={href}>
+          <Link route={href}>
             <a>{t(label)}</a>
           </Link>
         )}
@@ -134,6 +135,19 @@ const Menu = ({ t }: MenuProps) => {
         <div className="menu-inner">
           <div className="menu-close" onClick={closeMenu} />
           <ul>{renderLinks()}</ul>
+
+          <div className="menu-inner-lang">
+            <div
+              className={i18n.i18n.language === 'ua' ? 'active' : ''}
+              onClick={() => i18n.i18n.changeLanguage('ua')}>
+              UA
+            </div>
+            <div
+              className={i18n.i18n.language === 'ru' ? 'active' : ''}
+              onClick={() => i18n.i18n.changeLanguage('ru')}>
+              RU
+            </div>
+          </div>
         </div>
       </nav>
       {open && <div className="menu-outer" onClick={closeMenu} />}

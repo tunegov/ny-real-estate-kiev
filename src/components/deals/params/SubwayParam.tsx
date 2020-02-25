@@ -51,7 +51,7 @@ const SubwayParam = ({ t, currentValue, onChange, field }: Props) => {
           className="type-param-values"
           onMouseEnter={() => setVisible(true)}
           onMouseLeave={() => setVisible(false)}>
-          {values.map(val => (
+          {values?.map(val => (
             <SubwayLine
               key={val.value}
               type={getSubwayLineType(val.value)}

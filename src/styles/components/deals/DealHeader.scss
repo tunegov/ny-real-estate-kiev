@@ -18,5 +18,10 @@
   &-bottom {
     display: flex;
     margin: 1rem 0 5vh 10vw;
+
+    @include phone-and-tablet {
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
   }
 }

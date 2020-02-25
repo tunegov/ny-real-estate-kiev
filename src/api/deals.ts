@@ -2,9 +2,9 @@ import axios from './index';
 
 import { Params, PriceCurrency } from '@type/deals';
 
-export const search = async (currentPage: number, params: Params) => {
+export const search = async (currentPage: number, params: Partial<Params>) => {
   try {
-    const body: Params = {
+    const body: Partial<Params> = {
       currentPage,
       rowsPerPage: 50,
       country_id: 'Ukraine',

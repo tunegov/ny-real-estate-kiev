@@ -8,6 +8,9 @@ interface Props {
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
+  type?: string;
+  min?: string;
+  max?: string;
   disabled?: boolean;
   mask?: maskArray;
 }
@@ -19,6 +22,7 @@ const Input = (props: Props) => {
         mask={props.mask}
         guide={true}
         value={props.value}
+        type={props.type}
         onChange={props.onChange}
         placeholder={props.placeholder}
         className={`input ${props.className} ${
@@ -30,9 +34,11 @@ const Input = (props: Props) => {
   return (
     <input
       value={props.value}
+      type={props.type}
       onChange={props.onChange}
       placeholder={props.placeholder}
       className={`input ${props.className} ${props.disabled ? 'disabled' : ''}`}
+      {...props}
     />
   );
 };

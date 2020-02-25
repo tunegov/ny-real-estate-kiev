@@ -14,7 +14,7 @@ const DealHeader = (props: Props) => {
     <div className="deal-header">
       <div className="deal-header-top">
         <h1>{props.title}</h1>
-        <Search placeholder={props.placeholder} />
+        {/* <Search placeholder={props.placeholder} /> */}
       </div>
     </div>
   );

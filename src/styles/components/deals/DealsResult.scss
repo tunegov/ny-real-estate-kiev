@@ -18,6 +18,10 @@ $color-black-deal: #494949;
       cursor: pointer;
       transition: all 0.25s;
 
+      @include phone-and-tablet {
+        width: 100%;
+      }
+
       &:hover {
         transform: scale(1.03);
         z-index: 99;
@@ -50,9 +54,18 @@ $color-black-deal: #494949;
       &-image {
         width: 270px;
 
+        @include phone-and-tablet {
+          width: calc(100vw - 4rem);
+        }
+
         img {
           width: 270px;
           height: 220px;
+
+          @include phone-and-tablet {
+            width: calc(100vw - 4rem);
+            height: calc(100vw - 4rem - 50px);
+          }
         }
       }
 
@@ -62,6 +75,10 @@ $color-black-deal: #494949;
         flex-direction: column;
         justify-content: space-between;
         height: calc(100% - 220px - 2rem);
+
+        @include phone-and-tablet {
+          height: calc(100% - 100vw - 6rem - 170px);
+        }
 
         h3 {
           color: $color-black-deal;

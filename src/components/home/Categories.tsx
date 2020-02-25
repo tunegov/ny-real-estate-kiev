@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@server/routes';
 import { TFunction } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 
@@ -28,7 +28,7 @@ const Categories = ({ t }: Props) => {
   return (
     <div className="home-categories">
       {CATEGORIES.map(category => (
-        <Link key={category.key} href={`deals/${category.key}`}>
+        <Link key={category.key} route={`deals/${category.key}`}>
           <div className="home-categories-item">
             <div className={`home-categories-item-image ${category.key}`} />
             <p className="home-categories-item-text">
