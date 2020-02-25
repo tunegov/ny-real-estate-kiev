@@ -8,9 +8,7 @@ import {
   API_ACCESS_PASSWORD
 } from '@constants/index';
 
-const axiosInstance = axios.create({
-  baseURL: API_HOST_URL
-});
+const axiosInstance = axios.create({});
 
 export const requestInterceptors = axiosInstance.interceptors.request.use(
   async request => {
