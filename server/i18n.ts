@@ -3,9 +3,6 @@ import NextI18Next from 'next-i18next';
 const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'ua',
   otherLanguages: ['ru'],
-  // localeSubpaths: {
-  //   ru: 'ru'
-  // },
   serverLanguageDetection: true,
   browserLanguageDetection: true
 });

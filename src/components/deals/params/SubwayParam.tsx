@@ -89,7 +89,7 @@ const SubwayLine = ({
         const selected = currentValue.includes(value);
         return (
           <div
-            key={id}
+            key={value + id}
             className={`type-param-values-item ${selected ? 'selected' : ''}`}
             onClick={() => {
               if (selected) {

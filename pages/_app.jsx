@@ -4,8 +4,6 @@ import Head from 'next/head';
 import { appWithTranslation } from '@server/i18n';
 import ReactNotification from 'react-notifications-component';
 
-// import { NotificationContainer } from 'react-notifications';
-
 class MyApp extends App {
   componentDidMount() {
     screen.lockOrientationUniversal =
