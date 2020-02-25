@@ -14,7 +14,7 @@ exports.sendMessageToEmail = async (title, message, email) => {
             message,
             email
         };
-        return await index_1.default.post('send_message', body);
+        return await index_1.default.post('/api/send_message', body);
     }
     catch (err) {
         console.error(err);

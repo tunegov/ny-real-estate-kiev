@@ -7,7 +7,7 @@ const index_1 = __importDefault(require("./index"));
 exports.search = async (currentPage, params) => {
     try {
         const body = Object.assign({ currentPage, rowsPerPage: 50, country_id: 'Ukraine', region_id: 'Київська область', locality_id: 'Київ', geo_search_by: 'city', 'sorter[field]': 'price', 'sorter[direction]': 'asc' }, params);
-        const { data } = await index_1.default.post('/search', body);
+        const { data } = await index_1.default.post('/api/search', body);
         return data.data;
     }
     catch (err) {
@@ -20,7 +20,7 @@ exports.view = async (adid, currency_id) => {
             adid,
             currency_id
         };
-        return await index_1.default.post('/view', body);
+        return await index_1.default.post('/api/view', body);
     }
     catch (err) {
         console.error(err);
@@ -36,7 +36,7 @@ exports.getDistricts = async () => {
             'sorter[field]': 'area',
             'sorter[direction]': 'asc'
         };
-        const { data } = await index_1.default.post('/get_Districts', body);
+        const { data } = await index_1.default.post('/api/get_Districts', body);
         return convertData(data);
     }
     catch (err) {
@@ -53,7 +53,7 @@ exports.getSubway = async () => {
             'sorter[field]': 'area',
             'sorter[direction]': 'asc'
         };
-        const { data } = await index_1.default.post('/get_subway', body);
+        const { data } = await index_1.default.post('/api/get_subway', body);
         return data;
     }
     catch (err) {

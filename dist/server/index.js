@@ -31,7 +31,6 @@ app.prepare().then(() => {
     server.use(express_1.default.static(path_1.default.join(__dirname, '../static')));
     server.use(middleware_1.default(i18n_1.default));
     server.use('/api', api_1.default);
-    server.use('/ru/api', api_1.default);
     server.get('*', (req, res) => handler(req, res));
     server.listen(port);
     // eslint-disable-next-line no-console
