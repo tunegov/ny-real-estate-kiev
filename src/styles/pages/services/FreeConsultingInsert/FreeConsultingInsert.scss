@@ -19,22 +19,39 @@ $services: 'buying_a_property';
     color: #8a7671;
     min-height: 50px;
     padding: 7% 20% 7% 16%;
-    display: grid;
-    grid-template-areas:
-      'num li'
-      'num li'
-      'num li'
-      'num li'
-      'num li'
-      'num li';
-    grid-template-columns: 50px 400px;
-    grid-template-rows: 30px 30px 30px 30px 30px 30px;
-    grid-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-inner {
+      display: flex;
+      flex-direction: row;
+    }
 
     @include phone-and-tablet {
-      padding: 2rem;
+      padding: 1rem;
       left: 1rem;
-      grid-template-columns: 7vw 57vw;
+    }
+
+    &-num {
+      display: flex;
+      background-color: #dabbb5;
+      color: white;
+      padding: 1px;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      text-align: center;
+      margin: 8px;
+    }
+
+    &-li {
+      width: calc(100% - 50px);
+      display: flex;
+      line-height: 41px;
+      word-wrap: break-word;
     }
   }
 
@@ -45,22 +62,5 @@ $services: 'buying_a_property';
     bottom: 20%;
     right: -40px;
     background-color: #dabbb5;
-  }
-
-  &-num {
-    grid-area: num;
-    background-color: #dabbb5;
-    color: white;
-    padding: 1px;
-    width: 30px;
-    border-radius: 50px;
-    text-align: center;
-    margin: 8px;
-  }
-
-  &-li {
-    grid-area: li;
-    line-height: 41px;
-    word-wrap: break-word;
   }
 }

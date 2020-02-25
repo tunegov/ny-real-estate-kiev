@@ -27,20 +27,16 @@ const FreeConsultingInsert = (props: Props) => {
   return (
     <Plx parallaxData={textParalax} className="free-consulting-insert">
       <div className="free-consulting-insert-text">
-        <div className="free-consulting-insert-numbox">
-          {props.items.map((_, i) => (
-            <p key={i} className="free-consulting-insert-num">
+        {props.items.map((item, i) => (
+          <div className="free-consulting-insert-text-inner">
+            <p key={i} className="free-consulting-insert-text-num">
               0{i + 1}
             </p>
-          ))}
-        </div>
-        <div className="free-consulting-insert-libox">
-          {props.items.map((item, i) => (
-            <p key={i} className="free-consulting-insert-li">
+            <p key={i} className="free-consulting-insert-text-li">
               {props.t(item)}
             </p>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
       <div className="free-consulting-insert-line" />
     </Plx>
