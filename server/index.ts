@@ -66,7 +66,7 @@ app.prepare().then(() => {
   });
   server.listen(port);
 
-  createServer(credentials, server).listen(3002, () => {
+  createServer(credentials, server).listen(3001, () => {
     console.log(`> Ready on https://localhost:3001`);
   });
 
