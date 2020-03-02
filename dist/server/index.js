@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const next_1 = __importDefault(require("next"));
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
-const fs_1 = __importDefault(require("fs"));
 const https_1 = require("https");
 const url_1 = require("url");
 const body_parser_1 = __importDefault(require("body-parser"));
@@ -22,13 +21,19 @@ const dev = !isPROD;
 const app = next_1.default({ dev });
 const handler = routes_1.default.getRequestHandler(app);
 const handle = app.getRequestHandler();
-const privateKey = fs_1.default.readFileSync('/etc/letsencrypt/live/ny.com.ua/privkey.pem', 'utf8');
-const certificate = fs_1.default.readFileSync('/etc/letsencrypt/live/ny.com.ua/cert.pem', 'utf8');
-const ca = fs_1.default.readFileSync('/etc/letsencrypt/live/ny.com.ua/chain.pem', 'utf8');
+// const privateKey = fs.readFileSync(
+//   path.join(__dirname, '../../privkey.pem'),
+//   'utf8'
+// );
+// const certificate = fs.readFileSync(
+//   path.join(__dirname, '../../cert.pem'),
+//   'utf8'
+// );
+// const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
 const credentials = {
-    key: privateKey,
-    cert: certificate,
-    ca: ca
+// key: privateKey,
+// cert: certificate,
+// ca: ca
 };
 app.prepare().then(() => {
     const server = express_1.default();

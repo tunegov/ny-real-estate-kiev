@@ -21,20 +21,20 @@ const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
-const privateKey = fs.readFileSync(
-  path.join(__dirname, '../../privkey.pem'),
-  'utf8'
-);
-const certificate = fs.readFileSync(
-  path.join(__dirname, '../../cert.pem'),
-  'utf8'
-);
-const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
+// const privateKey = fs.readFileSync(
+//   path.join(__dirname, '../../privkey.pem'),
+//   'utf8'
+// );
+// const certificate = fs.readFileSync(
+//   path.join(__dirname, '../../cert.pem'),
+//   'utf8'
+// );
+// const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
 
 const credentials = {
-  key: privateKey,
-  cert: certificate,
-  ca: ca
+  // key: privateKey,
+  // cert: certificate,
+  // ca: ca
 };
 
 app.prepare().then(() => {
