@@ -62,10 +62,7 @@ app.prepare().then(() => {
 
   server.listen(port);
 
-  createServer(credentials, (req, res) => {
-    const parsedUrl = parse(req.url!, true);
-    handle(req, res, parsedUrl);
-  }).listen(3001, () => {
+  createServer(credentials).listen(3001, () => {
     console.log(`> Ready on https://localhost:443`);
   });
 
