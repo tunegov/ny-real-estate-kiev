@@ -22,14 +22,14 @@ const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
 const privateKey = fs.readFileSync(
-  path.join(__dirname, '../privkey.pem'),
+  path.join(__dirname, '../../privkey.pem'),
   'utf8'
 );
 const certificate = fs.readFileSync(
-  path.join(__dirname, '../cert.pem'),
+  path.join(__dirname, '../../cert.pem'),
   'utf8'
 );
-const ca = fs.readFileSync(path.join(__dirname, '../chain.pem', 'utf8'));
+const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
 
 const credentials = {
   key: privateKey,
