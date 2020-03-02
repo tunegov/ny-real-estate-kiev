@@ -51,7 +51,10 @@ app.prepare().then(() => {
   server.use(nextI18NextMiddleware(nextI18next));
   server.use('/api', api);
 
-  server.get('*', (req, res) => handler(req, res));
+  server.get('*', (req, res) => {
+    console.log(req);
+    handler(req, res);
+  });
 
   server.listen(port);
 

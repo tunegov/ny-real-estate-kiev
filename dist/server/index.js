@@ -8,7 +8,6 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const https_1 = require("https");
-const url_1 = require("url");
 const body_parser_1 = __importDefault(require("body-parser"));
 const middleware_1 = __importDefault(require("next-i18next/middleware"));
 const api_1 = __importDefault(require("./api"));
@@ -21,13 +20,12 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next_1.default({ dev });
 const handler = routes_1.default.getRequestHandler(app);
 const handle = app.getRequestHandler();
-const privateKey = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../pk.pem'), 'utf8');
-const certificate = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../fc.pem'), 'utf8');
-const ca = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../fc.pem'), 'utf8');
+const key = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../pk.pem'));
+const cert = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../fc.pem'));
+// const ca = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
 const credentials = {
-    key: privateKey,
-    cert: certificate,
-    ca: ca
+    key,
+    cert
 };
 app.prepare().then(() => {
     const server = express_1.default();
@@ -46,11 +44,8 @@ app.prepare().then(() => {
     server.use('/api', api_1.default);
     server.get('*', (req, res) => handler(req, res));
     server.listen(port);
-    https_1.createServer(credentials, (req, res) => {
-        const parsedUrl = url_1.parse(req.url, true);
-        handle(req, res, parsedUrl);
-    }).listen(443, () => {
-        console.log(`> Ready on https://localhost:${port}`);
+    https_1.createServer(credentials, server).listen(3001, () => {
+        console.log(`> Ready on https://localhost:3001`);
     });
     // eslint-disable-next-line no-console
     console.log(`> Server listening at http://localhost:${port} as ${dev ? 'development' : process.env.NODE_ENV}`);
