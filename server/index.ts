@@ -10,8 +10,10 @@ import api from './api';
 import nextI18next from './i18n';
 import routes from './routes';
 
-const port = parseInt(process.env.PORT || '3000', 10);
-const dev = process.env.NODE_ENV !== 'production';
+const isPROD = true;
+
+const port = parseInt(process.env.PORT || '80', 10);
+const dev = !isPROD;
 const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 
