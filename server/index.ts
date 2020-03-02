@@ -19,8 +19,8 @@ const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
-const key = fs.readFileSync(path.join(__dirname, '../../pk.pem'), 'utf8');
-const cert = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
+const key = fs.readFileSync(path.join(__dirname, '../../pk.pem'));
+const cert = fs.readFileSync(path.join(__dirname, '../../fc.pem'));
 // const ca = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
 
 const credentials = {
