@@ -1,6 +1,8 @@
 import next from 'next';
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
+import https from 'https';
 import bodyParser from 'body-parser';
 import nextI18NextMiddleware from 'next-i18next/middleware';
 import api from './api';
@@ -16,6 +18,25 @@ const port = parseInt(process.env.PORT || '80', 10);
 const dev = !isPROD;
 const app = next({ dev });
 const handler = routes.getRequestHandler(app);
+
+const privateKey = fs.readFileSync(
+  '/etc/letsencrypt/live/yourdomain.com/privkey.pem',
+  'utf8'
+);
+const certificate = fs.readFileSync(
+  '/etc/letsencrypt/live/yourdomain.com/cert.pem',
+  'utf8'
+);
+const ca = fs.readFileSync(
+  '/etc/letsencrypt/live/yourdomain.com/chain.pem',
+  'utf8'
+);
+
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
 
 app.prepare().then(() => {
   const server = express();
@@ -43,6 +64,12 @@ app.prepare().then(() => {
   server.get('*', (req, res) => handler(req, res));
 
   server.listen(port);
+
+  const httpsServer = https.createServer(credentials, server);
+
+  httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
+  });
 
   // eslint-disable-next-line no-console
   console.log(
