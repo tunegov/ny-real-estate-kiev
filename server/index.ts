@@ -22,14 +22,14 @@ const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
 const privateKey = fs.readFileSync(
-  '/etc/letsencrypt/live/ny.com.ua/privkey.pem',
+  path.join(__dirname, '../privkey.pem'),
   'utf8'
 );
 const certificate = fs.readFileSync(
-  '/etc/letsencrypt/live/ny.com.ua/cert.pem',
+  path.join(__dirname, '../cert.pem'),
   'utf8'
 );
-const ca = fs.readFileSync('/etc/letsencrypt/live/ny.com.ua/chain.pem', 'utf8');
+const ca = fs.readFileSync(path.join(__dirname, '../chain.pem', 'utf8'));
 
 const credentials = {
   key: privateKey,
