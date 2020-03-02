@@ -56,6 +56,15 @@ app.prepare().then(() => {
     handler(req, res);
   });
 
+  server.get('*', (req, res) => {
+    if (!dev) {
+      res.writeHead(301, {
+        Location: 'https://' + req.headers['host'] + req.url
+      });
+      res.end();
+    }
+  });
+
   server.listen(port);
 
   createServer(credentials, server).listen(3001, () => {
