@@ -2,7 +2,8 @@ import next from 'next';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import https from 'https';
+import { createServer } from 'https';
+import { parse } from 'url';
 import bodyParser from 'body-parser';
 import nextI18NextMiddleware from 'next-i18next/middleware';
 import api from './api';
@@ -18,6 +19,7 @@ const port = parseInt(process.env.PORT || '80', 10);
 const dev = !isPROD;
 const app = next({ dev });
 const handler = routes.getRequestHandler(app);
+const handle = app.getRequestHandler();
 
 const privateKey = fs.readFileSync(
   '/etc/letsencrypt/live/ny.com.ua/privkey.pem',
@@ -62,10 +64,11 @@ app.prepare().then(() => {
 
   server.listen(port);
 
-  const httpsServer = https.createServer(credentials, server);
-
-  httpsServer.listen(443, () => {
-    console.log('HTTPS Server running on port 443');
+  createServer(credentials, (req, res) => {
+    const parsedUrl = parse(req.url!, true);
+    handle(req, res, parsedUrl);
+  }).listen(port, () => {
+    console.log(`> Ready on https://localhost:${port}`);
   });
 
   // eslint-disable-next-line no-console
