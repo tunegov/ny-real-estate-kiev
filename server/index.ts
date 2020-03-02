@@ -13,29 +13,27 @@ import api from './api';
 import nextI18next from './i18n';
 import routes from './routes';
 
-const isPROD = true;
-
-const port = parseInt(process.env.PORT || '80', 10);
-const dev = !isPROD;
+const port = parseInt(process.env.PORT || '3000', 10);
+const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
-// const privateKey = fs.readFileSync(
-//   path.join(__dirname, '../../privkey.pem'),
-//   'utf8'
-// );
-// const certificate = fs.readFileSync(
-//   path.join(__dirname, '../../cert.pem'),
-//   'utf8'
-// );
-// const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
+const privateKey = fs.readFileSync(
+  path.join(__dirname, '../../pk.pem'),
+  'utf8'
+);
+const certificate = fs.readFileSync(
+  path.join(__dirname, '../../fc.pem'),
+  'utf8'
+);
+const ca = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
 
-// const credentials = {
-//   key: privateKey,
-//   cert: certificate,
-//   ca: ca
-// };
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
 
 app.prepare().then(() => {
   const server = express();
@@ -64,12 +62,12 @@ app.prepare().then(() => {
 
   server.listen(port);
 
-  // createServer(credentials, (req, res) => {
-  //   const parsedUrl = parse(req.url!, true);
-  //   handle(req, res, parsedUrl);
-  // }).listen(port, () => {
-  //   console.log(`> Ready on https://localhost:${port}`);
-  // });
+  createServer(credentials, (req, res) => {
+    const parsedUrl = parse(req.url!, true);
+    handle(req, res, parsedUrl);
+  }).listen(443, () => {
+    console.log(`> Ready on https://localhost:443`);
+  });
 
   // eslint-disable-next-line no-console
   console.log(

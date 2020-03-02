@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const next_1 = __importDefault(require("next"));
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
+const https_1 = require("https");
+const url_1 = require("url");
 const body_parser_1 = __importDefault(require("body-parser"));
 const middleware_1 = __importDefault(require("next-i18next/middleware"));
 const api_1 = __importDefault(require("./api"));
@@ -13,26 +16,19 @@ const api_1 = __importDefault(require("./api"));
 // #region Local Imports
 const i18n_1 = __importDefault(require("./i18n"));
 const routes_1 = __importDefault(require("./routes"));
-const isPROD = true;
-const port = parseInt(process.env.PORT || '80', 10);
-const dev = !isPROD;
+const port = parseInt(process.env.PORT || '3000', 10);
+const dev = process.env.NODE_ENV !== 'production';
 const app = next_1.default({ dev });
 const handler = routes_1.default.getRequestHandler(app);
 const handle = app.getRequestHandler();
-// const privateKey = fs.readFileSync(
-//   path.join(__dirname, '../../privkey.pem'),
-//   'utf8'
-// );
-// const certificate = fs.readFileSync(
-//   path.join(__dirname, '../../cert.pem'),
-//   'utf8'
-// );
-// const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
-// const credentials = {
-//   key: privateKey,
-//   cert: certificate,
-//   ca: ca
-// };
+const privateKey = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../pk.pem'), 'utf8');
+const certificate = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../fc.pem'), 'utf8');
+const ca = fs_1.default.readFileSync(path_1.default.join(__dirname, '../../fc.pem'), 'utf8');
+const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+};
 app.prepare().then(() => {
     const server = express_1.default();
     app.setAssetPrefix(process.env.STATIC_PATH);
@@ -50,12 +46,12 @@ app.prepare().then(() => {
     server.use('/api', api_1.default);
     server.get('*', (req, res) => handler(req, res));
     server.listen(port);
-    // createServer(credentials, (req, res) => {
-    //   const parsedUrl = parse(req.url!, true);
-    //   handle(req, res, parsedUrl);
-    // }).listen(port, () => {
-    //   console.log(`> Ready on https://localhost:${port}`);
-    // });
+    https_1.createServer(credentials, (req, res) => {
+        const parsedUrl = url_1.parse(req.url, true);
+        handle(req, res, parsedUrl);
+    }).listen(443, () => {
+        console.log(`> Ready on https://localhost:${port}`);
+    });
     // eslint-disable-next-line no-console
     console.log(`> Server listening at http://localhost:${port} as ${dev ? 'development' : process.env.NODE_ENV}`);
 });
