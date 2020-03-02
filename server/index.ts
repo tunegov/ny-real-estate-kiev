@@ -35,6 +35,8 @@ app.prepare().then(() => {
   });
 
   server.use(express.static(path.join(__dirname, '../static')));
+  server.use('/', express.static('public'));
+
   server.use(nextI18NextMiddleware(nextI18next));
   server.use('/api', api);
 
