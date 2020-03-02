@@ -31,11 +31,11 @@ const handle = app.getRequestHandler();
 // );
 // const ca = fs.readFileSync(path.join(__dirname, '../../chain.pem', 'utf8'));
 
-const credentials = {
-  // key: privateKey,
-  // cert: certificate,
-  // ca: ca
-};
+// const credentials = {
+//   key: privateKey,
+//   cert: certificate,
+//   ca: ca
+// };
 
 app.prepare().then(() => {
   const server = express();
@@ -64,12 +64,12 @@ app.prepare().then(() => {
 
   server.listen(port);
 
-  createServer(credentials, (req, res) => {
-    const parsedUrl = parse(req.url!, true);
-    handle(req, res, parsedUrl);
-  }).listen(port, () => {
-    console.log(`> Ready on https://localhost:${port}`);
-  });
+  // createServer(credentials, (req, res) => {
+  //   const parsedUrl = parse(req.url!, true);
+  //   handle(req, res, parsedUrl);
+  // }).listen(port, () => {
+  //   console.log(`> Ready on https://localhost:${port}`);
+  // });
 
   // eslint-disable-next-line no-console
   console.log(
