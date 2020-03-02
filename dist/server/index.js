@@ -33,6 +33,16 @@ app.prepare().then(() => {
     server.use(body_parser_1.default.urlencoded({ extended: false }));
     // Parse application/json
     server.use(body_parser_1.default.json());
+    server.use((req, res, next) => {
+        if (req.secure) {
+            // request was via https, so do no special handling
+            next();
+        }
+        else {
+            // request was via http, so redirect to https
+            res.redirect('https://' + req.headers.host + req.url);
+        }
+    });
     server.use(function (req, res, next) {
         res.header('Access-Control-Allow-Origin', '*');
         res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -42,9 +52,11 @@ app.prepare().then(() => {
     server.use('/', express_1.default.static('public'));
     server.use(middleware_1.default(i18n_1.default));
     server.use('/api', api_1.default);
-    server.get('*', (req, res) => handler(req, res));
+    server.get('*', (req, res) => {
+        handler(req, res);
+    });
     server.listen(port);
-    https_1.createServer(credentials, server).listen(3001, () => {
+    https_1.createServer(credentials, server).listen(3002, () => {
         console.log(`> Ready on https://localhost:3001`);
     });
     // eslint-disable-next-line no-console

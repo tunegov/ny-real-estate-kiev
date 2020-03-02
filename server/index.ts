@@ -36,6 +36,16 @@ app.prepare().then(() => {
   // Parse application/json
   server.use(bodyParser.json());
 
+  server.use((req, res, next) => {
+    if (req.secure) {
+      // request was via https, so do no special handling
+      next();
+    } else {
+      // request was via http, so redirect to https
+      res.redirect('https://' + req.headers.host + req.url);
+    }
+  });
+
   server.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header(
@@ -52,22 +62,11 @@ app.prepare().then(() => {
   server.use('/api', api);
 
   server.get('*', (req, res) => {
-    console.log(req);
     handler(req, res);
   });
-
-  server.get('*', (req, res) => {
-    if (!dev) {
-      res.writeHead(301, {
-        Location: 'https://' + req.headers['host'] + req.url
-      });
-      res.end();
-    }
-  });
-
   server.listen(port);
 
-  createServer(credentials, server).listen(3001, () => {
+  createServer(credentials, server).listen(3002, () => {
     console.log(`> Ready on https://localhost:3001`);
   });
 
