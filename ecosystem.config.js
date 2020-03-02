@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'ny',
-      script: './dist/servet/index.js',
+      script: './dist/server/index.js',
       env: {
         PORT: 3000,
         NODE_ENV: 'development'
