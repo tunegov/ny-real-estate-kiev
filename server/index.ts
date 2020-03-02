@@ -19,20 +19,13 @@ const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
-const privateKey = fs.readFileSync(
-  path.join(__dirname, '../../pk.pem'),
-  'utf8'
-);
-const certificate = fs.readFileSync(
-  path.join(__dirname, '../../fc.pem'),
-  'utf8'
-);
-const ca = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
+const key = fs.readFileSync(path.join(__dirname, '../../pk.pem'), 'utf8');
+const cert = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
+// const ca = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
 
 const credentials = {
-  key: privateKey,
-  cert: certificate,
-  ca: ca
+  key,
+  cert
 };
 
 app.prepare().then(() => {
@@ -62,8 +55,8 @@ app.prepare().then(() => {
 
   server.listen(port);
 
-  createServer(credentials).listen(3001, () => {
-    console.log(`> Ready on https://localhost:443`);
+  createServer(credentials, server).listen(3001, () => {
+    console.log(`> Ready on https://localhost:3001`);
   });
 
   // eslint-disable-next-line no-console
