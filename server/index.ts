@@ -20,17 +20,14 @@ const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 
 const privateKey = fs.readFileSync(
-  '/etc/letsencrypt/live/yourdomain.com/privkey.pem',
+  '/etc/letsencrypt/live/ny.com.ua/privkey.pem',
   'utf8'
 );
 const certificate = fs.readFileSync(
-  '/etc/letsencrypt/live/yourdomain.com/cert.pem',
+  '/etc/letsencrypt/live/ny.com.ua/cert.pem',
   'utf8'
 );
-const ca = fs.readFileSync(
-  '/etc/letsencrypt/live/yourdomain.com/chain.pem',
-  'utf8'
-);
+const ca = fs.readFileSync('/etc/letsencrypt/live/ny.com.ua/chain.pem', 'utf8');
 
 const credentials = {
   key: privateKey,
