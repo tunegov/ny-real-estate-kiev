@@ -26,6 +26,10 @@ class MyApp extends App {
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"
           />
           <meta name="theme-color" content="#f9f9f9" />
+          <meta
+            property="og:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
         </Head>
         <ReactNotification />
         <Component {...pageProps} />

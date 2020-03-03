@@ -8,6 +8,7 @@ import Content from '@components/Content';
 
 import { view } from '@api/deals';
 import { DealView } from '@type/deals';
+import { parseImg } from '@utils/deals';
 
 interface Props extends WithTranslation {
   id?: string;
@@ -54,14 +55,38 @@ class DealViewPage extends React.Component<Props, State> {
     );
   }
 
+  renderMetaTags() {
+    const item = this.props.item!;
+
+    const title = `${
+      item.property_complex ? item.property_complex + ' - ' : ''
+    }${item.adid}`;
+
+    const address = `${item.district}${
+      item.street_alias ? ', ' + item.street_alias : ''
+    }${item.housestr ? ', ' + item.housestr : ''}`;
+
+    const img = parseImg(item.media!.src_small);
+
+    return (
+      <>
+        <title>{title}</title>
+
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={address} />
+        <meta
+          property="og:url"
+          content={`https://ny.com.ua${this.props.router.asPath}`}
+        />
+        <meta property="og:image" content={img} />
+      </>
+    );
+  }
+
   render() {
-    const { id } = this.props.router.query;
-    console.log(this.props);
     return (
       <div>
-        <Head>
-          <title>{id}</title>
-        </Head>
+        <Head>{this.renderMetaTags()}</Head>
 
         <Content>{this.renderContent()}</Content>
       </div>

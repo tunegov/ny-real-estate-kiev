@@ -38,6 +38,8 @@ class HomePage extends React.Component<Props> {
       <div>
         <Head>
           <title>{t('home.title')}</title>
+          <meta property="og:title" content={t('home.title')} />
+
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
