@@ -22,6 +22,16 @@ class PartnersPage extends React.Component<Props> {
       <div>
         <Head>
           <title>{t('partners.title')}</title>
+          <meta property="og:title" content={t('partners.title')} />
+          <meta
+            property="og:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
+          <meta name="twitter:title" content={t('partners.title')} />
+          <meta
+            name="twitter:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
         </Head>
 
         <Content>

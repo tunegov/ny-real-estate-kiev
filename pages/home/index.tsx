@@ -39,7 +39,10 @@ class HomePage extends React.Component<Props> {
         <Head>
           <title>{t('home.title')}</title>
           <meta property="og:title" content={t('home.title')} />
-
+          <meta
+            property="og:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

@@ -83,6 +83,16 @@ class DealsPage extends React.Component<Props, State & Partial<Params>> {
       <div>
         <Head>
           <title>{title}</title>
+          <meta property="og:title" content={title} />
+          <meta
+            property="og:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
+          <meta name="twitter:title" content={title} />
+          <meta
+            name="twitter:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
         </Head>
 
         <Content>

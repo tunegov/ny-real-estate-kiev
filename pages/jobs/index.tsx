@@ -50,6 +50,16 @@ class JobsPage extends React.Component<Props> {
       <div>
         <Head>
           <title>{t('jobs.title')}</title>
+          <meta property="og:title" content={t('jobs.title')} />
+          <meta
+            property="og:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
+          <meta name="twitter:title" content={t('jobs.title')} />
+          <meta
+            name="twitter:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
         </Head>
 
         <Content>

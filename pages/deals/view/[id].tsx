@@ -81,10 +81,7 @@ class DealViewPage extends React.Component<Props, State> {
         <meta property="og:image" content={img} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={address} />
-        <meta
-          name="twitter:image"
-          content={`https://ny.com.ua${this.props.router.asPath}`}
-        />
+        <meta name="twitter:image" content={img} />
         <meta name="twitter:card" content="summary_large_image" />
       </>
     );

@@ -56,6 +56,16 @@ class ServicesPage extends React.Component<Props> {
       <div>
         <Head>
           <title>{this.props.title}</title>
+          <meta property="og:title" content={this.props.title} />
+          <meta
+            property="og:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
+          <meta name="twitter:title" content={this.props.title} />
+          <meta
+            name="twitter:image"
+            content="https://ny.com.ua/static/images/logo-without-text.png"
+          />
         </Head>
         <Content>
           {this.renderServiceContent()}
