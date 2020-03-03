@@ -12,6 +12,7 @@ const Header = () => {
       <Menu />
       <a className="logo-block" href="/">
         <Logo />
+        <h1>Агентство недвижимости "NEW-YORK"</h1>
       </a>
       <a href={`tel:${number}`} className="number">
         {number}

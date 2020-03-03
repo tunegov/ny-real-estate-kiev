@@ -4,11 +4,13 @@ header.header {
   height: 100px;
   padding: 0 50px;
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 2fr auto 2fr;
   align-items: center;
   background-color: white;
 
   @include phone-and-tablet {
+    grid-template-columns: 1fr 2fr 1.5fr;
+
     padding: 0 10px;
     height: 60px;
   }
@@ -17,6 +19,23 @@ header.header {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+
+    h1 {
+      margin-left: 2rem;
+      font-size: 40px;
+      font-family: 'Lato', sans-serif;
+      color: $color-brown-background;
+      font-weight: normal;
+      text-decoration: none;
+
+      @include phone-and-tablet {
+        font-size: 12px;
+        margin-left: 1rem;
+
+        word-break: break-word;
+      }
+    }
   }
 
   .number {
