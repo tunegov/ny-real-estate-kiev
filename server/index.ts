@@ -31,17 +31,6 @@ const credentials = {
 app.prepare().then(() => {
   const server = express();
 
-  // server.get('/sitemap.xml', function(req, res) {
-  //   res.header('Content-Type', 'application/xml');
-  //   (async function sendXML() {
-  //     let xmlFile = await createSitemap();
-  //     // Send it to the browser
-  //     res.send(xmlFile);
-  //     // Create a file on the selected destination
-  //     fs.writeFileSync(DESTINATION, xmlFile);
-  //   })();
-  // });
-
   app.setAssetPrefix(process.env.STATIC_PATH);
   server.use(bodyParser.urlencoded({ extended: false }));
   // Parse application/json
@@ -73,7 +62,6 @@ app.prepare().then(() => {
   server.use('/api', api);
 
   server.get('*', (req, res) => {
-    console.log(req.method, req.url);
     handler(req, res);
   });
   server.listen(port);

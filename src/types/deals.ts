@@ -271,6 +271,8 @@ export interface DealView {
   'deal.value': string;
   'property.value': string;
   'prop_kind.value': string;
+  lat: string;
+  lng: string;
   advert_id: number;
   users: any[];
   transport: string;

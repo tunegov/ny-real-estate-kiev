@@ -4,11 +4,15 @@ import GoogleMapReact from 'google-map-react';
 
 import '@styles/pages/contacts/ContactsMap.scss';
 
-const Marker = (props: any) => (
+export const Marker = (props: any) => (
   <a
     className="marker"
     target="_blank"
-    href="https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б">
+    href={
+      props.disable
+        ? undefined
+        : 'https://maps.google.com/?q=г. Киев, улица О.Гончара 47Б'
+    }>
     <div className="marker-inner">
       <div className="marker-inner-inner">
         <div className="marker-inner-inner-inner" />
