@@ -8,7 +8,9 @@ import {
   API_ACCESS_PASSWORD
 } from '@constants/index';
 
-const axiosInstance = axios.create({});
+const axiosInstance = axios.create({
+  baseURL: 'https://ny.com.ua'
+});
 
 export const requestInterceptors = axiosInstance.interceptors.request.use(
   async request => {

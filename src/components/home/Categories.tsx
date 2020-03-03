@@ -13,9 +13,6 @@ const CATEGORIES = [
     key: 'flats'
   },
   {
-    key: 'offices'
-  },
-  {
     key: 'homes'
   }
 ];

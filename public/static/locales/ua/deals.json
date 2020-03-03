@@ -23,7 +23,7 @@
     "params": {
       "type": {
         "rent_long": "Аренда",
-        "sell": "Купівля"
+        "sell": "Продаж"
       },
       "class": {
         "title": "Клас",

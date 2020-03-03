@@ -1,13 +1,13 @@
 {
   "home": {
-    "title": "NY real estate kiev",
+    "title": "Агентство нерухомості \"NEW-YORK\"",
     "header": {
       "button": {
         "text": "Підібрати нерухомість"
       }
     },
     "categories": {
-      "retail": "торгова нерухомість",
+      "retail": "комерційна нерухомість",
       "flats": "квартири",
       "offices": "офісна нерухомість",
       "homes": "будинки/ділянки"

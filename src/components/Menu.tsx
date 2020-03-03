@@ -108,7 +108,12 @@ const MenuLink = ({
 
 const Menu = ({ t }: MenuProps) => {
   const [open, setOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('ua');
   const router = useRouter();
+
+  useEffect(() => {
+    setCurrentLanguage(i18n.i18n.language || i18n.config.defaultLanguage);
+  });
 
   router.events?.on('routeChangeStart', () => {
     closeMenu();
@@ -138,12 +143,12 @@ const Menu = ({ t }: MenuProps) => {
 
           <div className="menu-inner-lang">
             <div
-              className={i18n.i18n.language === 'ua' ? 'active' : ''}
+              className={currentLanguage === 'ua' ? 'active' : ''}
               onClick={() => i18n.i18n.changeLanguage('ua')}>
               UA
             </div>
             <div
-              className={i18n.i18n.language === 'ru' ? 'active' : ''}
+              className={currentLanguage === 'ru' ? 'active' : ''}
               onClick={() => i18n.i18n.changeLanguage('ru')}>
               RU
             </div>

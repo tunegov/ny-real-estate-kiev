@@ -19,8 +19,8 @@ const app = next({ dev });
 const handler = routes.getRequestHandler(app);
 const handle = app.getRequestHandler();
 
-const key = fs.readFileSync(path.join(__dirname, '../../pk.pem'));
-const cert = fs.readFileSync(path.join(__dirname, '../../fc.pem'));
+const key = dev ? '' : fs.readFileSync(path.join(__dirname, '../../pk.pem'));
+const cert = dev ? '' : fs.readFileSync(path.join(__dirname, '../../fc.pem'));
 // const ca = fs.readFileSync(path.join(__dirname, '../../fc.pem'), 'utf8');
 
 const credentials = {
@@ -37,7 +37,7 @@ app.prepare().then(() => {
   server.use(bodyParser.json());
 
   server.use((req, res, next) => {
-    if (req.secure) {
+    if (dev || req.secure) {
       // request was via https, so do no special handling
       next();
     } else {
@@ -66,9 +66,11 @@ app.prepare().then(() => {
   });
   server.listen(port);
 
-  createServer(credentials, server).listen(3001, () => {
-    console.log(`> Ready on https://localhost:3001`);
-  });
+  if (!dev) {
+    createServer(credentials, server).listen(3001, () => {
+      console.log(`> Ready on https://localhost:3001`);
+    });
+  }
 
   // eslint-disable-next-line no-console
   console.log(

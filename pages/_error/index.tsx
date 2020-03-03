@@ -2,13 +2,24 @@ import * as React from 'react';
 import { NextPage } from 'next';
 
 import { withTranslation } from '@server/i18n';
+import Content from '@components/Content';
+
+import '@styles/pages/error/NotFound.scss';
 
 const Error: NextPage<any, any> = ({ t, statusCode }) => {
   return (
-    <div>
-      {t('common:Error')}
-      {statusCode}
-    </div>
+    <Content>
+      <div id="notfound">
+        <div className="notfound">
+          <div className="notfound-404">
+            <h1>
+              4<span>0</span>4
+            </h1>
+          </div>
+          <h2>{t('common.404')}</h2>
+        </div>
+      </div>
+    </Content>
   );
 };
 

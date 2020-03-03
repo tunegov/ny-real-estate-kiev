@@ -1,6 +1,6 @@
 import axios from './index';
 
-import { Params, PriceCurrency } from '@type/deals';
+import { Params, PriceCurrency, DealView } from '@type/deals';
 
 export const search = async (currentPage: number, params: Partial<Params>) => {
   try {
@@ -24,14 +24,19 @@ export const search = async (currentPage: number, params: Partial<Params>) => {
   }
 };
 
-export const view = async (adid: string, currency_id: PriceCurrency) => {
+export const view = async (
+  adid: string,
+  currency_id: PriceCurrency = 'UAH'
+) => {
   try {
     const body = {
       adid,
       currency_id
     };
 
-    return await axios.post('/api/view', body);
+    const { data } = await axios.post('/api/view', body);
+
+    return data as DealView;
   } catch (err) {
     console.error(err);
   }
