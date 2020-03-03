@@ -9,7 +9,7 @@ header.header {
   background-color: white;
 
   @include phone-and-tablet {
-    grid-template-columns: 1fr 2fr 1.5fr;
+    grid-template-columns: 0.75fr 2.5fr 2fr;
 
     padding: 0 10px;
     height: 60px;
