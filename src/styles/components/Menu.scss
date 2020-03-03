@@ -137,6 +137,10 @@
     & + .inner-links {
       padding-inline-start: 0px;
 
+      &.hidden {
+        display: none;
+      }
+
       li.selected a {
         color: $color-black;
       }

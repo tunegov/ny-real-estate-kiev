@@ -95,8 +95,8 @@ const MenuLink = ({
           </Link>
         )}
       </li>
-      {!collapsed && hasInnerLinks && (
-        <ul className="inner-links">
+      {hasInnerLinks && (
+        <ul className={`inner-links ${!collapsed ? '' : 'hidden'}`}>
           {innerLinks?.map(link => (
             <MenuLink router={router} t={t} key={link.label} {...link} />
           ))}
