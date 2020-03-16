@@ -48,7 +48,7 @@ const SubwayParam = ({ t, currentValue, onChange, field }: Props) => {
       </div>
       {visible && (
         <div
-          className="type-param-values"
+          className="type-param-values row"
           onMouseEnter={() => setVisible(true)}
           onMouseLeave={() => setVisible(false)}>
           {values?.map(val => (
@@ -83,14 +83,16 @@ const SubwayLine = ({
   type
 }: SubwayLineProps) => {
   return (
-    <div className={`type-param-values-block ${type}`}>
+    <div className={`type-param-values-block row ${type}`}>
       <div className={`type-param-values-block-circle ${type}`} />
       {items.map(({ value, id }) => {
         const selected = currentValue.includes(value);
         return (
           <div
             key={value + id}
-            className={`type-param-values-item ${selected ? 'selected' : ''}`}
+            className={`type-param-values-item row ${
+              selected ? 'selected' : ''
+            }`}
             onClick={() => {
               if (selected) {
                 const index = currentValue.indexOf(value);
@@ -100,6 +102,7 @@ const SubwayLine = ({
                 onChange(field, [...currentValue, value]);
               }
             }}>
+            <input type="checkbox" checked={selected} />
             {value}
           </div>
         );

@@ -35,9 +35,12 @@ const DistrictParam = ({ t, currentValue, onChange, field }: Props) => {
       </div>
       {visible && (
         <div
-          className="type-param-values"
+          className="type-param-values column"
           onMouseEnter={() => setVisible(true)}
           onMouseLeave={() => setVisible(false)}>
+          <div className="type-param-values-title">
+            {t(`deals.params.districts.params_title`)}
+          </div>
           {values?.map(({ value, id }) => {
             const selected = currentValue.includes(value);
             return (
@@ -55,6 +58,8 @@ const DistrictParam = ({ t, currentValue, onChange, field }: Props) => {
                     onChange(field, [...currentValue, value]);
                   }
                 }}>
+                <input type="checkbox" checked={selected} />
+
                 {value}
               </div>
             );

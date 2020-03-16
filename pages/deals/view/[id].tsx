@@ -6,6 +6,7 @@ import { withTranslation } from '@server/i18n';
 import GoogleMapReact from 'google-map-react';
 import Head from 'next/head';
 import Content from '@components/Content';
+import get from 'lodash/get';
 
 import { GOOGLE_MAPS_KEY } from '@constants/index';
 import { view } from '@api/deals';
@@ -14,6 +15,70 @@ import { parseImg } from '@utils/deals';
 
 import '@styles/pages/deals/view/DealView.scss';
 import { Marker } from '@components/contacts/ContactsMap';
+
+type Prop = {
+  key: string;
+  default: string;
+  translate?: boolean;
+};
+
+const PROPS: Prop[] = [
+  {
+    key: 'housing_class',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'transport',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'subway_station',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'storey',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'storeys',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'room_count',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'bedroom_count',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'bathroom_count',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'balcony_count',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'repair',
+    default: '',
+    translate: false
+  },
+  {
+    key: 'base_price',
+    default: '',
+    translate: false
+  }
+];
 
 interface Props extends WithTranslation {
   id?: string;
@@ -41,9 +106,29 @@ class DealViewPage extends React.Component<Props, State> {
     }));
   }
 
+  renderPropsItem(prop: Prop) {
+    const { t, item } = this.props!;
+
+    const value = get(item, prop.key, prop.default);
+    if (!value) {
+      return null;
+    }
+
+    return (
+      <div className="deal-view-content-top-props-item">
+        <div className="deal-view-content-top-props-item-left">
+          {t(`deals.view.prop.${prop.key}`)}:
+        </div>
+        <div className="deal-view-content-top-props-item-right"></div>
+        {prop.translate ? t(`deals.view.prop.values.${value}`) : value}
+      </div>
+    );
+  }
+
   renderContent() {
     const { t } = this.props!;
     const item = this.props.item!;
+    console.log(item);
 
     if (!item.adid) {
       return null;
@@ -77,6 +162,9 @@ class DealViewPage extends React.Component<Props, State> {
             </div>
             <div className="deal-view-content-top-props">
               <h3>{t('deals.view.props')}</h3>
+              <div className="deal-view-content-top-props-values">
+                {PROPS.map(this.renderPropsItem.bind(this))}
+              </div>
               <div className="deal-view-content-top-props-pattern"></div>
             </div>
           </div>

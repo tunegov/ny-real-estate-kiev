@@ -124,7 +124,7 @@ const Footer = ({ t }: Props) => {
   const renderLinks = () => {
     return (
       <div className="footer-links">
-        <div className="footer-links-inner">
+        {/* <div className="footer-links-inner">
           <div className="footer-links-col">
             {LINKS_1.map(link => (
               <p key={link.key} className="footer-link">
@@ -146,7 +146,7 @@ const Footer = ({ t }: Props) => {
               </p>
             ))}
           </div>
-        </div>
+        </div> */}
         <div className="footer-social">
           {SOCIAL_LINKS.map((link, index) => (
             <a
@@ -170,16 +170,14 @@ const Footer = ({ t }: Props) => {
           onChange={e => setEmail(e.target.value)}
         />
         <Button onClick={onSubscribe} title={t('footer.subscribe.button')} />
+        {renderLinks()}
       </div>
     );
   };
 
   return (
     <footer className="footer">
-      <div className="footer-content">
-        {renderLinks()}
-        {renderSubscripe()}
-      </div>
+      <div className="footer-content">{renderSubscripe()}</div>
       <div className="footer-image" />
     </footer>
   );

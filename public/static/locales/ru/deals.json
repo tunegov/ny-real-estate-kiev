@@ -32,7 +32,8 @@
         "elit": "Элитный"
       },
       "districts": {
-        "title": "Районы"
+        "title": "Районы",
+        "params_title": "Административные районы"
       },
       "subways": {
         "title": "Метро"
@@ -58,7 +59,20 @@
       }
     },
     "view": {
-      "props": "ХАРАКТЕРИСТИКИ"
+      "props": "ХАРАКТЕРИСТИКИ",
+      "prop": {
+        "housing_class": "Тип дома",
+        "transport": "Как добраться",
+        "subway_station": "Станция метро",
+        "storey": "Этаж",
+        "storeys": "Этажность",
+        "room_count": "Количество комнат",
+        "bedroom_count": "Количество уборных",
+        "bathroom_count": "Количество ванных комнат",
+        "balcony_count": "Количество балконов",
+        "repair": "Ремонт",
+        "base_price": "Базовая цена"
+      }
     }
   }
 }

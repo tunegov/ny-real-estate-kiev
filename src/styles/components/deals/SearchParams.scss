@@ -42,6 +42,27 @@
     padding: 1rem;
     z-index: 9999;
 
+    &-title {
+      padding: 0 0 1rem 2rem;
+      font-size: 20px;
+      color: black;
+    }
+
+    &.row {
+      flex-direction: row;
+      overflow: scroll;
+      max-height: 50vh;
+      width: calc(100% - 2vw);
+    }
+
+    &.column {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: scroll;
+      max-height: 50vh;
+      width: calc(100% - 2vw);
+    }
+
     @include phone-and-tablet {
       top: 76px;
     }
@@ -108,6 +129,11 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      flex-direction: row;
+
+      &.row {
+        display: block;
+      }
 
       &-circle {
         width: 20px;
@@ -167,6 +193,14 @@
     &-item {
       padding: 1rem 2rem;
       cursor: pointer;
+
+      &.row {
+        padding: 1rem 0.5rem 0.5rem 0;
+      }
+
+      input[type='checkbox'] {
+        margin-right: 0.5rem;
+      }
 
       &.selected {
         color: $color-black;

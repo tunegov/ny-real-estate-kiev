@@ -32,7 +32,8 @@
         "elit": "Елітний"
       },
       "districts": {
-        "title": "Райони"
+        "title": "Райони",
+        "params_title": "Адміністративні райони"
       },
       "subways": {
         "title": "Метро"
@@ -58,7 +59,20 @@
       }
     },
     "view": {
-      "props": "ХАРАКТЕРИСТИКИ"
+      "props": "ХАРАКТЕРИСТИКИ",
+      "prop": {
+        "housing_class": "Тип будинку",
+        "transport": "Як дістатись",
+        "subway_station": "Станція метро",
+        "storey": "Поверх",
+        "storeys": "Кількість поверхів",
+        "room_count": "Кількість кімнат",
+        "bedroom_count": "Кількість вбиралень",
+        "bathroom_count": "Кількість ванних кімнат",
+        "balcony_count": "Кількість балконів",
+        "repair": "Ремонт",
+        "base_price": "Базова ціна"
+      }
     }
   }
 }

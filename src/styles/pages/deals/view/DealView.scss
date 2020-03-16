@@ -131,6 +131,21 @@
           }
         }
 
+        &-values {
+          padding: 1.5rem 0 0 0;
+        }
+
+        &-item {
+          display: flex;
+          margin: 0.5rem 0;
+          font-size: 18px;
+
+          &-left {
+            font-weight: 600;
+            margin-right: 0.5rem;
+          }
+        }
+
         &-pattern {
           width: 25vw;
           min-height: 30vh;
