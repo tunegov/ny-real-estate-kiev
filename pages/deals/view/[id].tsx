@@ -72,11 +72,6 @@ const PROPS: Prop[] = [
     key: 'repair',
     default: '',
     translate: false
-  },
-  {
-    key: 'base_price',
-    default: '',
-    translate: false
   }
 ];
 
@@ -119,8 +114,9 @@ class DealViewPage extends React.Component<Props, State> {
         <div className="deal-view-content-top-props-item-left">
           {t(`deals.view.prop.${prop.key}`)}:
         </div>
-        <div className="deal-view-content-top-props-item-right"></div>
-        {prop.translate ? t(`deals.view.prop.values.${value}`) : value}
+        <div className="deal-view-content-top-props-item-right">
+          {prop.translate ? t(`deals.view.prop.values.${value}`) : value}
+        </div>
       </div>
     );
   }
@@ -128,7 +124,6 @@ class DealViewPage extends React.Component<Props, State> {
   renderContent() {
     const { t } = this.props!;
     const item = this.props.item!;
-    console.log(item);
 
     if (!item.adid) {
       return null;
@@ -161,9 +156,62 @@ class DealViewPage extends React.Component<Props, State> {
               />
             </div>
             <div className="deal-view-content-top-props">
-              <h3>{t('deals.view.props')}</h3>
+              {/* <h3>{t('deals.view.props')}</h3> */}
               <div className="deal-view-content-top-props-values">
-                {PROPS.map(this.renderPropsItem.bind(this))}
+                <h1>{get(item, 'base_price')}</h1>
+                <h2>
+                  {t('deals.view.prop.area_price', {
+                    area: get(item, 'price.native.value_m2')
+                  })}
+                </h2>
+                <div className="deal-view-content-top-props-item">
+                  <div className="deal-view-content-top-props-item-left">
+                    {t(`deals.view.prop.area`)}:
+                  </div>
+                  <div className="deal-view-content-top-props-item-right">
+                    {get(item, 'area_total')} / {get(item, 'area_life')} /{' '}
+                    {get(item, 'area_kitchen')}
+                  </div>
+                </div>
+                <div className="deal-view-content-top-props-item">
+                  <div className="deal-view-content-top-props-item-left">
+                    {t(`deals.view.prop.room_count`)}:
+                  </div>
+                  <div className="deal-view-content-top-props-item-right">
+                    {get(item, 'room_count')}
+                  </div>
+                </div>
+                <div className="deal-view-content-top-props-item">
+                  <div className="deal-view-content-top-props-item-left">
+                    {t(`deals.view.prop.storeys`)}:
+                  </div>
+                  <div className="deal-view-content-top-props-item-right">
+                    {t(`deals.view.prop.storey_count`, {
+                      storey: get(item, 'storey')
+                    })}{' '}
+                    /{' '}
+                    {t(`deals.view.prop.storeys_count`, {
+                      storeys: get(item, 'storeys')
+                    })}
+                  </div>
+                </div>
+                <div className="deal-view-content-top-props-item">
+                  <div className="deal-view-content-top-props-item-left">
+                    {t(`deals.view.prop.housing_class`)}:
+                  </div>
+                  <div className="deal-view-content-top-props-item-right">
+                    {get(item, 'housing_class')}
+                  </div>
+                </div>
+                <div className="deal-view-content-top-props-item">
+                  <div className="deal-view-content-top-props-item-left">
+                    {t(`deals.view.prop.repair`)}:
+                  </div>
+                  <div className="deal-view-content-top-props-item-right">
+                    {get(item, 'repair')}
+                  </div>
+                </div>
+                {/* {PROPS.map(this.renderPropsItem.bind(this))} */}
               </div>
               <div className="deal-view-content-top-props-pattern"></div>
             </div>

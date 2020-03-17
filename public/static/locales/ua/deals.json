@@ -62,16 +62,20 @@
       "props": "ХАРАКТЕРИСТИКИ",
       "prop": {
         "housing_class": "Тип будинку",
+        "area": "Площадь",
         "transport": "Як дістатись",
         "subway_station": "Станція метро",
         "storey": "Поверх",
-        "storeys": "Кількість поверхів",
-        "room_count": "Кількість кімнат",
+        "storey_count": "{{storey}} поверх",
+        "storeys": "Поверховість",
+        "storeys_count": "{{storeys}}-пов.",
+        "room_count": "Кімнати",
         "bedroom_count": "Кількість вбиралень",
         "bathroom_count": "Кількість ванних кімнат",
         "balcony_count": "Кількість балконів",
-        "repair": "Ремонт",
-        "base_price": "Базова ціна"
+        "repair": "Стан",
+        "base_price": "Базова ціна",
+        "area_price": "{{area}} $/м2"
       }
     }
   }

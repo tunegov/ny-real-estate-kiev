@@ -62,16 +62,20 @@
       "props": "ХАРАКТЕРИСТИКИ",
       "prop": {
         "housing_class": "Тип дома",
+        "area": "Площадь",
         "transport": "Как добраться",
         "subway_station": "Станция метро",
         "storey": "Этаж",
+        "storey_count": "{{storey}} этаж",
         "storeys": "Этажность",
+        "storeys_count": "{{storeys}}-эт.",
         "room_count": "Количество комнат",
         "bedroom_count": "Количество уборных",
         "bathroom_count": "Количество ванных комнат",
         "balcony_count": "Количество балконов",
-        "repair": "Ремонт",
-        "base_price": "Базовая цена"
+        "repair": "Состояние",
+        "base_price": "Базовая цена",
+        "area_price": "{{area}} $/м2"
       }
     }
   }

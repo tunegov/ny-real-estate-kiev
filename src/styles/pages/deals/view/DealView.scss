@@ -132,17 +132,34 @@
         }
 
         &-values {
-          padding: 1.5rem 0 0 0;
+          padding: 0.5rem 0 0 0;
+
+          h1 {
+            font-weight: 600;
+            font-size: 24px;
+            font-family: 'Lato', sans-serif;
+          }
+
+          h2 {
+            margin: 1rem 0;
+            font-weight: 400;
+            font-size: 20px;
+            color: $color-gray-dark;
+            font-family: 'Lato', sans-serif;
+          }
         }
 
         &-item {
-          display: flex;
+          display: grid;
+          grid-template-columns: auto 50%;
           margin: 0.5rem 0;
           font-size: 18px;
+          font-family: 'Lato', sans-serif;
 
           &-left {
-            font-weight: 600;
+            font-weight: 400;
             margin-right: 0.5rem;
+            color: $color-gray-dark;
           }
         }
 
