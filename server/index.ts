@@ -25,7 +25,7 @@ const cert = dev ? '' : fs.readFileSync(path.join(__dirname, '../../fc.pem'));
 
 const credentials = {
   key,
-  cert
+  cert,
 };
 
 app.prepare().then(() => {
@@ -46,7 +46,7 @@ app.prepare().then(() => {
     }
   });
 
-  server.use(function(req, res, next) {
+  server.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header(
       'Access-Control-Allow-Headers',

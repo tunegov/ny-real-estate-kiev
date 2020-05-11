@@ -7,6 +7,7 @@ interface Props {
   value: string;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   className?: string;
   type?: string;
   min?: string;
@@ -24,6 +25,7 @@ const Input = (props: Props) => {
         value={props.value}
         type={props.type}
         onChange={props.onChange}
+        onKeyPress={props.onKeyPress}
         placeholder={props.placeholder}
         className={`input ${props.className} ${
           props.disabled ? 'disabled' : ''
@@ -36,6 +38,7 @@ const Input = (props: Props) => {
       value={props.value}
       type={props.type}
       onChange={props.onChange}
+      onKeyPress={props.onKeyPress}
       placeholder={props.placeholder}
       className={`input ${props.className} ${props.disabled ? 'disabled' : ''}`}
       {...props}

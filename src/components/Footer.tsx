@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { TFunction } from 'next-i18next';
 
 import { withTranslation } from '@server/i18n';
+import { sendMessageToEmail } from '@api/user';
 import Button from '@components/Button';
 import Input from '@components/Input';
+import { show } from '@utils/notification';
+import { EmailRegex } from '@constants/index';
 
 import '@styles/components/Footer.scss';
 import {
   facebookLink,
   telegramLink,
-  instagramLink
+  instagramLink,
 } from '@constants/constants';
 
 type Link = {
@@ -20,97 +23,97 @@ type Link = {
 const LINKS_1: Link[] = [
   {
     url: '',
-    key: 'footer.links.flat'
+    key: 'footer.links.flat',
   },
   {
     url: '',
-    key: 'footer.links.selling'
+    key: 'footer.links.selling',
   },
   {
     url: '',
-    key: 'footer.links.rent'
+    key: 'footer.links.rent',
   },
   {
     url: '',
-    key: 'footer.links.property'
+    key: 'footer.links.property',
   },
   {
     url: '',
-    key: 'footer.links.new_building'
+    key: 'footer.links.new_building',
   },
   {
     url: '',
-    key: 'footer.links.buy'
-  }
+    key: 'footer.links.buy',
+  },
 ];
 
 const LINKS_2: Link[] = [
   {
     url: '',
-    key: 'footer.links.flat'
+    key: 'footer.links.flat',
   },
   {
     url: '',
-    key: 'footer.links.selling'
+    key: 'footer.links.selling',
   },
   {
     url: '',
-    key: 'footer.links.rent'
+    key: 'footer.links.rent',
   },
   {
     url: '',
-    key: 'footer.links.property'
+    key: 'footer.links.property',
   },
   {
     url: '',
-    key: 'footer.links.new_building'
+    key: 'footer.links.new_building',
   },
   {
     url: '',
-    key: 'footer.links.buy'
-  }
+    key: 'footer.links.buy',
+  },
 ];
 
 const LINKS_3: Link[] = [
   {
     url: '',
-    key: 'footer.links.flat'
+    key: 'footer.links.flat',
   },
   {
     url: '',
-    key: 'footer.links.selling'
+    key: 'footer.links.selling',
   },
   {
     url: '',
-    key: 'footer.links.rent'
+    key: 'footer.links.rent',
   },
   {
     url: '',
-    key: 'footer.links.property'
+    key: 'footer.links.property',
   },
   {
     url: '',
-    key: 'footer.links.new_building'
+    key: 'footer.links.new_building',
   },
   {
     url: '',
-    key: 'footer.links.buy'
-  }
+    key: 'footer.links.buy',
+  },
 ];
 
 const SOCIAL_LINKS = [
   {
     className: 'social-link telegram',
-    href: telegramLink
+    href: telegramLink,
   },
   {
     className: 'social-link facebook',
-    href: facebookLink
+    href: facebookLink,
   },
   {
     className: 'social-link instagram',
-    href: instagramLink
-  }
+    href: instagramLink,
+  },
 ];
 
 interface Props {
@@ -119,7 +122,22 @@ interface Props {
 
 const Footer = ({ t }: Props) => {
   const [email, setEmail] = useState('');
-  const onSubscribe = () => {};
+  const [valid, setValid] = useState(false);
+
+  const onSubscribe = async () => {
+    const messageText = `
+Новая подписка\n
+E-mail - ${email}
+    `;
+    await sendMessageToEmail(messageText);
+    setEmail('');
+
+    show(t('footer.alert.title'), t('footer.alert.message'));
+  };
+
+  const checkValid = (emailLocal: string) => {
+    setValid(EmailRegex.test(emailLocal));
+  };
 
   const renderLinks = () => {
     return (
@@ -167,9 +185,21 @@ const Footer = ({ t }: Props) => {
         <Input
           placeholder={t('footer.subscribe.input')}
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            checkValid(e.target.value);
+          }}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              onSubscribe();
+            }
+          }}
         />
-        <Button onClick={onSubscribe} title={t('footer.subscribe.button')} />
+        <Button
+          onClick={onSubscribe}
+          disabled={!valid}
+          title={t('footer.subscribe.button')}
+        />
         {renderLinks()}
       </div>
     );
@@ -183,4 +213,4 @@ const Footer = ({ t }: Props) => {
   );
 };
 
-export default withTranslation('footer')(Footer);
+export default withTranslation(['footer', 'services'])(Footer);

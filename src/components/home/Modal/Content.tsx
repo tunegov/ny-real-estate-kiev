@@ -9,15 +9,15 @@ import Stepper from './Stepper';
 import RadioGroup from './RadioGroup';
 import { NumberMask, NumberRegex } from '@constants/index';
 
-const MESSAGE_TITLE = 'Подобрать недвижимость';
-
 interface Props extends WithTranslation {
   onClose: any;
 }
 
 const Content = ({ t, onClose }: Props) => {
+  const firstAnswer = t('home.modal.steps.step_1.answer_1.key');
+
   const [step, setStep] = useState(0);
-  const [step1, setStep1] = useState(t('home.modal.steps.step_1.answer_1.key'));
+  const [step1, setStep1] = useState(firstAnswer);
   const [step2, setStep2] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -29,42 +29,42 @@ const Content = ({ t, onClose }: Props) => {
   const STEP_1_ITEMS = [
     {
       title: t('home.modal.steps.step_1.answer_1.title'),
-      key: t('home.modal.steps.step_1.answer_1.key')
+      key: t('home.modal.steps.step_1.answer_1.key'),
     },
     {
       title: t('home.modal.steps.step_1.answer_2.title'),
-      key: t('home.modal.steps.step_1.answer_2.key')
-    }
+      key: t('home.modal.steps.step_1.answer_2.key'),
+    },
   ];
 
   const STEP_2_1_ITEMS = [
     {
       title: t('home.modal.steps.step_2_1.answer_1.title'),
-      key: t('home.modal.steps.step_2_1.answer_1.key')
+      key: t('home.modal.steps.step_2_1.answer_1.key'),
     },
     {
       title: t('home.modal.steps.step_2_1.answer_2.title'),
-      key: t('home.modal.steps.step_2_1.answer_2.key')
+      key: t('home.modal.steps.step_2_1.answer_2.key'),
     },
     {
       title: t('home.modal.steps.step_2_1.answer_3.title'),
-      key: t('home.modal.steps.step_2_1.answer_3.key')
+      key: t('home.modal.steps.step_2_1.answer_3.key'),
     },
     {
       title: t('home.modal.steps.step_2_1.answer_4.title'),
-      key: t('home.modal.steps.step_2_1.answer_4.key')
-    }
+      key: t('home.modal.steps.step_2_1.answer_4.key'),
+    },
   ];
 
   const STEP_2_2_ITEMS = [
     {
       title: t('home.modal.steps.step_2_2.answer_1.title'),
-      key: t('home.modal.steps.step_2_2.answer_1.key')
+      key: t('home.modal.steps.step_2_2.answer_1.key'),
     },
     {
       title: t('home.modal.steps.step_2_2.answer_2.title'),
-      key: t('home.modal.steps.step_2_2.answer_2.key')
-    }
+      key: t('home.modal.steps.step_2_2.answer_2.key'),
+    },
   ];
 
   const checkValid = (nameLocal: string, phoneLocal: string) => {
@@ -75,20 +75,21 @@ const Content = ({ t, onClose }: Props) => {
     if (!valid) {
       return;
     }
-    const category1 = STEP_1_ITEMS.find(item => item.key === step1);
+    const category1 = STEP_1_ITEMS.find((item) => item.key === step1);
     const category2 = (isFirstStepFirstAnswer
       ? STEP_2_1_ITEMS
       : STEP_2_2_ITEMS
-    ).find(item => item.key === step2);
+    ).find((item) => item.key === step2);
 
     const messageText = `
-          Имя - <b>${name}<br/></b>
-          Телефон - <b>${phone}<br/><br/></b>
-          Выбранная категория:<br/>
-          <b>${category1!.title} -> ${category2!.title}</b>
+Подобрать недвижимость\n
+Имя - ${name}
+Телефон - ${phone}\n
+Выбранная категория:
+${category1!.title} -> ${category2!.title}
       `;
 
-    await sendMessageToEmail(MESSAGE_TITLE, messageText);
+    await sendMessageToEmail(messageText);
     setName('');
     setPhone('');
     setStep(step + 1);
@@ -151,7 +152,7 @@ const Content = ({ t, onClose }: Props) => {
             <div className="content-step-form">
               <Input
                 value={name}
-                onChange={e => {
+                onChange={(e) => {
                   setName(e.target.value);
                   checkValid(e.target.value, phone);
                 }}
@@ -160,7 +161,7 @@ const Content = ({ t, onClose }: Props) => {
               <Input
                 mask={NumberMask}
                 value={phone}
-                onChange={e => {
+                onChange={(e) => {
                   setPhone(e.target.value);
                   checkValid(name, e.target.value);
                 }}

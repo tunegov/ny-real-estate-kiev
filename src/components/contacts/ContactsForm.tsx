@@ -11,8 +11,6 @@ import { NumberMask, NumberRegex, EmailRegex } from '@constants/index';
 
 import '@styles/pages/contacts/ContactsForm.scss';
 
-const MESSAGE_TITLE = ' Остались вопросы';
-
 interface Props extends WithTranslation {
   title?: string;
 }
@@ -28,12 +26,13 @@ const ContactsForm = ({ t, title }: Props) => {
       return;
     }
     const messageText = `
-        Имя - ${name}<br/>
-        Телефон - ${phone}<br/>
-        E-mail - ${email}
+Остались вопросы\n
+Имя - ${name}
+Телефон - ${phone}
+E-mail - ${email}
     `;
 
-    await sendMessageToEmail(MESSAGE_TITLE, messageText);
+    await sendMessageToEmail(messageText);
 
     setName('');
     setPhone('');
@@ -62,7 +61,7 @@ const ContactsForm = ({ t, title }: Props) => {
       <div className="contacts-form-inputs">
         <Input
           value={name}
-          onChange={e => {
+          onChange={(e) => {
             setName(e.target.value);
             checkValid(e.target.value, phone, email);
           }}
@@ -71,7 +70,7 @@ const ContactsForm = ({ t, title }: Props) => {
         <Input
           mask={NumberMask}
           value={phone}
-          onChange={e => {
+          onChange={(e) => {
             setPhone(e.target.value);
             checkValid(name, e.target.value, email);
           }}
@@ -79,7 +78,7 @@ const ContactsForm = ({ t, title }: Props) => {
         />
         <Input
           value={email}
-          onChange={e => {
+          onChange={(e) => {
             setEmail(e.target.value);
             checkValid(name, phone, e.target.value);
           }}

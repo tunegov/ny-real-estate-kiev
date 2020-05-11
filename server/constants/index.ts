@@ -9,3 +9,6 @@ export const API_ACCESS_PASSWORD =
 export const lang = 'ru';
 
 export const ADMIN_USER_ID = 2976402;
+
+export const TELEGRAM_BOT_API_KEY =
+  '1125328147:AAEDykzn1vw4-JWwYrIqcT1iT5LwY5AgTQw';

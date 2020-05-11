@@ -7,3 +7,4 @@ exports.API_ACCESS_KEY = 'newyork-9D2#cMe*';
 exports.API_ACCESS_PASSWORD = 'GZlSsK3k71FZ&IKD7#BVGOb7U7VE&mzI^f9FuG%b7aQR6B^Y8Vx@^ED@BqTGQIKj';
 exports.lang = 'ru';
 exports.ADMIN_USER_ID = 2976402;
+exports.TELEGRAM_BOT_API_KEY = '1125328147:AAEDykzn1vw4-JWwYrIqcT1iT5LwY5AgTQw';

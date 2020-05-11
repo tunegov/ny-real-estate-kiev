@@ -11,8 +11,6 @@ import { NumberMask, NumberRegex } from '@constants/index';
 
 import '@styles/components/common/CallBackForm.scss';
 
-const MESSAGE_TITLE = 'Перезвонить клиенту';
-
 interface Props extends WithTranslation {}
 
 const CallBackForm = ({ t }: Props) => {
@@ -26,10 +24,11 @@ const CallBackForm = ({ t }: Props) => {
       return;
     }
     const messageText = `
-        Имя - ${name}<br/>
-        Телефон - ${phone}
+Перезвонить клиенту\n
+Имя - ${name}
+Телефон - ${phone}
     `;
-    await sendMessageToEmail(MESSAGE_TITLE, messageText);
+    await sendMessageToEmail(messageText);
     setName('');
     setPhone('');
     show(
@@ -53,7 +52,7 @@ const CallBackForm = ({ t }: Props) => {
         </p>
         <Input
           value={name}
-          onChange={e => {
+          onChange={(e) => {
             setName(e.target.value);
             checkValid(e.target.value, phone);
           }}
@@ -62,7 +61,7 @@ const CallBackForm = ({ t }: Props) => {
         <Input
           mask={NumberMask}
           value={phone}
-          onChange={e => {
+          onChange={(e) => {
             setPhone(e.target.value);
             checkValid(name, e.target.value);
           }}

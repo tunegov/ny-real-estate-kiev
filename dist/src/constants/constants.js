@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.number = '+380 67 994 3848';
-exports.telegramLink = '';
+exports.telegramLink = 'https://t.me/realestateagencykiev';
 exports.facebookLink = 'https://m.facebook.com/AHNewYorkRealEstateKiev';
 exports.instagramLink = 'https://instagram.com/real_estate_agency_kyiv?igshid=1rt28fqm4sjee';
 exports.GOOGLE_MAPS_KEY = 'AIzaSyAAEs5ZXI6WWT3ukkRNiiIjyKWziGEPyVw';

@@ -23,19 +23,19 @@ const Error: NextPage<any, any> = ({ t, statusCode }) => {
   );
 };
 
-Error.getInitialProps = async ({ res, err }) => {
-  let statusCode;
+// Error.getInitialProps = async ({ res, err }) => {
+//   let statusCode;
 
-  if (res) {
-    ({ statusCode } = res);
-  } else if (err) {
-    ({ statusCode } = err);
-  }
+//   if (res) {
+//     ({ statusCode } = res);
+//   } else if (err) {
+//     ({ statusCode } = err);
+//   }
 
-  return {
-    namespacesRequired: ['common'],
-    statusCode
-  };
-};
+//   return {
+//     namespacesRequired: ['common'],
+//     statusCode
+//   };
+// };
 
 export default withTranslation('common')(Error);

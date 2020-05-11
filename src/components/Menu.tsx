@@ -15,40 +15,40 @@ type LinkType = {
 };
 
 const links: LinkType[] = [
-  { href: '/team', label: 'menu.team' },
+  // { href: '/team', label: 'menu.team' },
   {
     href: '/services',
     label: 'menu.services',
     innerLinks: [
       {
         href: '/services/buying_a_property',
-        label: 'menu.services_list.buying_a_property'
+        label: 'menu.services_list.buying_a_property',
       },
       {
         href: '/services/property_for_sale',
-        label: 'menu.services_list.property_for_sale'
+        label: 'menu.services_list.property_for_sale',
       },
       {
         href: '/services/legal_support',
-        label: 'menu.services_list.legal_support'
+        label: 'menu.services_list.legal_support',
       },
       {
         href: '/services/expert_review',
-        label: 'menu.services_list.expert_review'
+        label: 'menu.services_list.expert_review',
       },
       {
         href: '/services/free_consulting',
-        label: 'menu.services_list.free_consulting'
+        label: 'menu.services_list.free_consulting',
       },
       {
         href: '/services/manufacturing_of_passports',
-        label: 'menu.services_list.manufacturing_of_passports'
-      }
-    ]
+        label: 'menu.services_list.manufacturing_of_passports',
+      },
+    ],
   },
   { href: '/jobs', label: 'menu.jobs' },
-  { href: '/partners', label: 'menu.partners' },
-  { href: '/contacts', label: 'menu.contacts' }
+  // { href: '/partners', label: 'menu.partners' },
+  { href: '/contacts', label: 'menu.contacts' },
 ];
 
 interface MenuProps {
@@ -65,7 +65,7 @@ const MenuLink = ({
   label,
   innerLinks,
   t,
-  router
+  router,
 }: LinkProps & LinkType) => {
   const [collapsed, setCollapsed] = useState(true);
 
@@ -97,7 +97,7 @@ const MenuLink = ({
       </li>
       {hasInnerLinks && (
         <ul className={`inner-links ${!collapsed ? '' : 'hidden'}`}>
-          {innerLinks?.map(link => (
+          {innerLinks?.map((link) => (
             <MenuLink router={router} t={t} key={link.label} {...link} />
           ))}
         </ul>
@@ -129,7 +129,7 @@ const Menu = ({ t }: MenuProps) => {
   };
 
   const renderLinks = () => {
-    return links.map(link => {
+    return links.map((link) => {
       return <MenuLink router={router} t={t} key={link.label} {...link} />;
     });
   };

@@ -58,7 +58,11 @@ const DistrictParam = ({ t, currentValue, onChange, field }: Props) => {
                     onChange(field, [...currentValue, value]);
                   }
                 }}>
-                <input type="checkbox" checked={selected} />
+                <input
+                  type="checkbox"
+                  checked={selected}
+                  onChange={() => null}
+                />
 
                 {value}
               </div>

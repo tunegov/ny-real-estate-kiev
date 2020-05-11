@@ -111,6 +111,7 @@
           input {
             margin-bottom: 1rem;
             width: 350px;
+            color: $color-brown-background;
 
             @include phone-and-tablet {
               width: 250px;

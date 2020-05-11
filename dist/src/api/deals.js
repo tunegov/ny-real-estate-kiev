@@ -14,13 +14,14 @@ exports.search = async (currentPage, params) => {
         console.error(err);
     }
 };
-exports.view = async (adid, currency_id) => {
+exports.view = async (adid, currency_id = 'UAH') => {
     try {
         const body = {
             adid,
             currency_id
         };
-        return await index_1.default.post('/api/view', body);
+        const { data } = await index_1.default.post('/api/view', body);
+        return data;
     }
     catch (err) {
         console.error(err);

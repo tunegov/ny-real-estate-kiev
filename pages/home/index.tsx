@@ -14,11 +14,11 @@ interface Props extends WithTranslation {}
 
 class HomePage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common', 'home']
+    namespacesRequired: ['menu', 'common', 'home'],
   });
 
   state = {
-    modalVisible: false
+    modalVisible: false,
   };
 
   openModal() {
