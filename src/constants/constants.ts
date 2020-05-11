@@ -1,5 +1,5 @@
 export const number = '+380 67 994 3848';
-export const telegramLink = 'https://t.me/realestateagencykiev';
+export const telegramLink = 'https://t.me/realestkiev';
 export const facebookLink = 'https://m.facebook.com/AHNewYorkRealEstateKiev';
 export const instagramLink = 'https://instagram.com/realestkiev';
 
