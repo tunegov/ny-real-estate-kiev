@@ -15,6 +15,10 @@ $phone-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
+body {
+  overflow: overlay;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import '../../node_modules/react-notifications-component/dist/scss/notification.scss';
 @import '~react-image-gallery/styles/scss/image-gallery.scss';

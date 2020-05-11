@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Plx from 'react-plx';
+import { motion } from 'framer-motion';
 
 import Button from '@components/Button';
 
@@ -13,11 +14,23 @@ const textParalax = [
       {
         startValue: 0,
         endValue: 200,
-        property: 'translateY'
-      }
-    ]
-  }
+        property: 'translateY',
+      },
+    ],
+  },
 ];
+
+const fadeInBlock = {
+  initial: {
+    y: 30,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.9 },
+  },
+};
 
 interface Props {
   buttonLabel: string;
@@ -48,9 +61,9 @@ const HeaderBlock = (props: Props) => {
   return (
     <div className="home-header">
       <Plx parallaxData={textParalax}>
-        <div className="home-header-content">
+        <motion.div variants={fadeInBlock} className="home-header-content">
           <Button title={props.buttonLabel} onClick={props.buttonOnClick} />
-        </div>
+        </motion.div>
       </Plx>
       <div
         style={{ backgroundPosition: `${x}px ${y}px` }}

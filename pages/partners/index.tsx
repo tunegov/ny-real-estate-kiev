@@ -13,7 +13,7 @@ interface Props extends WithTranslation {}
 
 class PartnersPage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common', 'jobs']
+    namespacesRequired: ['menu', 'common', 'jobs'],
   });
 
   render() {
@@ -34,22 +34,20 @@ class PartnersPage extends React.Component<Props> {
           />
         </Head>
 
-        <Content>
-          <HeaderBlock
-            title={t('partners.title')}
-            subtitle={t('partners.subtitle')}
-            imageClassName="partners"
-          />
-          <ParthnersInsert
-            title={t('partners-insert.title')}
-            subtitle={t('partners-insert.subtitle')}
-          />
-          <ParthnersLogo imageClassName="parthners-logo" />
-          <ParthnersAdvantages
-            title={t('partners-advantages.title')}
-            subtitle={t('partners-advantages.subtitle')}
-          />
-        </Content>
+        <HeaderBlock
+          title={t('partners.title')}
+          subtitle={t('partners.subtitle')}
+          imageClassName="partners"
+        />
+        <ParthnersInsert
+          title={t('partners-insert.title')}
+          subtitle={t('partners-insert.subtitle')}
+        />
+        <ParthnersLogo imageClassName="parthners-logo" />
+        <ParthnersAdvantages
+          title={t('partners-advantages.title')}
+          subtitle={t('partners-advantages.subtitle')}
+        />
       </div>
     );
   }

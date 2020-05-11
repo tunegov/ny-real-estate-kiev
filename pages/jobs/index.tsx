@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
+import { motion } from 'framer-motion';
 
-import Content from '@components/Content';
 import HeaderBlock from '@components/common/HeaderBlock';
 import JobsInsert, { JobProps } from '@components/JobsInsert/JobsInsert';
 
@@ -22,7 +22,7 @@ const FakeJobs: JobProps[] = [
       <br />,
       '- впевнено працюєш з ПК;',
       <br />,
-      '- комунікабельний.'
+      '- комунікабельний.',
     ],
     salary: '',
     functional: 'Ми готові надати тобі:',
@@ -37,21 +37,35 @@ const FakeJobs: JobProps[] = [
       <br />,
       '- офіс в центрі Києва;',
       <br />,
-      '- високий відсоток заробітку від комісійних.'
+      '- високий відсоток заробітку від комісійних.',
     ],
-    button: 'Відправити резюме'
-  }
+    button: 'Відправити резюме',
+  },
 ];
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInJobs = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1.2, ease: easing },
+  },
+};
 
 class JobsPage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common, jobs']
+    namespacesRequired: ['menu', 'common, jobs'],
   });
 
   render() {
     const { t } = this.props;
     return (
-      <div>
+      <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
         <Head>
           <title>{t('jobs.title')}</title>
           <meta property="og:title" content={t('jobs.title')} />
@@ -66,17 +80,18 @@ class JobsPage extends React.Component<Props> {
           />
         </Head>
 
-        <Content>
-          <HeaderBlock
-            title={t('jobs.title')}
-            subtitle={t('jobs.subtitle')}
-            imageClassName="jobs"
-          />
+        <HeaderBlock
+          title={t('jobs.title')}
+          subtitle={t('jobs.subtitle')}
+          imageClassName="jobs"
+        />
+
+        <motion.div variants={fadeInJobs}>
           {FakeJobs.map((job, index) => (
             <JobsInsert key={index} {...job} />
           ))}
-        </Content>
-      </div>
+        </motion.div>
+      </motion.div>
     );
   }
 }

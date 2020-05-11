@@ -124,7 +124,7 @@ const Menu = ({ t }: MenuProps) => {
     setOpen(true);
   };
   const closeMenu = () => {
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'overlay';
     setOpen(false);
   };
 

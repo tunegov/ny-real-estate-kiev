@@ -12,7 +12,7 @@ interface Props extends WithTranslation {}
 
 class TeamPage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common', 'team']
+    namespacesRequired: ['menu', 'common', 'team'],
   });
 
   render() {
@@ -33,18 +33,16 @@ class TeamPage extends React.Component<Props> {
           />
         </Head>
 
-        <Content>
-          <HeaderBlock
-            title={t('team.title')}
-            subtitle={t('team.subtitle')}
-            imageClassName="team"
-          />
-          <TeamInsert
-            title={t('team.insert.title')}
-            subtitle={t('team.insert.subtitle')}
-          />
-          {/* <TeamGallery /> */}
-        </Content>
+        <HeaderBlock
+          title={t('team.title')}
+          subtitle={t('team.subtitle')}
+          imageClassName="team"
+        />
+        <TeamInsert
+          title={t('team.insert.title')}
+          subtitle={t('team.insert.subtitle')}
+        />
+        {/* <TeamGallery /> */}
       </div>
     );
   }

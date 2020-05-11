@@ -1,5 +1,14 @@
 @import '../../common';
 
+@keyframes itemFade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .deal-search-params {
   background-color: $color-gray-darkest;
   width: 100%;
@@ -31,6 +40,8 @@
   }
 
   .type-param-values {
+    // animation-name: itemFade;
+    // animation-duration: 0.4s;
     color: #818181;
     position: absolute;
     background-color: #efefef;

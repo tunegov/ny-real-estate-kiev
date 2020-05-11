@@ -14,6 +14,6 @@ bot.help((ctx) =>
   ctx.reply('Я отправляю все уведомления что приходят с сайта')
 );
 
-bot.launch();
+// bot.launch();
 
 export default bot;

@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
+import { motion } from 'framer-motion';
 
 import Content from '@components/Content';
 import DealHeader from '@components/deals/DealHeader';
@@ -16,7 +17,7 @@ import {
   SorterFields,
   PriceCurrency,
   PriceKind,
-  Params
+  Params,
 } from '@type/deals';
 
 interface Props extends WithTranslation {
@@ -31,7 +32,7 @@ interface State {
 
 class DealsPage extends React.Component<Props, State & Partial<Params>> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common', 'deals']
+    namespacesRequired: ['menu', 'common', 'deals'],
   });
 
   constructor(props: Props) {
@@ -48,7 +49,7 @@ class DealsPage extends React.Component<Props, State & Partial<Params>> {
       'area_total[value_to]': undefined,
       'price[kind]': 'per_object',
       data: [],
-      currentPage: 1
+      currentPage: 1,
     };
   }
 
@@ -80,7 +81,7 @@ class DealsPage extends React.Component<Props, State & Partial<Params>> {
     const { data, ...params } = this.state;
 
     return (
-      <div>
+      <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
         <Head>
           <title>{title}</title>
           <meta property="og:title" content={title} />
@@ -95,15 +96,13 @@ class DealsPage extends React.Component<Props, State & Partial<Params>> {
           />
         </Head>
 
-        <Content>
-          <DealHeader
-            title={title}
-            placeholder={t('deals.header.search.placeholder')}
-          />
-          <SearchParams params={params} onChange={this.onChange.bind(this)} />
-          <DealsResult deals={data} />
-        </Content>
-      </div>
+        <DealHeader
+          title={title}
+          placeholder={t('deals.header.search.placeholder')}
+        />
+        <SearchParams params={params} onChange={this.onChange.bind(this)} />
+        <DealsResult deals={data} />
+      </motion.div>
     );
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
+import { motion } from 'framer-motion';
 
 import Content from '@components/Content';
 import CallBackForm from '@components/common/CallBackForm';
@@ -19,7 +20,7 @@ interface Props extends WithTranslation {
 
 class ServicesPage extends React.Component<Props> {
   static getInitialProps = async () => ({
-    namespacesRequired: ['menu', 'common', 'services']
+    namespacesRequired: ['menu', 'common', 'services'],
   });
 
   renderServiceContent() {
@@ -53,7 +54,7 @@ class ServicesPage extends React.Component<Props> {
 
   render() {
     return (
-      <div>
+      <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
         <Head>
           <title>{this.props.title}</title>
           <meta property="og:title" content={this.props.title} />
@@ -67,11 +68,9 @@ class ServicesPage extends React.Component<Props> {
             content="https://ny.com.ua/static/images/logo-without-text.png"
           />
         </Head>
-        <Content>
-          {this.renderServiceContent()}
-          <CallBackForm />
-        </Content>
-      </div>
+        {this.renderServiceContent()}
+        <CallBackForm />
+      </motion.div>
     );
   }
 }

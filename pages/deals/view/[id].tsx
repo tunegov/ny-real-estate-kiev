@@ -5,8 +5,8 @@ import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
 import GoogleMapReact from 'google-map-react';
 import Head from 'next/head';
-import Content from '@components/Content';
 import get from 'lodash/get';
+import { motion } from 'framer-motion';
 
 import { GOOGLE_MAPS_KEY } from '@constants/index';
 import { view } from '@api/deals';
@@ -26,54 +26,102 @@ const PROPS: Prop[] = [
   {
     key: 'housing_class',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'transport',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'subway_station',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'storey',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'storeys',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'room_count',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'bedroom_count',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'bathroom_count',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'balcony_count',
     default: '',
-    translate: false
+    translate: false,
   },
   {
     key: 'repair',
     default: '',
-    translate: false
-  }
+    translate: false,
+  },
 ];
+
+const fadeInTitle = {
+  initial: {
+    x: 45,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6 },
+  },
+};
+
+const fadeInSubitle = {
+  initial: {
+    y: 15,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8 },
+  },
+};
+
+const fadeInImages = {
+  initial: {
+    y: 15,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1 },
+  },
+};
+
+const fadeInProps = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1 },
+  },
+};
 
 interface Props extends WithTranslation {
   id?: string;
@@ -89,15 +137,15 @@ class DealViewPage extends React.Component<Props, State> {
     const item = await view(String(id));
     return {
       namespacesRequired: ['menu', 'common'],
-      item
+      item,
     };
   }
 
   _getImagesForGallery(images: ViewMedia) {
-    const keys = Object.keys(images).filter(key => !!Number(key));
-    return keys.map(key => ({
+    const keys = Object.keys(images).filter((key) => !!Number(key));
+    return keys.map((key) => ({
       thumbnail: parseImg(images[key].src_small),
-      original: parseImg(images[key].src_middle)
+      original: parseImg(images[key].src_middle),
     }));
   }
 
@@ -140,12 +188,18 @@ class DealViewPage extends React.Component<Props, State> {
     return (
       <div className="deal-view">
         <div className="deal-view-header">
-          <h1>{item.property_complex}</h1>
-          <h2>{address}</h2>
+          <motion.div variants={fadeInTitle}>
+            <h1>{item.property_complex}</h1>
+          </motion.div>
+          <motion.div variants={fadeInSubitle}>
+            <h2>{address}</h2>
+          </motion.div>
         </div>
         <div className="deal-view-content">
           <div className="deal-view-content-top">
-            <div className="deal-view-content-top-gallery">
+            <motion.div
+              variants={fadeInImages}
+              className="deal-view-content-top-gallery">
               <ImageGallery
                 items={images}
                 lazyLoad
@@ -154,14 +208,16 @@ class DealViewPage extends React.Component<Props, State> {
                 renderLeftNav={this.renderLeftNav.bind(this)}
                 renderRightNav={this.renderRightNav.bind(this)}
               />
-            </div>
-            <div className="deal-view-content-top-props">
+            </motion.div>
+            <motion.div
+              variants={fadeInProps}
+              className="deal-view-content-top-props">
               {/* <h3>{t('deals.view.props')}</h3> */}
               <div className="deal-view-content-top-props-values">
                 <h1>{get(item, 'base_price')}</h1>
                 <h2>
                   {t('deals.view.prop.area_price', {
-                    area: get(item, 'price.native.value_m2')
+                    area: get(item, 'price.native.value_m2'),
                   })}
                 </h2>
                 <div className="deal-view-content-top-props-item">
@@ -192,11 +248,11 @@ class DealViewPage extends React.Component<Props, State> {
                   </div>
                   <div className="deal-view-content-top-props-item-right">
                     {t(`deals.view.prop.storey_count`, {
-                      storey: get(item, 'storey')
+                      storey: get(item, 'storey'),
                     })}{' '}
                     /{' '}
                     {t(`deals.view.prop.storeys_count`, {
-                      storeys: get(item, 'storeys')
+                      storeys: get(item, 'storeys'),
                     })}
                   </div>
                 </div>
@@ -223,7 +279,7 @@ class DealViewPage extends React.Component<Props, State> {
                 {/* {PROPS.map(this.renderPropsItem.bind(this))} */}
               </div>
               <div className="deal-view-content-top-props-pattern"></div>
-            </div>
+            </motion.div>
           </div>
           <div className="deal-view-content-text">{item?.promo_text}</div>
         </div>
@@ -233,7 +289,7 @@ class DealViewPage extends React.Component<Props, State> {
             bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
             defaultCenter={{
               lat,
-              lng
+              lng,
             }}
             defaultZoom={17}
             yesIWantToUseGoogleMapApiInternals>
@@ -297,11 +353,11 @@ class DealViewPage extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
         <Head>{this.renderMetaTags()}</Head>
 
-        <Content>{this.renderContent()}</Content>
-      </div>
+        {this.renderContent()}
+      </motion.div>
     );
   }
 }

@@ -1,26 +1,41 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import '@styles/pages/contacts/ContactsInfo.scss';
 import {
   facebookLink,
   telegramLink,
-  instagramLink
+  instagramLink,
 } from '@constants/constants';
 
 const SOCIAL_LINKS = [
   {
     className: 'social-link telegram',
-    href: telegramLink
+    href: telegramLink,
   },
   {
     className: 'social-link facebook',
-    href: facebookLink
+    href: facebookLink,
   },
   {
     className: 'social-link instagram',
-    href: instagramLink
-  }
+    href: instagramLink,
+  },
 ];
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInBlock = {
+  initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: easing },
+  },
+};
 
 interface Props {
   title?: string;
@@ -31,7 +46,7 @@ interface Props {
 
 const Contacts = (props: Props) => {
   return (
-    <div className="contacts-info">
+    <motion.div variants={fadeInBlock} className="contacts-info">
       <div className="contacts-info-text">
         <p className="contacts-info-text-title">{props.title}</p>
         <div className="contacts-info-block">
@@ -77,7 +92,7 @@ const Contacts = (props: Props) => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

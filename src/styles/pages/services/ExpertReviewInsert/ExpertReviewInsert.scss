@@ -4,11 +4,16 @@ $services: 'buying_a_property';
 
 .expert-review-insert {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   min-height: 100px;
   background-color: white;
   margin: 3vh 50vw 3vh 10vw;
+
+  &-outer {
+    z-index: 4;
+    position: relative;
+  }
 
   @include phone-and-tablet {
     margin: 3vh 30vw 3vh 2vw;

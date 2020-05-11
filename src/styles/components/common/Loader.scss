@@ -1,0 +1,34 @@
+@import '../../common';
+
+@keyframes loaderFade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loaderContentFade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loader-outer {
+  animation-name: loaderFade;
+  animation-duration: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loader-content {
+  animation-name: loaderContentFade;
+  animation-duration: 0.4s;
+}

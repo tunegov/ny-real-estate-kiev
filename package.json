@@ -23,6 +23,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
+    "framer-motion": "^1.10.3",
     "google-map-react": "^1.1.7",
     "nedb": "^1.8.0",
     "next": "9.3.6",

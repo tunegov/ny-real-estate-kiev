@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@server/routes';
 import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
+import { motion } from 'framer-motion';
 
 import '@styles/components/deals/DealsResult.scss';
 import { DealItem } from '@type/deals';
@@ -10,18 +11,34 @@ interface Props extends WithTranslation {
   deals: DealItem[];
 }
 
+const fadeInBlock = (index: number) => ({
+  initial: {
+    y: 50,
+    // opacity: 0,
+  },
+  animate: {
+    y: 0,
+    // opacity: 1,
+    transition: { duration: 0.02 * index },
+  },
+});
+
 const DealsResult = ({ t, deals }: Props) => {
   return (
     <div className="deal-content">
       <div className="deal-content-list">
-        {deals.map(deal => {
+        {deals.map((deal, i) => {
           const address = `${deal.district}${
             deal.street_alias ? ', ' + deal.street_alias : ''
           }${deal.housestr ? ', ' + deal.housestr : ''}`;
 
+          const variants = fadeInBlock(i + 1);
+
           return (
             <Link key={deal.adid} route={`/deals/view/${deal.adid}`}>
-              <div className="deal-content-list-item">
+              <motion.div
+                variants={variants}
+                className="deal-content-list-item">
                 {deal.buyer_not_pay && (
                   <div className="deal-content-list-item-fee">
                     {t('deals.item.no_fee')}
@@ -62,7 +79,7 @@ const DealsResult = ({ t, deals }: Props) => {
                     </div>
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </Link>
           );
         })}

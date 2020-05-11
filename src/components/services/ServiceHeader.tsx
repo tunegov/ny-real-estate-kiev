@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Plx from 'react-plx';
+import { motion } from 'framer-motion';
 
 import '@styles/pages/services/ServiceHeader.scss';
 
@@ -11,11 +12,37 @@ const textParalax = [
       {
         startValue: 0,
         endValue: 200,
-        property: 'translateY'
-      }
-    ]
-  }
+        property: 'translateY',
+      },
+    ],
+  },
 ];
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInHeaderImage = {
+  initial: {
+    y: 60,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: easing },
+  },
+};
+
+const fadeInHeaderText = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: easing },
+  },
+};
 
 interface Props {
   title: string;
@@ -44,18 +71,19 @@ const ServiceHeader = (props: Props) => {
 
   return (
     <div className="service-header">
+      <motion.div
+        variants={fadeInHeaderImage}
+        style={{ backgroundPosition: `${x}px ${y}px` }}
+        className={`service-header-image ${props.imageClassName}`}
+      />
       <Plx parallaxData={textParalax}>
-        <div className="service-header-text">
+        <motion.div variants={fadeInHeaderText} className="service-header-text">
           <p className="service-header-text-title">{props.title}</p>
           {!!props.subtitle && (
             <p className="service-header-text-subtitle">{props.subtitle}</p>
           )}
-        </div>
+        </motion.div>
       </Plx>
-      <div
-        style={{ backgroundPosition: `${x}px ${y}px` }}
-        className={`service-header-image ${props.imageClassName}`}
-      />
     </div>
   );
 };

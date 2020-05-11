@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { WithTranslation } from 'next-i18next';
 import { withTranslation } from '@server/i18n';
+import { motion } from 'framer-motion';
 
 import Content from '@components/Content';
 import CallBackForm from '@components/common/CallBackForm';
@@ -28,14 +29,18 @@ class HomePage extends React.Component<Props> {
 
   closeModal(e: any) {
     e.stopPropagation();
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'overlay';
     this.setState({ modalVisible: false });
   }
 
   render() {
     const { t } = this.props;
     return (
-      <div>
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={{ exit: { transition: { staggerChildren: 0.1 } } }}>
         <Head>
           <title>{t('home.title')}</title>
           <meta property="og:title" content={t('home.title')} />
@@ -46,20 +51,18 @@ class HomePage extends React.Component<Props> {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Content withPattern>
-          <Header
-            buttonLabel={t('home.header.button.text')}
-            buttonOnClick={this.openModal.bind(this)}
-          />
-          <Modal
-            visible={this.state.modalVisible}
-            onClose={this.closeModal.bind(this)}
-          />
-          <Categories />
-          <CooperationsSteps />
-          <CallBackForm />
-        </Content>
-      </div>
+        <Header
+          buttonLabel={t('home.header.button.text')}
+          buttonOnClick={this.openModal.bind(this)}
+        />
+        <Modal
+          visible={this.state.modalVisible}
+          onClose={this.closeModal.bind(this)}
+        />
+        <Categories />
+        <CooperationsSteps />
+        <CallBackForm />
+      </motion.div>
     );
   }
 }
