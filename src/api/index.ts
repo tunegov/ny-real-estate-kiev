@@ -9,8 +9,8 @@ import {
 } from '@constants/index';
 
 const axiosInstance = axios.create({
-  // baseURL: 'https://ny.com.ua'
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://ny.com.ua',
+  // baseURL: 'http://localhost:3000',
 });
 
 export const requestInterceptors = axiosInstance.interceptors.request.use(
